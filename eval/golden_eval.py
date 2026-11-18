@@ -49,6 +49,7 @@ def main() -> dict:
     ap.add_argument("--url", default="http://127.0.0.1:8000"); ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--version", default="v0"); ap.add_argument("--profile", default="dev-cpu"); ap.add_argument("--tag", default="")
     ap.add_argument("--no-record", action="store_true"); ap.add_argument("--force-negatives", action="store_true", help="send negatives through generation (tests the model's own abstention)")
+    ap.add_argument("--pace", type=float, default=0.0, help="seconds to sleep after each LLM-backed request (stay under a provider's tokens/min quota)")
     ap.add_argument("--save", default="", help="write rows+summary to this JSON path without recording KPIs")
     a = ap.parse_args()
     G = [json.loads(l) for l in (ROOT / "eval/data/golden_250.jsonl").read_text().splitlines()]
@@ -61,6 +62,8 @@ def main() -> dict:
         r = c.post(f"{a.url}/api/v1/admin/query_debug", json={"tenant_id": tenant, "user_id": user, "query": g["question"], "role": "operator", **({"force_generate": True} if a.force_negatives and g["stratum"] == "negative" else {})}, headers={"X-Tenant-ID": tenant})
         d = r.json()
         rows.append({"g": g, "d": d})
+        if a.pace and d.get("llm"):
+            time.sleep(a.pace)
         if (i + 1) % 25 == 0:
             print(f"  {i + 1}/{len(G)} ({time.time() - t_start:.0f}s)", flush=True)
     per = defaultdict(lambda: defaultdict(list)); overall = defaultdict(list)

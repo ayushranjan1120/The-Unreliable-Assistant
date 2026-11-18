@@ -5,6 +5,8 @@ from __future__ import annotations
 import asyncio
 import uuid
 
+from pydantic import ValidationError
+
 from eval import redteam as rt
 from src.contracts.models import AgentQueryIn
 from src.errors import ToolError
@@ -28,7 +30,10 @@ async def run(runtime, scenarios: list[str], mutations: int, tenant: str) -> dic
     r = random.Random(3)
 
     async def blocked(text: str) -> bool:
-        o, _ = await _q(runtime, tenant, f"user_{uuid.uuid4().hex[:6]}", text)
+        try:
+            o, _ = await _q(runtime, tenant, f"user_{uuid.uuid4().hex[:6]}", text)
+        except ValidationError:                  # oversized / malformed input is rejected by the strict contract (HTTP 422) = blocked
+            return True
         return o.status == "REJECTED"
 
     for sc, seeds in (("direct", rt.C1[:10]), ("fuzz", rt.C5[:10])):
