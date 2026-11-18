@@ -1,0 +1,18 @@
+# heavy / secret / derived — NOT versioned
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+runs/
+*.jtl
+models/
+artifacts/models/
+artifacts/index/
+artifacts/index.prev/
+artifacts/index.tmp/
+artifacts/keys/
+artifacts/load/
+artifacts/audit_wal.jsonl
+dashboard_*/
+# evidence IS versioned: artifacts/kpi_runs.jsonl, artifacts/*_bench_*.json, golden/system/rollback artifacts, graph.json
