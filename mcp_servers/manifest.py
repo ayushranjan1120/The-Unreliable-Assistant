@@ -73,9 +73,19 @@ def verify(server: str, index_hash: str = "") -> tuple[bool, str]:
     return True, "ok"
 
 
+def current_index_hash() -> str:
+    """Hash of the live retrieval index manifest ('' if no index yet)."""
+    f = ROOT / "artifacts" / "index" / "manifest.json"
+    return hashlib.sha256(json.dumps(json.loads(f.read_text()), sort_keys=True).encode()).hexdigest() if f.exists() else ""
+
+
+def sign_current(version: str = "v0") -> list[str]:
+    """Re-sign all manifests against the CURRENT index (what every start-up and test restore must use)."""
+    return sign_all(version, current_index_hash())
+
+
 if __name__ == "__main__":
     import sys
-    idx = json.loads((ROOT / "artifacts" / "index" / "manifest.json").read_text()) if (ROOT / "artifacts" / "index" / "manifest.json").exists() else {}
-    ih = hashlib.sha256(json.dumps(idx, sort_keys=True).encode()).hexdigest() if idx else ""
-    print("signed:", sign_all(sys.argv[1] if len(sys.argv) > 1 else "v0", ih))
+    ih = current_index_hash()
+    print("signed:", sign_current(sys.argv[1] if len(sys.argv) > 1 else "v0"))
     print({s: verify(s, ih if s == "hybrid-rag" else "") for s in SERVERS})

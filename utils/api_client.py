@@ -29,7 +29,8 @@ class BackendClient:
 
     def _call(self, method: str, path: str, **kw: Any) -> ApiResult:
         try:
-            r = httpx.request(method, f"{self.base_url}{path}", timeout=self.timeout_s, **kw)
+            kw.setdefault("timeout", self.timeout_s)
+            r = httpx.request(method, f"{self.base_url}{path}", **kw)
             lat = r.elapsed.total_seconds() * 1000
             body = r.json() if r.headers.get("content-type", "").startswith("application/json") else r.text
             return ApiResult(r.is_success, body, "" if r.is_success else f"HTTP {r.status_code}", r.status_code, lat)
@@ -62,6 +63,7 @@ class BackendClient:
         """Generic GET for admin endpoints."""
         return self._call("GET", path, params=params)
 
-    def post(self, path: str, body: dict | None = None, tenant_id: str | None = None) -> ApiResult:
-        """Generic POST for admin endpoints."""
-        return self._call("POST", path, json=body or {}, headers={"X-Tenant-ID": tenant_id} if tenant_id else {})
+    def post(self, path: str, body: dict | None = None, tenant_id: str | None = None, timeout_s: float | None = None) -> ApiResult:
+        """Generic POST for admin endpoints (``timeout_s`` overrides the default for long operations such as red-team runs)."""
+        kw = {"timeout": timeout_s} if timeout_s else {}
+        return self._call("POST", path, json=body or {}, headers={"X-Tenant-ID": tenant_id} if tenant_id else {}, **kw)

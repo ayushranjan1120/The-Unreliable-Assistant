@@ -175,6 +175,7 @@ class AgentRuntime:
         if hit:
             tier, p = hit
             extras["cache"] = tier
+            steps.append(Step(1, "CACHE", None, f"served from {tier} cache (tenant-scoped); no retrieval or generation ran", 0.0))
             return out(p["route"], p["answer"], p["citations"], p["abstained"], "OK", p.get("faithfulness"), p.get("degraded", False))
 
         # ---- TRIAGE ---------------------------------------------------------------------------------------------------------
@@ -246,6 +247,15 @@ class AgentRuntime:
             obs_text = ret.text
             steps.append(Step(iteration + 1, "OBSERVATION", "hybrid_retrieve", f"{obs_text[:300]}", (time.perf_counter() - t) * 1000))
             extras["retrieval"] = {"top_score": raw["top_score"], "stage_ms": raw["stage_ms"], "abstain": raw["abstain"], "degraded": raw.get("degraded", False)}
+        pinned = grounding.entity_note_ids(text, self.graph)                 # deterministic entity pinning: every named SKU/supplier is in context
+        if len(pinned) >= 2 or (pinned and not chunks_raw):
+            have = {c["source_id"] for c in chunks_raw}
+            add = [{"chunk_id": self.graph.notes[n].chunk_id, "text": self.graph.notes[n].body, "source_id": n, "domain": self.graph.notes[n].domain,
+                    "risk_tier": self.graph.notes[n].tier, "ce_score": 1.0} for n in pinned if n not in have]
+            chunks_raw = (add + chunks_raw)[:max(self.s.rerank_k, len(pinned))]
+            if add:
+                telemetry.METRICS.inc("entity_pinning.applied")
+                obs_text = (obs_text + " " + " ".join(a["text"] for a in add)).strip() if len(pinned) < 3 else obs_text
         self.metrics["steps_total"] += iteration
         if not chunks_raw:                                                    # deterministic abstention short-circuit: NO LLM call
             self.metrics["abstained"] += 1

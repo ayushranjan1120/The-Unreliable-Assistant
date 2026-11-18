@@ -25,10 +25,10 @@ def render(ctx: state.Ctx) -> None:
     with left:
         with st.container(border=True):
             sel = st.multiselect("Scenarios", list(SCENARIOS), default=list(SCENARIOS), format_func=lambda k: SCENARIOS[k])
-            n = st.slider("Mutations per seed prompt", 1, 25, 5)
+            n = st.slider("Mutations per seed prompt", 1, 25, 2, help="More mutations = more trials (tighter confidence bound) but a slower run on a CPU host")
             if st.button("Run selected", type="primary", disabled=not sel):
                 with st.status("Running adversarial suite …", expanded=True) as s:
-                    r = cached.backend(ctx.backend_url).post("/api/v1/admin/redteam/run", {"scenarios": sel, "mutations": n}, ctx.tenant_id)
+                    r = cached.backend(ctx.backend_url).post("/api/v1/admin/redteam/run", {"scenarios": sel, "mutations": n}, ctx.tenant_id, timeout_s=600)
                     if r.ok:
                         s.update(label="complete", state="complete")
                         st.session_state["redteam_last"] = r.data

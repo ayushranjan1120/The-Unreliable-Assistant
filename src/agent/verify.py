@@ -25,9 +25,19 @@ def claims(answer: str) -> list[str]:
 
 
 def ungrounded_facts(answer: str, context: str) -> list[str]:
-    """Numbers/ids in ``answer`` that do not appear in ``context`` (deterministic, model-free)."""
+    """Numbers/ids in ``answer`` that are not in ``context`` (deterministic, model-free). A number is also accepted when it is the exact
+    sum or absolute difference of two numbers in the context (derived comparison/arithmetic answers); wrong arithmetic is still flagged."""
     ctx = context.lower()
-    return [f for f in dict.fromkeys(_FACT.findall(answer)) if f.lower() not in ctx]
+    ctx_nums = sorted({float(n) for n in re.findall(r"(?<![\w.-])\d+(?:\.\d+)?", ctx)})[:60]
+    derived = {round(abs(a - b), 6) for a in ctx_nums for b in ctx_nums} | {round(a + b, 6) for a in ctx_nums for b in ctx_nums}
+    out = []
+    for f in dict.fromkeys(_FACT.findall(answer)):
+        if f.lower() in ctx:
+            continue
+        if re.fullmatch(r"\d+(?:\.\d+)?", f) and round(float(f), 6) in derived:
+            continue
+        out.append(f)
+    return out
 
 
 class NliVerifier:
@@ -65,7 +75,11 @@ class NliVerifier:
             ctxw = set(w for nc in nctx for w in strip(nc))
             def span_ok(c: str) -> bool:      # short span answers ("42 months.", "Medical Devices"): every token must occur in the context
                 w = strip(c); return 0 < len(w) <= 4 and all(x in ctxw for x in w)
-            todo = [c for c in cl if not any(norm(c) in nc for nc in nctx) and not span_ok(c)]   # (1) quotes / grounded spans need no NLI
+            joined = " ".join(nctx)
+            def multi_entity_ok(c: str) -> bool:   # comparison claims span chunks (small NLI cannot): accept if all ids+numbers are grounded (KNOWN LIMITATION: semantic reversal passes)
+                ids = set(re.findall(r"sku-\d{3}|sup-\d{2}", c.lower()))
+                return len(ids) >= 2 and all(i in joined for i in ids) and not ungrounded_facts(c, joined)
+            todo = [c for c in cl if not any(norm(c) in nc for nc in nctx) and not span_ok(c) and not multi_entity_ok(c)]   # (1) quotes / grounded spans need no NLI
             bad: list[str] = []
             if todo:
                 wins = [w for ch in chunk_texts for w in self._windows(ch)][:48]

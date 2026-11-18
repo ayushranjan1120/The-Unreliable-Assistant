@@ -127,7 +127,7 @@ def test_manifest_detects_tamper(tmp_path, monkeypatch):
     p = manifest.MANIFESTS / "graphify-vault.json"
     m = json.loads(p.read_text()); m["body"]["code_sha256"] = "0" * 64; p.write_text(json.dumps(m))
     assert manifest.verify("graphify-vault") == (False, "bad signature")
-    manifest.sign_all("v0", "")                                          # restore
+    manifest.sign_current("v0")                                          # restore against the REAL index (not an empty hash)
 
 
 async def test_audit_chain_tamper_evident_and_append_only():

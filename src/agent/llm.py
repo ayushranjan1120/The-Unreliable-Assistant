@@ -118,6 +118,9 @@ class HFLocalLLM:
 
 
 class OpenAICompatLLM:
+    """OpenAI-compatible chat client. A 429 with a short ``retry-after`` is waited out (up to 3 tries) instead of being treated as an outage."""
+    MAX_WAIT_S = 12.0
+
     """vLLM/TRT-LLM OpenAI-compatible streaming client (target profile). Measures TTFT from the first streamed token."""
 
     def __init__(self, base_url: str, model: str, timeout_s: float = 1.0, api_key: str | None = None, name: str = "openai_compat", extra: dict | None = None, min_tokens: int = 0) -> None:
@@ -125,6 +128,17 @@ class OpenAICompatLLM:
         self.c = httpx.AsyncClient(timeout=timeout_s, headers={"Authorization": f"Bearer {api_key}"} if api_key else {})
 
     async def generate(self, system, prompt, question, chunks, max_tokens=64) -> LLMResult:
+        for attempt in range(3):
+            try:
+                return await self._once(system, prompt, max_tokens)
+            except httpx.HTTPStatusError as e:
+                ra = e.response.headers.get("retry-after") if e.response is not None else None
+                if e.response is not None and e.response.status_code == 429 and attempt < 2 and ra and float(ra) <= self.MAX_WAIT_S:
+                    await asyncio.sleep(float(ra) + 0.3)
+                    continue
+                raise
+
+    async def _once(self, system, prompt, max_tokens) -> LLMResult:
         import json
         t = time.perf_counter(); first = None; text = []
         body = {"model": self.model, "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}],
@@ -186,7 +200,7 @@ def make_llm(backend: str, model: str) -> LLM:
             gm = os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b")
             reasoning = "gpt-oss" in gm                       # hidden reasoning tokens count against max_tokens → low effort + floor
             chain.append(OpenAICompatLLM("https://api.groq.com/openai/v1", gm, 20.0, os.environ["GROQ_API_KEY"], "groq",
-                                         {"reasoning_effort": "low"} if reasoning else {}, 320 if reasoning else 0))
+                                         {"reasoning_effort": "low"} if reasoning else {}, 192 if reasoning else 0))
         if os.environ.get("OPENROUTER_API_KEY"):
             chain.append(OpenAICompatLLM("https://openrouter.ai/api/v1", os.environ.get("OPENROUTER_MODEL", "meta-llama/llama-3.1-8b-instruct"), 8.0, os.environ["OPENROUTER_API_KEY"], "openrouter"))
         return RoutedLLM(chain)

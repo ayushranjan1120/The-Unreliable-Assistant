@@ -100,3 +100,16 @@ def gate_reason(query: str, g: GraphIndex) -> str | None:
     if coverage_ratio(query, v) >= OOV_RATIO_GATE:
         return f"vocab_gap:{','.join(coverage_gap(query, v))[:60]}"
     return None
+
+
+_NOTE_ENT = re.compile(r"\b(?:sku[-_ ]?(\d{1,3})|sup[-_ ]?(\d{1,2}))\b", re.I)
+
+
+def entity_note_ids(query: str, g: GraphIndex) -> list[str]:
+    """Vault note ids for every SKU / supplier named in the query (order preserved, existing notes only)."""
+    ids: list[str] = []
+    for m in _NOTE_ENT.finditer(query):
+        nid = f"sku-{int(m.group(1)):03d}" if m.group(1) else f"sup-{int(m.group(2)):02d}"
+        if nid in g.notes and nid not in ids:
+            ids.append(nid)
+    return ids
