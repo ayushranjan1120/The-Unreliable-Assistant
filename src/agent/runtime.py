@@ -9,6 +9,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import os
 import re
 import time
 import uuid
@@ -125,7 +126,10 @@ class AgentRuntime:
         self.levers = {"strict_extractive": False, "rerank_threshold": s.manifest.rerank_threshold, "top_k": s.top_k}
         H = lambda reg, hitl=None: ToolExecutionHarness(reg, self.breaker, self.idem, hitl, s.obs_max_tokens, int(s.per_step_timeout_ms * s.time_scale))
         c = lambda server, tool: (lambda m, rc: host.call(server, tool, m.model_dump(mode="json"), rc.tenant_id))
-        T = lambda name, server, tier, model, tool=None: ToolSpec(name, server, tier, model, c(server, tool or name), int(120 * s.time_scale))
+        import os
+        state_ms = int(os.environ.get("STATE_TIMEOUT_MS", "0"))          # remote managed DB (Neon): raise state-store step budget; 0 = use the spec budget
+        T = lambda name, server, tier, model, tool=None: ToolSpec(name, server, tier, model, c(server, tool or name),
+                                                                  max(int(120 * s.time_scale), state_ms) if server == "state-store" else int(120 * s.time_scale))
         self.h_retrieval = H({"hybrid_retrieve": T("hybrid_retrieve", "hybrid-rag", "TIER_1_READ", HybridRetrieveIn),
                               "resolve_subgraph": T("resolve_subgraph", "graphify-vault", "TIER_1_READ", SubgraphIn)})          # read-only: no mutating tool registered
         self.h_exec = H({"lot_status": T("lot_status", "state-store", "TIER_1_READ", LotStatusIn), "sku_lookup": T("sku_lookup", "state-store", "TIER_1_READ", SkuLookupIn),
@@ -143,7 +147,7 @@ class AgentRuntime:
         t0 = time.perf_counter()
         sid = req.session_id or str(uuid.uuid4())
         pctx = PluginCtx(req.tenant_id, req.user_id, sid, tc.trace_id)
-        rc = ReqCtx(req.tenant_id, req.user_id, req.role, sid, tc.trace_id, time.monotonic() + self.s.total_loop_budget_ms * self.s.time_scale / 1000)
+        rc = ReqCtx(req.tenant_id, req.user_id, req.role, sid, tc.trace_id, time.monotonic() + max(self.s.total_loop_budget_ms * self.s.time_scale, int(os.environ.get('STATE_TIMEOUT_MS', '0')) * 2) / 1000)
         steps: list[Step] = []
         extras: dict[str, Any] = {"react_steps": steps, "spans": tc.spans, "pii": None}
         self.metrics["queries"] += 1

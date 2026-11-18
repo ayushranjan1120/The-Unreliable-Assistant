@@ -39,7 +39,9 @@ def main() -> dict:
     r = c.post(f"{URL}/api/v1/agent/query", json={"tenant_id": T, "user_id": "user_a", "query": "hello"}, headers={"X-Tenant-ID": "tenant_other"})
     check("tenant header mismatch → 403 -32007", r.status_code == 403 and r.json()["error"]["code"] == -32007)
     # ---- Tier-3 HITL --------------------------------------------------------------------------------------------------------
-    lot = f"LOT-{int(run, 16) % 90000 + 10000:05d}"
+    from src.repo import Repo as _R
+    base = int(run, 16) % 90000 + 10000
+    lot = next(f"LOT-{n:05d}" for n in range(base, base + 200) if _R._default_lot_status(T, f"LOT-{n:05d}") != "RELEASED")   # default must differ from the target state
     before = q(c, T, "user_req", f"What is the status of {lot}?")["answer"]
     o1 = q(c, T, "user_req", f"Please release {lot} now")
     check("Tier-3 request is held PENDING_APPROVAL", o1["status"] == "PENDING_APPROVAL" and o1["approval_id"], o1["status"])

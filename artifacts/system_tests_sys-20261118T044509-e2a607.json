@@ -1,0 +1,91 @@
+{
+ "results": [
+  {
+   "test": "tenant header mismatch \u2192 403 -32007",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "Tier-3 request is held PENDING_APPROVAL",
+   "ok": true,
+   "detail": "PENDING_APPROVAL"
+  },
+  {
+   "test": "lot state unchanged while pending (no execution without approval)",
+   "ok": true,
+   "detail": "LOT-35177 status: QUARANTINED."
+  },
+  {
+   "test": "repeat request reuses the SAME pending approval (idempotent)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "requester cannot approve own request",
+   "ok": true,
+   "detail": "{'error': {'code': -32002, 'message': 'requester cannot approve their own reques"
+  },
+  {
+   "test": "pending item visible in HITL queue",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "approval from another tenant is rejected (tenant isolation on HITL)",
+   "ok": true,
+   "detail": "{'error': {'code': -32001, 'message': 'no pending approval with that id', 'data'"
+  },
+  {
+   "test": "different reviewer approves",
+   "ok": true,
+   "detail": "{'approval_id': '5b0b0dd9-57f0-4b13-a910-6a66980630c7', 'status': 'APPROVED'}"
+  },
+  {
+   "test": "after approval the transition executes",
+   "ok": true,
+   "detail": "LOT-35177: RELEASE applied after approval."
+  },
+  {
+   "test": "lot is RELEASED in the ledger",
+   "ok": true,
+   "detail": "LOT-35177 status: RELEASED."
+  },
+  {
+   "test": "approval is single-use (a repeat needs a NEW approval)",
+   "ok": true,
+   "detail": "PENDING_APPROVAL"
+  },
+  {
+   "test": "RBAC: reader role cannot request Tier-3",
+   "ok": true,
+   "detail": "REJECTED"
+  },
+  {
+   "test": "audit hash chain verifies (per tenant)",
+   "ok": true,
+   "detail": "{'ok': True, 'events': 6, 'broken_at': None}"
+  },
+  {
+   "test": "infinite SKU retry loop is cut by the breaker (KPI-16)",
+   "ok": true,
+   "detail": "VALIDATION_FAILED,VALIDATION_FAILED,BREAKER_OPEN,BREAKER_OPEN"
+  },
+  {
+   "test": "cross-tenant cache probe: 0 leaks (KPI-28)",
+   "ok": true,
+   "detail": "12 probes"
+  },
+  {
+   "test": "concurrent cross-tenant storm: 0 leaks over 120 requests",
+   "ok": true,
+   "detail": "leaks=0"
+  }
+ ],
+ "passed": 16,
+ "total": 16,
+ "first_pass_rate": 99.15966386554622,
+ "repair_rate": null,
+ "tier3_ok": true,
+ "leaks": 0,
+ "loop_escape": 100.0
+}

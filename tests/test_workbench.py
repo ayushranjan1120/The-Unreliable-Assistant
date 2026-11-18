@@ -16,8 +16,9 @@ def test_utils_do_not_import_streamlit():
 
 
 def test_app_boots_with_backend_down(monkeypatch):
-    monkeypatch.setenv("BACKEND_URL", "http://127.0.0.1:9")  # nothing listens
-    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30)
+    at.session_state["backend_url"] = "http://127.0.0.1:9"      # nothing listens (set via session state: module defaults are read once per process)
+    at.run()
     assert not at.exception, at.exception
     assert len(at.tabs) == 6
     assert any("offline" in w.value for w in at.sidebar.warning)
@@ -47,8 +48,9 @@ def test_workbench_renders_with_live_backend(monkeypatch):
         httpx.get("http://127.0.0.1:8000/healthz", timeout=2).raise_for_status()
     except Exception:
         pytest.skip("backend not running")
-    monkeypatch.setenv("BACKEND_URL", "http://127.0.0.1:8000")
-    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60)
+    at.session_state["backend_url"] = "http://127.0.0.1:8000"
+    at.run()
     assert not at.exception, at.exception
     assert len(at.tabs) == 6 and not any("View failed" in e.value for e in at.error)
     assert any("online" in s.value for s in at.sidebar.success)

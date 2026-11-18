@@ -187,7 +187,7 @@ class ToolExecutionHarness:
             self.m.inc("harness.idempotent_replay")
             return Observation(tool, prev["text"], prev["raw"], count(prev["text"]), repairs, True, 0.0)
 
-        timeout = max(1.0, min(spec.timeout_ms, self.per_step_timeout_ms, rc.remaining_ms())) / 1000
+        timeout = max(1.0, min(spec.timeout_ms, rc.remaining_ms())) / 1000        # spec.timeout_ms carries the per-step budget (default 120 ms × time_scale)
         try:
             raw = await asyncio.wait_for(spec.handler(model, rc), timeout=timeout)
         except asyncio.TimeoutError:

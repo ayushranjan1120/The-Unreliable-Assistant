@@ -13,6 +13,9 @@ python -c "from src.config import *; from src.rag.index import build_index; buil
 cp .env.example .env   # add GROQ_API_KEY / OPENROUTER_API_KEY here — NEVER in chat, NEVER committed
 ```
 
+## 0b. Database without Docker/local Postgres (Neon)
+Docker is **not used anywhere**. Put the Neon *owner* connection string in `.env` as `PG_ADMIN_DSN`, then `python -m scripts.neon_setup` — it migrates, creates a `NOBYPASSRLS` app role `ua_app`, writes `PG_DSN` to `.env` and **proves tenant RLS** (own rows visible, other tenant's invisible, cross-tenant write blocked). Redis is optional: without it the cache/breaker fall back to per-process memory. Remote-DB caveat: every state-store call pays the network RTT (427 ms measured from this VM to Neon us-east-1), so latency KPIs are only meaningful with the DB co-located with the app; use `STATE_TIMEOUT_MS` for functional tests.
+
 ## 1. Static + unit tests (≈20 s, no servers)
 `python -m pytest -q` → expect 26 tests. Covers: no raw Redis keys/SQL outside `keys.py`/`repo.py`, strict contracts, BM25 == `rank_bm25`, RRF, chunker, cache tenant assertion, fail-closed plugins, PII, manifest tamper, audit-chain tamper + RLS, harness (repair/RBAC/idempotency/HITL/breaker), workbench boots with backend down.
 

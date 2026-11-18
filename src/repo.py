@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import uuid
 from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator
@@ -16,6 +17,20 @@ import asyncpg
 from src.errors import Code, ToolError
 
 GENESIS = "0" * 64
+
+
+def pg_connect_args(dsn: str) -> tuple[str, dict]:
+    """Return ``(clean_dsn, asyncpg kwargs)``. Handles managed Postgres (Neon): libpq-only query params (``channel_binding``,
+    ``sslmode``) are removed, TLS is enabled for non-local hosts, and the prepared-statement cache is disabled for
+    PgBouncer-style poolers (``-pooler`` hosts) which run in transaction mode."""
+    import re
+    clean = re.sub(r"[?&](channel_binding|sslmode)=[^&]*", "", dsn).rstrip("?")
+    host = re.search(r"@([^/:?]+)", dsn)
+    remote = bool(host) and host.group(1) not in ("localhost", "127.0.0.1", "::1")
+    kw: dict = {"ssl": "require"} if remote else {}
+    if host and "-pooler" in host.group(1):
+        kw["statement_cache_size"] = 0
+    return clean, kw
 
 
 def canonical(payload: Any) -> str:
@@ -37,7 +52,8 @@ class Repo:
     @classmethod
     async def create(cls, dsn: str, size: int = 128) -> "Repo":
         """Create the pool (``db_pool`` bulkhead)."""
-        return cls(await asyncpg.create_pool(dsn, min_size=min(8, size), max_size=size, command_timeout=5))
+        clean, kw = pg_connect_args(dsn)
+        return cls(await asyncpg.create_pool(clean, min_size=min(8, size), max_size=size, command_timeout=float(os.environ.get("PG_COMMAND_TIMEOUT", "5")), **kw))
 
     @asynccontextmanager
     async def tx(self, tenant_id: str) -> AsyncIterator[asyncpg.Connection]:

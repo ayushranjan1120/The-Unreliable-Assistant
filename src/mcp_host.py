@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -97,7 +98,7 @@ class McpHost:
         idx_manifest = ROOT / "artifacts" / "index" / "manifest.json"
         ih = hashlib.sha256(json.dumps(json.loads(idx_manifest.read_text()), sort_keys=True).encode()).hexdigest() if idx_manifest.exists() else ""
         pools = {"hybrid-rag": s.rag_pool, "state-store": s.db_pool, "graphify-vault": s.rag_pool}
-        self.servers = {n: ServerConn(n, c, pools[n], (c.get("timeout_ms", 150) * s.time_scale) if n != "state-store" else 150 * s.time_scale,
+        self.servers = {n: ServerConn(n, c, pools[n], (c.get("timeout_ms", 150) * s.time_scale) if n != "state-store" else float(os.environ.get("STATE_TIMEOUT_MS", 150 * s.time_scale)),
                                       ih if n == "hybrid-rag" else "") for n, c in cfg.items()}
         self.log: deque[dict] = deque(maxlen=300)
         self.m = telemetry.METRICS

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Apply/rollback migrations: python scripts/migrate.py up|down [NNN]. Down scripts are exercised in the L1 rollback drill."""
-import asyncio, sys
+"""Apply/rollback migrations: python -m scripts.migrate up|down. Uses PG_ADMIN_DSN (schema owner) when set, else PG_DSN."""
+import asyncio, os, sys
 from pathlib import Path
 import asyncpg
 from src.config import get_settings
+from src.repo import pg_connect_args
 
 async def main(direction: str) -> None:
-    c = await asyncpg.connect(get_settings().pg_dsn)
-    files = sorted(Path("migrations").glob(f"*.{direction}.sql"), reverse=(direction == "down"))
-    for f in files:
+    dsn, kw = pg_connect_args(os.environ.get("PG_ADMIN_DSN") or get_settings().pg_dsn)
+    c = await asyncpg.connect(dsn, **kw)
+    for f in sorted(Path("migrations").glob(f"*.{direction}.sql"), reverse=(direction == "down")):
         await c.execute(f.read_text()); print(direction, f.name)
     await c.close()
 
