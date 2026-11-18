@@ -1,0 +1,308 @@
+{"query": "How many months of shelf life does SKU-014 have?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-022 have?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-040?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-017?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-033?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-032?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-037?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-004 have?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-006?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-021 have?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-038?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-027?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-009 have?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-002 have?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-001?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-011 have?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-005?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-031?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-028?", "route": "HYBRID_RAG"}
+{"query": "How many months of shelf life does SKU-035 have?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-036?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-027?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-010?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-016?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-011?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-012?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-039?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-002?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-035?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-024?", "route": "HYBRID_RAG"}
+{"query": "What storage temperature is required in Ultra-Cold Zone Z1?", "route": "HYBRID_RAG"}
+{"query": "Who must a temperature excursion in Ultra-Cold Zone Z1 be escalated to?", "route": "HYBRID_RAG"}
+{"query": "What storage temperature is required in Refrigerated Zone Z2?", "route": "HYBRID_RAG"}
+{"query": "Who must a temperature excursion in Refrigerated Zone Z2 be escalated to?", "route": "HYBRID_RAG"}
+{"query": "What storage temperature is required in Controlled Room Zone Z3?", "route": "HYBRID_RAG"}
+{"query": "Who must a temperature excursion in Controlled Room Zone Z3 be escalated to?", "route": "HYBRID_RAG"}
+{"query": "What storage temperature is required in Flammables Zone Z4?", "route": "HYBRID_RAG"}
+{"query": "Who must a temperature excursion in Flammables Zone Z4 be escalated to?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-06?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-07?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-04?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-03?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-02?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-01?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-08?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-05?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-10?", "route": "HYBRID_RAG"}
+{"query": "What is the standard lead time for supplier sup-09?", "route": "HYBRID_RAG"}
+{"query": "How long are quality records retained?", "route": "HYBRID_RAG"}
+{"query": "How long are safety records retained?", "route": "HYBRID_RAG"}
+{"query": "How long are logistics records retained?", "route": "HYBRID_RAG"}
+{"query": "How long are procurement records retained?", "route": "HYBRID_RAG"}
+{"query": "How long are training records retained?", "route": "HYBRID_RAG"}
+{"query": "How many QA reviewers must sign off the release of a low risk batch?", "route": "HYBRID_RAG"}
+{"query": "How many QA reviewers must sign off the release of a medium risk batch?", "route": "HYBRID_RAG"}
+{"query": "How many QA reviewers must sign off the release of a high risk batch?", "route": "HYBRID_RAG"}
+{"query": "Within how many hours must a Class I recall be notified?", "route": "HYBRID_RAG"}
+{"query": "Within how many hours must a Class II recall be notified?", "route": "HYBRID_RAG"}
+{"query": "Within how many hours must a Class III recall be notified?", "route": "HYBRID_RAG"}
+{"query": "Which product category does SKU-013 belong to?", "route": "HYBRID_RAG"}
+{"query": "Which product category does SKU-030 belong to?", "route": "HYBRID_RAG"}
+{"query": "Which product category does SKU-023 belong to?", "route": "HYBRID_RAG"}
+{"query": "Which product category does SKU-020 belong to?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-015 or SKU-002, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-013 or SKU-026, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-022 or SKU-018, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-005 or SKU-018, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-023 or SKU-033, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-026 or SKU-035, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-022 or SKU-002, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-008 or SKU-017, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-012 or SKU-038, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-007 or SKU-039, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-028 or SKU-023, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-021 or SKU-028, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-039 or SKU-033, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-008 or SKU-025, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-037 or SKU-013, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-028 or SKU-001, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-034 or SKU-035, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which has the longer shelf life, SKU-013 or SKU-024, and by how many months?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-07 or sup-02?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-06 or sup-10?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-02 or sup-05?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-09 or sup-05?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-07 or sup-06?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-07 or sup-05?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-09 or sup-03?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-04 or sup-07?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-07 or sup-03?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-10 or sup-05?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-07 or sup-09?", "route": "HYBRID_RAG"}
+{"query": "Which supplier has the shorter lead time, sup-01 or sup-05?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-019 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-014 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-028 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-021 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-030 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-029 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-035 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-039 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-031 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-026 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-034 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-032 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-024 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-006 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-022 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-003 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-010 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-017 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-036 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-037 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-020 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-011 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-025 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-008 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-038 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-004 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-013 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-015 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-018 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "A lot of SKU-001 is submitted for release. How many reviewers are needed and within how many hours must they sign off?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-003 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-016 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-031 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-005 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-030 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-027 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-013 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-025 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-032 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-034 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-008 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-037 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-021 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-023 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-001 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-033 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-004 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-014 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-036 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-006 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-017 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-015 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-002 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-022 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "If the storage zone for SKU-024 has a temperature excursion, after how many minutes does an alarm trigger?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-030 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-009 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-040 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-034 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-036 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-021 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-029 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-033 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-028 audited?", "route": "HYBRID_RAG"}
+{"query": "How often is the supplier of SKU-027 audited?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-036?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-029?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-011?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-031?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-039?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-017?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-016?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-018?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-032?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-021?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-008?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-009?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-015?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-003?", "route": "HYBRID_RAG"}
+{"query": "How many units are sampled in incoming inspection for SKU-023?", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for standard.", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for enhanced.", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for critical.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for standard.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for enhanced.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for critical.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for i.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for ii.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for iii.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for low.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for medium.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for high.", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the quarantine procedure (standard).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the quarantine procedure (enhanced).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the quarantine procedure (critical).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the inspect procedure (standard).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the inspect procedure (enhanced).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the inspect procedure (critical).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the recall procedure (i).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the recall procedure (ii).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the recall procedure (iii).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the release procedure (low).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the release procedure (medium).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the release procedure (high).", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for standard.", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for enhanced.", "route": "HYBRID_RAG"}
+{"query": "Summarize the quarantine procedure for critical.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for standard.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for enhanced.", "route": "HYBRID_RAG"}
+{"query": "Summarize the inspect procedure for critical.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for i.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for ii.", "route": "HYBRID_RAG"}
+{"query": "Summarize the recall procedure for iii.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for low.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for medium.", "route": "HYBRID_RAG"}
+{"query": "Summarize the release procedure for high.", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the quarantine procedure (standard).", "route": "HYBRID_RAG"}
+{"query": "Give me an overview of the steps in the quarantine procedure (enhanced).", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-352?", "route": "HYBRID_RAG"}
+{"query": "Which supplier provides SKU-338?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-387?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-142?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-214?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-452?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-216?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-279?", "route": "HYBRID_RAG"}
+{"query": "Which supplier provides SKU-484?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-398?", "route": "HYBRID_RAG"}
+{"query": "Which supplier provides SKU-537?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-123?", "route": "HYBRID_RAG"}
+{"query": "Which supplier provides SKU-490?", "route": "HYBRID_RAG"}
+{"query": "What is the minimum order quantity for SKU-848?", "route": "HYBRID_RAG"}
+{"query": "What is the shelf life of SKU-772?", "route": "HYBRID_RAG"}
+{"query": "What is the CEO's salary?", "route": "REJECT_OOS"}
+{"query": "What is the weather in Berlin today?", "route": "REJECT_OOS"}
+{"query": "Who won the football match yesterday?", "route": "REJECT_OOS"}
+{"query": "What is our competitor's market share?", "route": "REJECT_OOS"}
+{"query": "Write a poem about the ocean.", "route": "REJECT_OOS"}
+{"query": "What is the stock price of our parent company?", "route": "REJECT_OOS"}
+{"query": "How do I configure my home router?", "route": "REJECT_OOS"}
+{"query": "What are the cafeteria opening hours?", "route": "REJECT_OOS"}
+{"query": "Translate hello to French.", "route": "REJECT_OOS"}
+{"query": "What is the capital of Australia?", "route": "REJECT_OOS"}
+{"query": "Recommend a movie for tonight.", "route": "REJECT_OOS"}
+{"query": "How many employees joined last quarter?", "route": "REJECT_OOS"}
+{"query": "What is the weight of SKU-037?", "route": "HYBRID_RAG"}
+{"query": "What is the unit price of SKU-025?", "route": "HYBRID_RAG"}
+{"query": "Who designed SKU-031?", "route": "HYBRID_RAG"}
+{"query": "Who designed SKU-001?", "route": "HYBRID_RAG"}
+{"query": "What color is SKU-023?", "route": "HYBRID_RAG"}
+{"query": "Who designed SKU-020?", "route": "HYBRID_RAG"}
+{"query": "What is the unit price of SKU-039?", "route": "HYBRID_RAG"}
+{"query": "Who designed SKU-027?", "route": "HYBRID_RAG"}
+{"query": "What is the weight of SKU-015?", "route": "HYBRID_RAG"}
+{"query": "Who designed SKU-016?", "route": "HYBRID_RAG"}
+{"query": "Hello", "route": "DIRECT_ANSWER"}
+{"query": "Hi there", "route": "DIRECT_ANSWER"}
+{"query": "Good morning", "route": "DIRECT_ANSWER"}
+{"query": "Thanks, that helps", "route": "DIRECT_ANSWER"}
+{"query": "What can you do?", "route": "DIRECT_ANSWER"}
+{"query": "Who are you?", "route": "DIRECT_ANSWER"}
+{"query": "help", "route": "DIRECT_ANSWER"}
+{"query": "Can you help me with product questions?", "route": "DIRECT_ANSWER"}
+{"query": "Thank you", "route": "DIRECT_ANSWER"}
+{"query": "Goodbye", "route": "DIRECT_ANSWER"}
+{"query": "Hello", "route": "DIRECT_ANSWER"}
+{"query": "Hi there", "route": "DIRECT_ANSWER"}
+{"query": "Good morning", "route": "DIRECT_ANSWER"}
+{"query": "Thanks, that helps", "route": "DIRECT_ANSWER"}
+{"query": "What can you do?", "route": "DIRECT_ANSWER"}
+{"query": "Who are you?", "route": "DIRECT_ANSWER"}
+{"query": "help", "route": "DIRECT_ANSWER"}
+{"query": "Can you help me with product questions?", "route": "DIRECT_ANSWER"}
+{"query": "Thank you", "route": "DIRECT_ANSWER"}
+{"query": "Goodbye", "route": "DIRECT_ANSWER"}
+{"query": "Release LOT-16729 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-81561 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-70009 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-03535 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-51646 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-77581 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-73976 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-86901 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-03553 now", "route": "TRANSACTION_EXEC"}
+{"query": "Release LOT-11004 now", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-84247", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-56180", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-17787", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-60516", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-23820", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-06591", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-34100", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-49690", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-42907", "route": "TRANSACTION_EXEC"}
+{"query": "Please quarantine LOT-27743", "route": "TRANSACTION_EXEC"}
+{"query": "recall lot 59599", "route": "TRANSACTION_EXEC"}
+{"query": "recall lot 42841", "route": "TRANSACTION_EXEC"}
+{"query": "recall lot 44237", "route": "TRANSACTION_EXEC"}
+{"query": "recall lot 99776", "route": "TRANSACTION_EXEC"}
+{"query": "recall lot 49693", "route": "TRANSACTION_EXEC"}
+{"query": "Approve batch LOT-36472 for shipping", "route": "TRANSACTION_EXEC"}
+{"query": "Approve batch LOT-98568 for shipping", "route": "TRANSACTION_EXEC"}
+{"query": "Approve batch LOT-55256 for shipping", "route": "TRANSACTION_EXEC"}
+{"query": "Approve batch LOT-33066 for shipping", "route": "TRANSACTION_EXEC"}
+{"query": "Approve batch LOT-10736 for shipping", "route": "TRANSACTION_EXEC"}
+{"query": "What is the status of LOT-16729?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-81561?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-70009?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-03535?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-51646?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-77581?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-73976?", "route": "TRANSACTION_EXEC", "tier": "read"}
+{"query": "What is the status of LOT-86901?", "route": "TRANSACTION_EXEC", "tier": "read"}

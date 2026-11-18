@@ -1,0 +1,19 @@
+[project]
+name = "unreliable-assistant"
+version = "0.0.0"
+description = "Enterprise-grade MCP agentic assistant (design.md D1.0)"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "fastapi>=0.115", "uvicorn[standard]>=0.30", "pydantic>=2.7", "httpx>=0.27", "orjson",
+  "redis>=5.0", "asyncpg>=0.29", "pluggy>=1.5", "pyyaml", "numpy", "networkx",
+  "rank-bm25", "nltk", "faiss-cpu", "mcp>=1.2,<2",
+  "torch", "transformers", "sentence-transformers", "onnxruntime", "optimum[onnxruntime]",
+  "opentelemetry-api", "opentelemetry-sdk", "opentelemetry-exporter-otlp-proto-grpc",
+  "streamlit>=1.40", "plotly", "pandas", "cryptography", "tiktoken", "graphviz", "pillow",
+]
+[dependency-groups]
+dev = ["pytest", "pytest-asyncio", "ruff"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

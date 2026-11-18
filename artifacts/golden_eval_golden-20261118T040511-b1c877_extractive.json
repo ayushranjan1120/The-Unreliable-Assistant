@@ -1,0 +1,2297 @@
+{
+ "n": 250,
+ "n_pos": 213,
+ "n_neg": 37,
+ "faithfulness_proxy": 1.0,
+ "answer_relevancy_proxy": 0.8051643192488263,
+ "context_entity_recall": 0.9694835680751174,
+ "answered_rate_pos": 0.9953051643192489,
+ "abstention_accuracy_pct": 100.0,
+ "hallucination_rate_pct": 5.188679245283019,
+ "answered": 212,
+ "mean_steps": 1.824,
+ "latency_ms": {
+  "p50": 2475.39,
+  "p95": 3120.28
+ },
+ "per_stratum": {
+  "factoid": {
+   "entity_recall": 0.9603174603174603,
+   "relevancy": 0.9365079365079365,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "complex": {
+   "entity_recall": 0.9516129032258065,
+   "relevancy": 0.6532258064516129,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "multihop": {
+   "entity_recall": 0.98,
+   "relevancy": 0.68,
+   "answered": 0.98,
+   "faith": 1.0
+  },
+  "summary": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  }
+ },
+ "token_reduction_pct": 68.27157802032431,
+ "cost_per_1k": 0.06160316742081458,
+ "rows": [
+  {
+   "id": "G001",
+   "q": "How many months of shelf life does SKU-014 have?",
+   "gt": "42 months",
+   "answer": "Product SKU-014 (Dual Reagent Mix) belongs to the Medical Devices category and is supplied by sup-06. Its shelf life is 42 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G002",
+   "q": "How many months of shelf life does SKU-022 have?",
+   "gt": "54 months",
+   "answer": "Product SKU-022 (Advanced Buffer) belongs to the Medical Devices category and is supplied by sup-10. Its shelf life is 54 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G003",
+   "q": "What is the shelf life of SKU-040?",
+   "gt": "30 months",
+   "answer": "Product SKU-040 (Pure Assay Kit) belongs to the Nutraceuticals category and is supplied by sup-02. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G004",
+   "q": "What is the shelf life of SKU-017?",
+   "gt": "24 months",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G005",
+   "q": "What is the shelf life of SKU-033?",
+   "gt": "18 months",
+   "answer": "Product SKU-033 (Rapid Assay Kit) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 18 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G006",
+   "q": "What is the shelf life of SKU-032?",
+   "gt": "30 months",
+   "answer": "Product SKU-032 (Ultra Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G007",
+   "q": "What is the shelf life of SKU-037?",
+   "gt": "54 months",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10. Its shelf life is 54 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G008",
+   "q": "How many months of shelf life does SKU-004 have?",
+   "gt": "39 months",
+   "answer": "Product SKU-004 (Premium Vial Pack) belongs to the Solvents category and is supplied by sup-02. Its shelf life is 39 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G009",
+   "q": "What is the shelf life of SKU-006?",
+   "gt": "54 months",
+   "answer": "Product SKU-006 (Premium Carrier Tray) belongs to the Medical Devices category and is supplied by sup-03. Its shelf life is 54 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G010",
+   "q": "How many months of shelf life does SKU-021 have?",
+   "gt": "63 months",
+   "answer": "Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09. Its shelf life is 63 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G011",
+   "q": "What is the shelf life of SKU-038?",
+   "gt": "45 months",
+   "answer": "Product SKU-038 (Rapid Filter Unit) belongs to the Medical Devices category and is supplied by sup-02. Its shelf life is 45 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G012",
+   "q": "What is the shelf life of SKU-027?",
+   "gt": "27 months",
+   "answer": "Product SKU-027 (Stable Sealant) belongs to the Reagents category and is supplied by sup-08. Its shelf life is 27 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G013",
+   "q": "How many months of shelf life does SKU-009 have?",
+   "gt": "21 months",
+   "answer": "Product SKU-009 (Certified Sensor Cartridge) belongs to the Biologics category and is supplied by sup-08. Its shelf life is 21 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G014",
+   "q": "How many months of shelf life does SKU-002 have?",
+   "gt": "12 months",
+   "answer": "Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. Its shelf life is 12 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G015",
+   "q": "What is the shelf life of SKU-001?",
+   "gt": "30 months",
+   "answer": "Product SKU-001 (Premium Filter Unit) belongs to the Biologics category and is supplied by sup-06. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G016",
+   "q": "How many months of shelf life does SKU-011 have?",
+   "gt": "24 months",
+   "answer": "Product SKU-011 (Rapid Sealant) belongs to the Reagents category and is supplied by sup-08. Its shelf life is 24 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G017",
+   "q": "What is the shelf life of SKU-005?",
+   "gt": "60 months",
+   "answer": "Product SKU-005 (Advanced Syringe Set) belongs to the Consumables category and is supplied by sup-06. Its shelf life is 60 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G018",
+   "q": "What is the shelf life of SKU-031?",
+   "gt": "78 months",
+   "answer": "Product SKU-031 (Stable Buffer) belongs to the Packaging Materials category and is supplied by sup-10. Its shelf life is 78 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G019",
+   "q": "What is the shelf life of SKU-028?",
+   "gt": "30 months",
+   "answer": "Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G020",
+   "q": "How many months of shelf life does SKU-035 have?",
+   "gt": "30 months",
+   "answer": "Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G021",
+   "q": "What is the minimum order quantity for SKU-036?",
+   "gt": "25 units",
+   "answer": "Product SKU-036 (Advanced Vial Pack) belongs to the Solvents category and is supplied by sup-05. The minimum order quantity is 25 units and the reorder point is 80 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G022",
+   "q": "What is the minimum order quantity for SKU-027?",
+   "gt": "100 units",
+   "answer": "Product SKU-027 (Stable Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 100 units and the reorder point is 40 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G023",
+   "q": "What is the minimum order quantity for SKU-010?",
+   "gt": "100 units",
+   "answer": "Product SKU-010 (Dual Sealant) belongs to the Vaccines category and is supplied by sup-05. The minimum order quantity is 100 units and the reorder point is 120 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G024",
+   "q": "What is the minimum order quantity for SKU-016?",
+   "gt": "50 units",
+   "answer": "Product SKU-016 (Dual Carrier Tray) belongs to the Nutraceuticals category and is supplied by sup-04. The minimum order quantity is 50 units and the reorder point is 40 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G025",
+   "q": "What is the minimum order quantity for SKU-011?",
+   "gt": "10 units",
+   "answer": "Product SKU-011 (Rapid Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 10 units and the reorder point is 20 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G026",
+   "q": "What is the minimum order quantity for SKU-012?",
+   "gt": "100 units",
+   "answer": "Product SKU-012 (Rapid Sensor Cartridge) belongs to the Solvents category and is supplied by sup-10. The minimum order quantity is 100 units and the reorder point is 120 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G027",
+   "q": "What is the minimum order quantity for SKU-039?",
+   "gt": "50 units",
+   "answer": "Product SKU-039 (Ultra Sealant) belongs to the Packaging Materials category and is supplied by sup-01. The minimum order quantity is 50 units and the reorder point is 20 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G028",
+   "q": "What is the minimum order quantity for SKU-002?",
+   "gt": "250 units",
+   "answer": "Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G029",
+   "q": "What is the minimum order quantity for SKU-035?",
+   "gt": "50 units",
+   "answer": "Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. The minimum order quantity is 50 units and the reorder point is 40 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G030",
+   "q": "What is the minimum order quantity for SKU-024?",
+   "gt": "25 units",
+   "answer": "Product SKU-024 (Pure Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-04. The minimum order quantity is 25 units and the reorder point is 120 units.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G031",
+   "q": "What storage temperature is required in Ultra-Cold Zone Z1?",
+   "gt": "-80 to -60 degrees Celsius",
+   "answer": "Ultra-Cold Zone Z1: the required storage temperature is -80 to -60 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G032",
+   "q": "Who must a temperature excursion in Ultra-Cold Zone Z1 be escalated to?",
+   "gt": "the Cold Chain Supervisor",
+   "answer": "Ultra-Cold Zone Z1: the required storage temperature is -80 to -60 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G033",
+   "q": "What storage temperature is required in Refrigerated Zone Z2?",
+   "gt": "2 to 8 degrees Celsius",
+   "answer": "Refrigerated Zone Z2: the required storage temperature is 2 to 8 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G034",
+   "q": "Who must a temperature excursion in Refrigerated Zone Z2 be escalated to?",
+   "gt": "the Warehouse Manager",
+   "answer": "Refrigerated Zone Z2: the required storage temperature is 2 to 8 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G035",
+   "q": "What storage temperature is required in Controlled Room Zone Z3?",
+   "gt": "15 to 25 degrees Celsius",
+   "answer": "Controlled Room Zone Z3: the required storage temperature is 15 to 25 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G036",
+   "q": "Who must a temperature excursion in Controlled Room Zone Z3 be escalated to?",
+   "gt": "the Shift Lead",
+   "answer": "Controlled Room Zone Z3: the required storage temperature is 15 to 25 degrees Celsius.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G037",
+   "q": "What storage temperature is required in Flammables Zone Z4?",
+   "gt": "15 to 25 degrees Celsius with ventilation",
+   "answer": "Flammables Zone Z4: the required storage temperature is 15 to 25 degrees Celsius with ventilation.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G038",
+   "q": "Who must a temperature excursion in Flammables Zone Z4 be escalated to?",
+   "gt": "the Safety Officer",
+   "answer": "Flammables Zone Z4: the required storage temperature is 15 to 25 degrees Celsius with ventilation.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G039",
+   "q": "What is the standard lead time for supplier sup-06?",
+   "gt": "35 days",
+   "answer": "Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier. The standard lead time is 35 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G040",
+   "q": "What is the standard lead time for supplier sup-07?",
+   "gt": "21 days",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. The standard lead time is 21 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G041",
+   "q": "What is the standard lead time for supplier sup-04?",
+   "gt": "7 days",
+   "answer": "Supplier sup-04 (Alder Supply Co, Japan) is a tier A supplier. The standard lead time is 7 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G042",
+   "q": "What is the standard lead time for supplier sup-03?",
+   "gt": "28 days",
+   "answer": "Supplier sup-03 (Iris Supply Co, Ireland) is a tier A supplier. The standard lead time is 28 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G043",
+   "q": "What is the standard lead time for supplier sup-02?",
+   "gt": "10 days",
+   "answer": "Supplier sup-02 (Dune Supply Co, Germany) is a tier A supplier. The standard lead time is 10 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G044",
+   "q": "What is the standard lead time for supplier sup-01?",
+   "gt": "35 days",
+   "answer": "Supplier sup-01 (Birch Supply Co, Canada) is a tier A supplier. The standard lead time is 35 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G045",
+   "q": "What is the standard lead time for supplier sup-08?",
+   "gt": "10 days",
+   "answer": "Supplier sup-08 (Elm Supply Co, Ireland) is a tier A supplier. The standard lead time is 10 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G046",
+   "q": "What is the standard lead time for supplier sup-05?",
+   "gt": "28 days",
+   "answer": "Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier. The standard lead time is 28 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G047",
+   "q": "What is the standard lead time for supplier sup-10?",
+   "gt": "7 days",
+   "answer": "Supplier sup-10 (Fjord Supply Co, Ireland) is a tier A supplier. The standard lead time is 7 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G048",
+   "q": "What is the standard lead time for supplier sup-09?",
+   "gt": "10 days",
+   "answer": "Supplier sup-09 (Fjord Supply Co, Japan) is a tier B supplier. The standard lead time is 10 days.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G049",
+   "q": "How long are quality records retained?",
+   "gt": "10 years",
+   "answer": "Records in the quality domain are retained for 10 years before secure disposal.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G050",
+   "q": "How long are safety records retained?",
+   "gt": "15 years",
+   "answer": "Records in the safety domain are retained for 15 years before secure disposal.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G051",
+   "q": "How long are logistics records retained?",
+   "gt": "5 years",
+   "answer": "Records in the logistics domain are retained for 5 years before secure disposal.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G052",
+   "q": "How long are procurement records retained?",
+   "gt": "7 years",
+   "answer": "Records in the procurement domain are retained for 7 years before secure disposal.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G053",
+   "q": "How long are training records retained?",
+   "gt": "3 years",
+   "answer": "Records in the training domain are retained for 3 years before secure disposal.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G054",
+   "q": "How many QA reviewers must sign off the release of a low risk batch?",
+   "gt": "1",
+   "answer": "Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G055",
+   "q": "How many QA reviewers must sign off the release of a medium risk batch?",
+   "gt": "2",
+   "answer": "Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G056",
+   "q": "How many QA reviewers must sign off the release of a high risk batch?",
+   "gt": "3",
+   "answer": "Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G057",
+   "q": "Within how many hours must a Class I recall be notified?",
+   "gt": "4 hours",
+   "answer": "A Class I recall must be notified to the regulator and customers within 4 hours of the recall decision.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G058",
+   "q": "Within how many hours must a Class II recall be notified?",
+   "gt": "24 hours",
+   "answer": "A Class II recall must be notified to the regulator and customers within 24 hours of the recall decision.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G059",
+   "q": "Within how many hours must a Class III recall be notified?",
+   "gt": "72 hours",
+   "answer": "A Class III recall must be notified to the regulator and customers within 72 hours of the recall decision.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G060",
+   "q": "Which product category does SKU-013 belong to?",
+   "gt": "Consumables",
+   "answer": "Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G061",
+   "q": "Which product category does SKU-030 belong to?",
+   "gt": "Medical Devices",
+   "answer": "Product SKU-030 (Certified Reagent Mix) belongs to the Medical Devices category and is supplied by sup-07.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G062",
+   "q": "Which product category does SKU-023 belong to?",
+   "gt": "Packaging Materials",
+   "answer": "Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G063",
+   "q": "Which product category does SKU-020 belong to?",
+   "gt": "Solvents",
+   "answer": "Product SKU-020 (Ultra Sensor Cartridge) belongs to the Solvents category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G064",
+   "q": "Which has the longer shelf life, SKU-015 or SKU-002, and by how many months?",
+   "gt": "SKU-015 by 57 months",
+   "answer": "Product SKU-015 (Sterile Reagent Mix) belongs to the Packaging Materials category and is supplied by sup-09. Its shelf life is 69 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G065",
+   "q": "Which has the longer shelf life, SKU-013 or SKU-026, and by how many months?",
+   "gt": "SKU-013 by 45 months",
+   "answer": "Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. Its shelf life is 66 months. Product SKU-026 (Sterile Assay Kit) belongs to the Vaccines category and is supplied by sup-01. Its shelf life is 21 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G066",
+   "q": "Which has the longer shelf life, SKU-022 or SKU-018, and by how many months?",
+   "gt": "SKU-022 by 42 months",
+   "answer": "Product SKU-022 (Advanced Buffer) belongs to the Medical Devices category and is supplied by sup-10. Its shelf life is 54 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G067",
+   "q": "Which has the longer shelf life, SKU-005 or SKU-018, and by how many months?",
+   "gt": "SKU-005 by 48 months",
+   "answer": "Product SKU-005 (Advanced Syringe Set) belongs to the Consumables category and is supplied by sup-06. Its shelf life is 60 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G068",
+   "q": "Which has the longer shelf life, SKU-023 or SKU-033, and by how many months?",
+   "gt": "SKU-023 by 48 months",
+   "answer": "Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02. Its shelf life is 66 months. Product SKU-033 (Rapid Assay Kit) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 18 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G069",
+   "q": "Which has the longer shelf life, SKU-026 or SKU-035, and by how many months?",
+   "gt": "SKU-035 by 9 months",
+   "answer": "[sku-026] Product SKU-026 (Sterile Assay Kit) belongs to the Vaccines category and is supplied by sup-01. Its shelf life is 21 months. Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G070",
+   "q": "Which has the longer shelf life, SKU-022 or SKU-002, and by how many months?",
+   "gt": "SKU-022 by 42 months",
+   "answer": "Product SKU-022 (Advanced Buffer) belongs to the Medical Devices category and is supplied by sup-10. Its shelf life is 54 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G071",
+   "q": "Which has the longer shelf life, SKU-008 or SKU-017, and by how many months?",
+   "gt": "SKU-017 by 3 months",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. Its shelf life is 21 months. Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G072",
+   "q": "Which has the longer shelf life, SKU-012 or SKU-038, and by how many months?",
+   "gt": "SKU-038 by 15 months",
+   "answer": "[sku-012] Product SKU-012 (Rapid Sensor Cartridge) belongs to the Solvents category and is supplied by sup-10. Its shelf life is 30 months. Product SKU-038 (Rapid Filter Unit) belongs to the Medical Devices category and is supplied by sup-02. Its shelf life is 45 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G073",
+   "q": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?",
+   "gt": "they are equal",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-003 (Advanced Carrier Tray) belongs to the Reagents category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G074",
+   "q": "Which has the longer shelf life, SKU-007 or SKU-039, and by how many months?",
+   "gt": "SKU-039 by 6 months",
+   "answer": "Product SKU-007 (Pure Sealant) belongs to the Packaging Materials category and is supplied by sup-04. Its shelf life is 72 months. Product SKU-039 (Ultra Sealant) belongs to the Packaging Materials category and is supplied by sup-01. Its shelf life is 78 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G075",
+   "q": "Which has the longer shelf life, SKU-028 or SKU-023, and by how many months?",
+   "gt": "SKU-023 by 36 months",
+   "answer": "Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months. Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02. Its shelf life is 66 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G076",
+   "q": "Which has the longer shelf life, SKU-021 or SKU-028, and by how many months?",
+   "gt": "SKU-021 by 33 months",
+   "answer": "Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09. Its shelf life is 63 months. Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G077",
+   "q": "Which has the longer shelf life, SKU-039 or SKU-033, and by how many months?",
+   "gt": "SKU-039 by 60 months",
+   "answer": "Product SKU-039 (Ultra Sealant) belongs to the Packaging Materials category and is supplied by sup-01. Its shelf life is 78 months. Product SKU-033 (Rapid Assay Kit) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 18 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G078",
+   "q": "Which has the longer shelf life, SKU-008 or SKU-025, and by how many months?",
+   "gt": "SKU-025 by 6 months",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. Its shelf life is 21 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G079",
+   "q": "Which has the longer shelf life, SKU-037 or SKU-013, and by how many months?",
+   "gt": "SKU-013 by 12 months",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10. Its shelf life is 54 months. Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. Its shelf life is 66 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G080",
+   "q": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?",
+   "gt": "they are equal",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-003 (Advanced Carrier Tray) belongs to the Reagents category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G081",
+   "q": "Which has the longer shelf life, SKU-028 or SKU-001, and by how many months?",
+   "gt": "they are equal",
+   "answer": "Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months. Product SKU-001 (Premium Filter Unit) belongs to the Biologics category and is supplied by sup-06.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G082",
+   "q": "Which has the longer shelf life, SKU-034 or SKU-035, and by how many months?",
+   "gt": "SKU-035 by 6 months",
+   "answer": "Product SKU-034 (Ultra Vial Pack) belongs to the Vaccines category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G083",
+   "q": "Which has the longer shelf life, SKU-013 or SKU-024, and by how many months?",
+   "gt": "SKU-013 by 36 months",
+   "answer": "Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. Its shelf life is 66 months. Product SKU-024 (Pure Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-04. Its shelf life is 30 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G084",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-02?",
+   "gt": "sup-02",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-02 (Dune Supply Co, Germany) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G085",
+   "q": "Which supplier has the shorter lead time, sup-06 or sup-10?",
+   "gt": "sup-10",
+   "answer": "Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier. Supplier sup-10 (Fjord Supply Co, Ireland) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G086",
+   "q": "Which supplier has the shorter lead time, sup-02 or sup-05?",
+   "gt": "sup-02",
+   "answer": "Supplier sup-02 (Dune Supply Co, Germany) is a tier A supplier. Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G087",
+   "q": "Which supplier has the shorter lead time, sup-09 or sup-05?",
+   "gt": "sup-09",
+   "answer": "Supplier sup-09 (Fjord Supply Co, Japan) is a tier B supplier. Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G088",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-06?",
+   "gt": "sup-07",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G089",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-05?",
+   "gt": "sup-07",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G090",
+   "q": "Which supplier has the shorter lead time, sup-09 or sup-03?",
+   "gt": "sup-09",
+   "answer": "Supplier sup-09 (Fjord Supply Co, Japan) is a tier B supplier. Supplier sup-03 (Iris Supply Co, Ireland) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G091",
+   "q": "Which supplier has the shorter lead time, sup-04 or sup-07?",
+   "gt": "sup-04",
+   "answer": "Supplier sup-04 (Alder Supply Co, Japan) is a tier A supplier. Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G092",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-03?",
+   "gt": "sup-07",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-03 (Iris Supply Co, Ireland) is a tier A supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G093",
+   "q": "Which supplier has the shorter lead time, sup-10 or sup-05?",
+   "gt": "sup-10",
+   "answer": "Supplier sup-10 (Fjord Supply Co, Ireland) is a tier A supplier. Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G094",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-09?",
+   "gt": "sup-09",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-09 (Fjord Supply Co, Japan) is a tier B supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G095",
+   "q": "Which supplier has the shorter lead time, sup-01 or sup-05?",
+   "gt": "sup-05",
+   "answer": "Supplier sup-01 (Birch Supply Co, Canada) is a tier A supplier. Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G096",
+   "q": "A lot of SKU-019 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission. Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": true
+  },
+  {
+   "id": "G097",
+   "q": "A lot of SKU-014 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G098",
+   "q": "A lot of SKU-028 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G099",
+   "q": "A lot of SKU-021 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G100",
+   "q": "A lot of SKU-030 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G101",
+   "q": "A lot of SKU-029 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "Product SKU-029 (Certified Culture Medium) belongs to the Consumables category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G102",
+   "q": "A lot of SKU-035 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G103",
+   "q": "A lot of SKU-039 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G104",
+   "q": "A lot of SKU-031 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "Product SKU-031 (Stable Buffer) belongs to the Packaging Materials category and is supplied by sup-10.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G105",
+   "q": "A lot of SKU-026 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G106",
+   "q": "A lot of SKU-034 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G107",
+   "q": "A lot of SKU-032 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G108",
+   "q": "A lot of SKU-024 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G109",
+   "q": "A lot of SKU-006 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G110",
+   "q": "A lot of SKU-022 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission. Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": true
+  },
+  {
+   "id": "G111",
+   "q": "A lot of SKU-003 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G112",
+   "q": "A lot of SKU-010 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G113",
+   "q": "A lot of SKU-017 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G114",
+   "q": "A lot of SKU-036 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G115",
+   "q": "A lot of SKU-037 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G116",
+   "q": "A lot of SKU-020 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G117",
+   "q": "A lot of SKU-011 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G118",
+   "q": "A lot of SKU-025 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G119",
+   "q": "A lot of SKU-008 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G120",
+   "q": "A lot of SKU-038 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G121",
+   "q": "A lot of SKU-004 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G122",
+   "q": "A lot of SKU-013 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G123",
+   "q": "A lot of SKU-015 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G124",
+   "q": "A lot of SKU-018 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G125",
+   "q": "A lot of SKU-001 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G126",
+   "q": "If the storage zone for SKU-003 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "answer": "[sku-003] Product SKU-003 (Advanced Carrier Tray) belongs to the Reagents category and is supplied by sup-04. A temperature excursion longer than 30 minutes triggers an alarm and must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G127",
+   "q": "If the storage zone for SKU-016 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-016] Product SKU-016 (Dual Carrier Tray) belongs to the Nutraceuticals category and is supplied by sup-04. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G128",
+   "q": "If the storage zone for SKU-031 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-031] Product SKU-031 (Stable Buffer) belongs to the Packaging Materials category and is supplied by sup-10. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G129",
+   "q": "If the storage zone for SKU-005 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-005] Product SKU-005 (Advanced Syringe Set) belongs to the Consumables category and is supplied by sup-06. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G130",
+   "q": "If the storage zone for SKU-030 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-030] Product SKU-030 (Certified Reagent Mix) belongs to the Medical Devices category and is supplied by sup-07. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G131",
+   "q": "If the storage zone for SKU-027 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "answer": "[sku-027] Product SKU-027 (Stable Sealant) belongs to the Reagents category and is supplied by sup-08. A temperature excursion longer than 30 minutes triggers an alarm and must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G132",
+   "q": "If the storage zone for SKU-013 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-013] Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G133",
+   "q": "If the storage zone for SKU-025 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "answer": "[sku-025] Product SKU-025 (Stable Assay Kit) belongs to the Biologics category and is supplied by sup-02. A temperature excursion longer than 15 minutes triggers an alarm and must be escalated to the Cold Chain Supervisor.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G134",
+   "q": "If the storage zone for SKU-032 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-032] Product SKU-032 (Ultra Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-09. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G135",
+   "q": "If the storage zone for SKU-034 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "answer": "[sku-034] Product SKU-034 (Ultra Vial Pack) belongs to the Vaccines category and is supplied by sup-10. A temperature excursion longer than 30 minutes triggers an alarm and must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G136",
+   "q": "If the storage zone for SKU-008 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-008] Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G137",
+   "q": "If the storage zone for SKU-037 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-037] Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G138",
+   "q": "If the storage zone for SKU-021 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-021] Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G139",
+   "q": "If the storage zone for SKU-023 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-023] Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G140",
+   "q": "If the storage zone for SKU-001 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "answer": "[sku-001] Product SKU-001 (Premium Filter Unit) belongs to the Biologics category and is supplied by sup-06. A temperature excursion longer than 15 minutes triggers an alarm and must be escalated to the Cold Chain Supervisor.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G141",
+   "q": "If the storage zone for SKU-033 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "answer": "[sku-033] Product SKU-033 (Rapid Assay Kit) belongs to the Biologics category and is supplied by sup-10. A temperature excursion longer than 15 minutes triggers an alarm and must be escalated to the Cold Chain Supervisor.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G142",
+   "q": "If the storage zone for SKU-004 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "60 minutes",
+   "answer": "[sku-004] Product SKU-004 (Premium Vial Pack) belongs to the Solvents category and is supplied by sup-02. A temperature excursion longer than 60 minutes triggers an alarm and must be escalated to the Safety Officer.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G143",
+   "q": "If the storage zone for SKU-014 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-014] Product SKU-014 (Dual Reagent Mix) belongs to the Medical Devices category and is supplied by sup-06. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G144",
+   "q": "If the storage zone for SKU-036 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "60 minutes",
+   "answer": "[sku-036] Product SKU-036 (Advanced Vial Pack) belongs to the Solvents category and is supplied by sup-05. A temperature excursion longer than 60 minutes triggers an alarm and must be escalated to the Safety Officer.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G145",
+   "q": "If the storage zone for SKU-006 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-006] Product SKU-006 (Premium Carrier Tray) belongs to the Medical Devices category and is supplied by sup-03. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G146",
+   "q": "If the storage zone for SKU-017 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "answer": "[sku-017] Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. A temperature excursion longer than 15 minutes triggers an alarm and must be escalated to the Cold Chain Supervisor.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G147",
+   "q": "If the storage zone for SKU-015 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-015] Product SKU-015 (Sterile Reagent Mix) belongs to the Packaging Materials category and is supplied by sup-09. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G148",
+   "q": "If the storage zone for SKU-002 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "answer": "[sku-002] Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. A temperature excursion longer than 30 minutes triggers an alarm and must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G149",
+   "q": "If the storage zone for SKU-022 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-022] Product SKU-022 (Advanced Buffer) belongs to the Medical Devices category and is supplied by sup-10. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G150",
+   "q": "If the storage zone for SKU-024 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "answer": "[sku-024] Product SKU-024 (Pure Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-04. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G151",
+   "q": "How often is the supplier of SKU-030 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G152",
+   "q": "How often is the supplier of SKU-009 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G153",
+   "q": "How often is the supplier of SKU-040 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G154",
+   "q": "How often is the supplier of SKU-034 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G155",
+   "q": "How often is the supplier of SKU-036 audited?",
+   "gt": "every 24 months",
+   "answer": "Tier C suppliers are audited every 24 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G156",
+   "q": "How often is the supplier of SKU-021 audited?",
+   "gt": "every 12 months",
+   "answer": "Tier B suppliers are audited every 12 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G157",
+   "q": "How often is the supplier of SKU-029 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G158",
+   "q": "How often is the supplier of SKU-033 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G159",
+   "q": "How often is the supplier of SKU-028 audited?",
+   "gt": "every 12 months",
+   "answer": "Tier B suppliers are audited every 12 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G160",
+   "q": "How often is the supplier of SKU-027 audited?",
+   "gt": "every 6 months",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G161",
+   "q": "How many units are sampled in incoming inspection for SKU-036?",
+   "gt": "13 units",
+   "answer": "[sku-036] Product SKU-036 (Advanced Vial Pack) belongs to the Solvents category and is supplied by sup-05.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G162",
+   "q": "How many units are sampled in incoming inspection for SKU-029?",
+   "gt": "8 units",
+   "answer": "Product SKU-029 (Certified Culture Medium) belongs to the Consumables category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G163",
+   "q": "How many units are sampled in incoming inspection for SKU-011?",
+   "gt": "13 units",
+   "answer": "[rule-inspect-enhanced] Incoming inspection for enhanced QA categories uses a sample of 13 units per lot using AQL sampling.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G164",
+   "q": "How many units are sampled in incoming inspection for SKU-031?",
+   "gt": "8 units",
+   "answer": "[sku-031] Product SKU-031 (Stable Buffer) belongs to the Packaging Materials category and is supplied by sup-10.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G165",
+   "q": "How many units are sampled in incoming inspection for SKU-039?",
+   "gt": "8 units",
+   "answer": "[sku-039] Product SKU-039 (Ultra Sealant) belongs to the Packaging Materials category and is supplied by sup-01.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G166",
+   "q": "How many units are sampled in incoming inspection for SKU-017?",
+   "gt": "32 units",
+   "answer": "[sku-017] Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G167",
+   "q": "How many units are sampled in incoming inspection for SKU-016?",
+   "gt": "8 units",
+   "answer": "Product SKU-016 (Dual Carrier Tray) belongs to the Nutraceuticals category and is supplied by sup-04.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G168",
+   "q": "How many units are sampled in incoming inspection for SKU-018?",
+   "gt": "32 units",
+   "answer": "[rule-inspect-critical] Incoming inspection for critical QA categories uses a sample of 32 units per lot using AQL sampling.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G169",
+   "q": "How many units are sampled in incoming inspection for SKU-032?",
+   "gt": "8 units",
+   "answer": "[sku-032] Product SKU-032 (Ultra Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-09.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G170",
+   "q": "How many units are sampled in incoming inspection for SKU-021?",
+   "gt": "8 units",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": true
+  },
+  {
+   "id": "G171",
+   "q": "How many units are sampled in incoming inspection for SKU-008?",
+   "gt": "8 units",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": true
+  },
+  {
+   "id": "G172",
+   "q": "How many units are sampled in incoming inspection for SKU-009?",
+   "gt": "32 units",
+   "answer": "[sku-009] Product SKU-009 (Certified Sensor Cartridge) belongs to the Biologics category and is supplied by sup-08.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G173",
+   "q": "How many units are sampled in incoming inspection for SKU-015?",
+   "gt": "8 units",
+   "answer": "Product SKU-015 (Sterile Reagent Mix) belongs to the Packaging Materials category and is supplied by sup-09.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G174",
+   "q": "How many units are sampled in incoming inspection for SKU-003?",
+   "gt": "13 units",
+   "answer": "[rule-inspect-enhanced] Incoming inspection for enhanced QA categories uses a sample of 13 units per lot using AQL sampling.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G175",
+   "q": "How many units are sampled in incoming inspection for SKU-023?",
+   "gt": "8 units",
+   "answer": "[sku-023] Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G176",
+   "q": "Summarize the quarantine procedure for standard.",
+   "gt": "4-step quarantine procedure (standard)",
+   "answer": "Step 4 of the quarantine procedure (standard): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G177",
+   "q": "Summarize the quarantine procedure for enhanced.",
+   "gt": "4-step quarantine procedure (enhanced)",
+   "answer": "Step 4 of the quarantine procedure (enhanced): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G178",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G179",
+   "q": "Summarize the inspect procedure for standard.",
+   "gt": "4-step inspect procedure (standard)",
+   "answer": "Step 1 of the inspect procedure (standard): Verify the delivery against the purchase order.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G180",
+   "q": "Summarize the inspect procedure for enhanced.",
+   "gt": "4-step inspect procedure (enhanced)",
+   "answer": "Step 4 of the inspect procedure (enhanced): Record results and accept or reject the lot.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G181",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G182",
+   "q": "Summarize the recall procedure for i.",
+   "gt": "4-step recall procedure (i)",
+   "answer": "Step 1 of the recall procedure (i): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G183",
+   "q": "Summarize the recall procedure for ii.",
+   "gt": "4-step recall procedure (ii)",
+   "answer": "Step 1 of the recall procedure (ii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G184",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G185",
+   "q": "Summarize the release procedure for low.",
+   "gt": "4-step release procedure (low)",
+   "answer": "Step 1 of the release procedure (low): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G186",
+   "q": "Summarize the release procedure for medium.",
+   "gt": "4-step release procedure (medium)",
+   "answer": "Step 1 of the release procedure (medium): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G187",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G188",
+   "q": "Give me an overview of the steps in the quarantine procedure (standard).",
+   "gt": "4-step quarantine procedure (standard)",
+   "answer": "Step 4 of the quarantine procedure (standard): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G189",
+   "q": "Give me an overview of the steps in the quarantine procedure (enhanced).",
+   "gt": "4-step quarantine procedure (enhanced)",
+   "answer": "Step 4 of the quarantine procedure (enhanced): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G190",
+   "q": "Give me an overview of the steps in the quarantine procedure (critical).",
+   "gt": "4-step quarantine procedure (critical)",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G191",
+   "q": "Give me an overview of the steps in the inspect procedure (standard).",
+   "gt": "4-step inspect procedure (standard)",
+   "answer": "Step 1 of the inspect procedure (standard): Verify the delivery against the purchase order.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G192",
+   "q": "Give me an overview of the steps in the inspect procedure (enhanced).",
+   "gt": "4-step inspect procedure (enhanced)",
+   "answer": "Step 1 of the inspect procedure (enhanced): Verify the delivery against the purchase order.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G193",
+   "q": "Give me an overview of the steps in the inspect procedure (critical).",
+   "gt": "4-step inspect procedure (critical)",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G194",
+   "q": "Give me an overview of the steps in the recall procedure (i).",
+   "gt": "4-step recall procedure (i)",
+   "answer": "Step 1 of the recall procedure (i): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G195",
+   "q": "Give me an overview of the steps in the recall procedure (ii).",
+   "gt": "4-step recall procedure (ii)",
+   "answer": "Step 1 of the recall procedure (ii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G196",
+   "q": "Give me an overview of the steps in the recall procedure (iii).",
+   "gt": "4-step recall procedure (iii)",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G197",
+   "q": "Give me an overview of the steps in the release procedure (low).",
+   "gt": "4-step release procedure (low)",
+   "answer": "Step 1 of the release procedure (low): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G198",
+   "q": "Give me an overview of the steps in the release procedure (medium).",
+   "gt": "4-step release procedure (medium)",
+   "answer": "Step 1 of the release procedure (medium): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G199",
+   "q": "Give me an overview of the steps in the release procedure (high).",
+   "gt": "4-step release procedure (high)",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G200",
+   "q": "Summarize the quarantine procedure for standard.",
+   "gt": "4-step quarantine procedure (standard)",
+   "answer": "Step 4 of the quarantine procedure (standard): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G201",
+   "q": "Summarize the quarantine procedure for enhanced.",
+   "gt": "4-step quarantine procedure (enhanced)",
+   "answer": "Step 4 of the quarantine procedure (enhanced): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G202",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G203",
+   "q": "Summarize the inspect procedure for standard.",
+   "gt": "4-step inspect procedure (standard)",
+   "answer": "Step 1 of the inspect procedure (standard): Verify the delivery against the purchase order.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G204",
+   "q": "Summarize the inspect procedure for enhanced.",
+   "gt": "4-step inspect procedure (enhanced)",
+   "answer": "Step 4 of the inspect procedure (enhanced): Record results and accept or reject the lot.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G205",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G206",
+   "q": "Summarize the recall procedure for i.",
+   "gt": "4-step recall procedure (i)",
+   "answer": "Step 1 of the recall procedure (i): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G207",
+   "q": "Summarize the recall procedure for ii.",
+   "gt": "4-step recall procedure (ii)",
+   "answer": "Step 1 of the recall procedure (ii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G208",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G209",
+   "q": "Summarize the release procedure for low.",
+   "gt": "4-step release procedure (low)",
+   "answer": "Step 1 of the release procedure (low): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G210",
+   "q": "Summarize the release procedure for medium.",
+   "gt": "4-step release procedure (medium)",
+   "answer": "Step 1 of the release procedure (medium): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G211",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G212",
+   "q": "Give me an overview of the steps in the quarantine procedure (standard).",
+   "gt": "4-step quarantine procedure (standard)",
+   "answer": "Step 4 of the quarantine procedure (standard): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G213",
+   "q": "Give me an overview of the steps in the quarantine procedure (enhanced).",
+   "gt": "4-step quarantine procedure (enhanced)",
+   "answer": "Step 4 of the quarantine procedure (enhanced): Record the decision and notify the supplier.",
+   "abstained": false,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G214",
+   "q": "What is the shelf life of SKU-352?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G215",
+   "q": "Which supplier provides SKU-338?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G216",
+   "q": "What is the minimum order quantity for SKU-387?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G217",
+   "q": "What is the shelf life of SKU-142?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G218",
+   "q": "What is the shelf life of SKU-214?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G219",
+   "q": "What is the minimum order quantity for SKU-452?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G220",
+   "q": "What is the minimum order quantity for SKU-216?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G221",
+   "q": "What is the shelf life of SKU-279?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G222",
+   "q": "Which supplier provides SKU-484?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G223",
+   "q": "What is the minimum order quantity for SKU-398?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G224",
+   "q": "Which supplier provides SKU-537?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G225",
+   "q": "What is the shelf life of SKU-123?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G226",
+   "q": "Which supplier provides SKU-490?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G227",
+   "q": "What is the minimum order quantity for SKU-848?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G228",
+   "q": "What is the shelf life of SKU-772?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (unknown entity)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G229",
+   "q": "What is the CEO's salary?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G230",
+   "q": "What is the weather in Berlin today?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G231",
+   "q": "Who won the football match yesterday?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G232",
+   "q": "What is our competitor's market share?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G233",
+   "q": "Write a poem about the ocean.",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G234",
+   "q": "What is the stock price of our parent company?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G235",
+   "q": "How do I configure my home router?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G236",
+   "q": "What are the cafeteria opening hours?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G237",
+   "q": "Translate hello to French.",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G238",
+   "q": "What is the capital of Australia?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G239",
+   "q": "Recommend a movie for tonight.",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G240",
+   "q": "How many employees joined last quarter?",
+   "gt": "ABSTAIN",
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "route": "REJECT_OOS",
+   "degraded": false
+  },
+  {
+   "id": "G241",
+   "q": "What is the weight of SKU-037?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G242",
+   "q": "What is the unit price of SKU-025?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G243",
+   "q": "Who designed SKU-031?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G244",
+   "q": "Who designed SKU-001?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G245",
+   "q": "What color is SKU-023?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G246",
+   "q": "Who designed SKU-020?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G247",
+   "q": "What is the unit price of SKU-039?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G248",
+   "q": "Who designed SKU-027?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G249",
+   "q": "What is the weight of SKU-015?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  },
+  {
+   "id": "G250",
+   "q": "Who designed SKU-016?",
+   "gt": "ABSTAIN",
+   "answer": "I don't have enough information in the knowledge base to answer that reliably. (vocab gap)",
+   "abstained": true,
+   "route": "HYBRID_RAG",
+   "degraded": false
+  }
+ ]
+}

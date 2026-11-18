@@ -1,0 +1,426 @@
+{
+ "sups": {
+  "sup-01": {
+   "name": "Birch Supply Co",
+   "tier": "A",
+   "lead": 35,
+   "country": "Canada"
+  },
+  "sup-02": {
+   "name": "Dune Supply Co",
+   "tier": "A",
+   "lead": 10,
+   "country": "Germany"
+  },
+  "sup-03": {
+   "name": "Iris Supply Co",
+   "tier": "A",
+   "lead": 28,
+   "country": "Ireland"
+  },
+  "sup-04": {
+   "name": "Alder Supply Co",
+   "tier": "A",
+   "lead": 7,
+   "country": "Japan"
+  },
+  "sup-05": {
+   "name": "Dune Supply Co",
+   "tier": "C",
+   "lead": 28,
+   "country": "Germany"
+  },
+  "sup-06": {
+   "name": "Iris Supply Co",
+   "tier": "A",
+   "lead": 35,
+   "country": "Singapore"
+  },
+  "sup-07": {
+   "name": "Grove Supply Co",
+   "tier": "A",
+   "lead": 21,
+   "country": "Singapore"
+  },
+  "sup-08": {
+   "name": "Elm Supply Co",
+   "tier": "A",
+   "lead": 10,
+   "country": "Ireland"
+  },
+  "sup-09": {
+   "name": "Fjord Supply Co",
+   "tier": "B",
+   "lead": 10,
+   "country": "Japan"
+  },
+  "sup-10": {
+   "name": "Fjord Supply Co",
+   "tier": "A",
+   "lead": 7,
+   "country": "Ireland"
+  }
+ },
+ "skus": {
+  "SKU-001": {
+   "name": "Premium Filter Unit",
+   "cat": "biologics",
+   "sup": "sup-06",
+   "shelf": 30,
+   "moq": 50,
+   "reorder": 20,
+   "risk": "high"
+  },
+  "SKU-002": {
+   "name": "Dual Assay Kit",
+   "cat": "vaccines",
+   "sup": "sup-07",
+   "shelf": 12,
+   "moq": 250,
+   "reorder": 80,
+   "risk": "high"
+  },
+  "SKU-003": {
+   "name": "Advanced Carrier Tray",
+   "cat": "reagents",
+   "sup": "sup-04",
+   "shelf": 24,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-004": {
+   "name": "Premium Vial Pack",
+   "cat": "solvents",
+   "sup": "sup-02",
+   "shelf": 39,
+   "moq": 50,
+   "reorder": 120,
+   "risk": "medium"
+  },
+  "SKU-005": {
+   "name": "Advanced Syringe Set",
+   "cat": "consumables",
+   "sup": "sup-06",
+   "shelf": 60,
+   "moq": 25,
+   "reorder": 80,
+   "risk": "low"
+  },
+  "SKU-006": {
+   "name": "Premium Carrier Tray",
+   "cat": "devices",
+   "sup": "sup-03",
+   "shelf": 54,
+   "moq": 25,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-007": {
+   "name": "Pure Sealant",
+   "cat": "packaging",
+   "sup": "sup-04",
+   "shelf": 72,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-008": {
+   "name": "Compact Reagent Mix",
+   "cat": "nutraceuticals",
+   "sup": "sup-02",
+   "shelf": 21,
+   "moq": 250,
+   "reorder": 80,
+   "risk": "low"
+  },
+  "SKU-009": {
+   "name": "Certified Sensor Cartridge",
+   "cat": "biologics",
+   "sup": "sup-08",
+   "shelf": 21,
+   "moq": 50,
+   "reorder": 40,
+   "risk": "high"
+  },
+  "SKU-010": {
+   "name": "Dual Sealant",
+   "cat": "vaccines",
+   "sup": "sup-05",
+   "shelf": 24,
+   "moq": 100,
+   "reorder": 120,
+   "risk": "high"
+  },
+  "SKU-011": {
+   "name": "Rapid Sealant",
+   "cat": "reagents",
+   "sup": "sup-08",
+   "shelf": 24,
+   "moq": 10,
+   "reorder": 20,
+   "risk": "medium"
+  },
+  "SKU-012": {
+   "name": "Rapid Sensor Cartridge",
+   "cat": "solvents",
+   "sup": "sup-10",
+   "shelf": 30,
+   "moq": 100,
+   "reorder": 120,
+   "risk": "medium"
+  },
+  "SKU-013": {
+   "name": "Certified Sealant",
+   "cat": "consumables",
+   "sup": "sup-05",
+   "shelf": 66,
+   "moq": 10,
+   "reorder": 20,
+   "risk": "low"
+  },
+  "SKU-014": {
+   "name": "Dual Reagent Mix",
+   "cat": "devices",
+   "sup": "sup-06",
+   "shelf": 42,
+   "moq": 50,
+   "reorder": 120,
+   "risk": "medium"
+  },
+  "SKU-015": {
+   "name": "Sterile Reagent Mix",
+   "cat": "packaging",
+   "sup": "sup-09",
+   "shelf": 69,
+   "moq": 250,
+   "reorder": 20,
+   "risk": "medium"
+  },
+  "SKU-016": {
+   "name": "Dual Carrier Tray",
+   "cat": "nutraceuticals",
+   "sup": "sup-04",
+   "shelf": 21,
+   "moq": 50,
+   "reorder": 40,
+   "risk": "low"
+  },
+  "SKU-017": {
+   "name": "Dual Buffer",
+   "cat": "biologics",
+   "sup": "sup-10",
+   "shelf": 24,
+   "moq": 100,
+   "reorder": 20,
+   "risk": "high"
+  },
+  "SKU-018": {
+   "name": "Advanced Reagent Mix",
+   "cat": "vaccines",
+   "sup": "sup-04",
+   "shelf": 12,
+   "moq": 25,
+   "reorder": 20,
+   "risk": "high"
+  },
+  "SKU-019": {
+   "name": "Certified Assay Kit",
+   "cat": "reagents",
+   "sup": "sup-09",
+   "shelf": 27,
+   "moq": 25,
+   "reorder": 120,
+   "risk": "low"
+  },
+  "SKU-020": {
+   "name": "Ultra Sensor Cartridge",
+   "cat": "solvents",
+   "sup": "sup-04",
+   "shelf": 42,
+   "moq": 25,
+   "reorder": 80,
+   "risk": "medium"
+  },
+  "SKU-021": {
+   "name": "Advanced Culture Medium",
+   "cat": "consumables",
+   "sup": "sup-09",
+   "shelf": 63,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "low"
+  },
+  "SKU-022": {
+   "name": "Advanced Buffer",
+   "cat": "devices",
+   "sup": "sup-10",
+   "shelf": 54,
+   "moq": 25,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-023": {
+   "name": "Sterile Vial Pack",
+   "cat": "packaging",
+   "sup": "sup-02",
+   "shelf": 66,
+   "moq": 50,
+   "reorder": 20,
+   "risk": "low"
+  },
+  "SKU-024": {
+   "name": "Pure Culture Medium",
+   "cat": "nutraceuticals",
+   "sup": "sup-04",
+   "shelf": 30,
+   "moq": 25,
+   "reorder": 120,
+   "risk": "low"
+  },
+  "SKU-025": {
+   "name": "Stable Assay Kit",
+   "cat": "biologics",
+   "sup": "sup-02",
+   "shelf": 27,
+   "moq": 50,
+   "reorder": 120,
+   "risk": "high"
+  },
+  "SKU-026": {
+   "name": "Sterile Assay Kit",
+   "cat": "vaccines",
+   "sup": "sup-01",
+   "shelf": 21,
+   "moq": 50,
+   "reorder": 20,
+   "risk": "high"
+  },
+  "SKU-027": {
+   "name": "Stable Sealant",
+   "cat": "reagents",
+   "sup": "sup-08",
+   "shelf": 27,
+   "moq": 100,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-028": {
+   "name": "Premium Buffer",
+   "cat": "solvents",
+   "sup": "sup-09",
+   "shelf": 30,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-029": {
+   "name": "Certified Culture Medium",
+   "cat": "consumables",
+   "sup": "sup-04",
+   "shelf": 63,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "low"
+  },
+  "SKU-030": {
+   "name": "Certified Reagent Mix",
+   "cat": "devices",
+   "sup": "sup-07",
+   "shelf": 54,
+   "moq": 100,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-031": {
+   "name": "Stable Buffer",
+   "cat": "packaging",
+   "sup": "sup-10",
+   "shelf": 78,
+   "moq": 10,
+   "reorder": 80,
+   "risk": "low"
+  },
+  "SKU-032": {
+   "name": "Ultra Culture Medium",
+   "cat": "nutraceuticals",
+   "sup": "sup-09",
+   "shelf": 30,
+   "moq": 25,
+   "reorder": 20,
+   "risk": "low"
+  },
+  "SKU-033": {
+   "name": "Rapid Assay Kit",
+   "cat": "biologics",
+   "sup": "sup-10",
+   "shelf": 18,
+   "moq": 25,
+   "reorder": 120,
+   "risk": "high"
+  },
+  "SKU-034": {
+   "name": "Ultra Vial Pack",
+   "cat": "vaccines",
+   "sup": "sup-10",
+   "shelf": 24,
+   "moq": 10,
+   "reorder": 20,
+   "risk": "high"
+  },
+  "SKU-035": {
+   "name": "Ultra Carrier Tray",
+   "cat": "reagents",
+   "sup": "sup-09",
+   "shelf": 30,
+   "moq": 50,
+   "reorder": 40,
+   "risk": "medium"
+  },
+  "SKU-036": {
+   "name": "Advanced Vial Pack",
+   "cat": "solvents",
+   "sup": "sup-05",
+   "shelf": 39,
+   "moq": 25,
+   "reorder": 80,
+   "risk": "medium"
+  },
+  "SKU-037": {
+   "name": "Certified Carrier Tray",
+   "cat": "consumables",
+   "sup": "sup-10",
+   "shelf": 54,
+   "moq": 10,
+   "reorder": 40,
+   "risk": "low"
+  },
+  "SKU-038": {
+   "name": "Rapid Filter Unit",
+   "cat": "devices",
+   "sup": "sup-02",
+   "shelf": 45,
+   "moq": 50,
+   "reorder": 80,
+   "risk": "medium"
+  },
+  "SKU-039": {
+   "name": "Ultra Sealant",
+   "cat": "packaging",
+   "sup": "sup-01",
+   "shelf": 78,
+   "moq": 50,
+   "reorder": 20,
+   "risk": "low"
+  },
+  "SKU-040": {
+   "name": "Pure Assay Kit",
+   "cat": "nutraceuticals",
+   "sup": "sup-02",
+   "shelf": 30,
+   "moq": 25,
+   "reorder": 80,
+   "risk": "low"
+  }
+ }
+}

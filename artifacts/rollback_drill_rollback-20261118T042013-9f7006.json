@@ -1,0 +1,32 @@
+[
+ {
+  "layer": "config/flag snapshot restore",
+  "ok": true,
+  "ms": 2.4,
+  "detail": "mcp_config.json restored byte-identical"
+ },
+ {
+  "layer": "index manifest N-1 swap",
+  "ok": false,
+  "ms": 0.1,
+  "detail": "RuntimeError: no N-1 index present (run build_index twice)"
+ },
+ {
+  "layer": "DB migration down/up (scratch DB)",
+  "ok": false,
+  "ms": 32.0,
+  "detail": "InsufficientPrivilegeError: permission denied to create database"
+ },
+ {
+  "layer": "cache namespace invalidation",
+  "ok": true,
+  "ms": 1.6,
+  "detail": "policy_version bump changes every L2 key (old entries unreachable, expire by TTL)"
+ },
+ {
+  "layer": "code rollback to tag",
+  "ok": false,
+  "ms": 4.1,
+  "detail": "RuntimeError: no git commits yet \u2014 code rollback NOT exercised (needs the owner's go-ahead to commit/tag)"
+ }
+]

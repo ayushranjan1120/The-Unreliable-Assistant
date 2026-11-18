@@ -1,0 +1,1 @@
+{"overhead_ms": {"n": 724, "p50": 5.366347999370191, "p95": 13.266592000036326, "p99": 17.883841999719152}, "note": "RTT minus server-reported processing + client parse; stdio pipe on 4-vCPU CPU host, concurrent with other load"}

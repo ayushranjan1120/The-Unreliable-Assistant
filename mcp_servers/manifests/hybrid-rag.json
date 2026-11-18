@@ -1,0 +1,10 @@
+{
+ "body": {
+  "server": "hybrid-rag",
+  "version": "v0",
+  "code_sha256": "3bd40d890d9203207199137651901ebfcc5f25c773571f0574f305f8dd287875",
+  "contracts_sha256": "efe2e563c15e666510ebfceb8bd53806a11bba64d383493e1162d371d9860363",
+  "index_hash": "006ba58ec4379577ffeac74e5e480036bc22c4370c878f6b6a2685fef1543e8e"
+ },
+ "sig": "53ea616a2ab1c96545cc1d2a5858a52b24a46eaf3828f829dc4b71dceaf80aa0cd8b127bc280f3b10959310eeb734a6ecce73d0c154cecaa250d6075eac8f707"
+}

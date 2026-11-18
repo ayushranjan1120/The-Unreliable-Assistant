@@ -1,0 +1,10 @@
+{
+ "body": {
+  "server": "state-store",
+  "version": "v0",
+  "code_sha256": "6432d1602e38cf9fe9a31dd88fa008073500a30521a1f2ecff69b3873665c086",
+  "contracts_sha256": "efe2e563c15e666510ebfceb8bd53806a11bba64d383493e1162d371d9860363",
+  "index_hash": ""
+ },
+ "sig": "4db86063ad7fb68f85fd56079387128b4bfeacd0afe90edb83adbde6730359604068f38db799f678990d579bc3ee33438cce8cffcc452d199dcabd9cd108f402"
+}

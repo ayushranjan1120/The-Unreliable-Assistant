@@ -1,0 +1,10 @@
+{
+ "body": {
+  "server": "graphify-vault",
+  "version": "v0",
+  "code_sha256": "ab2a315d6469611e1cc88ad0735d850e579cf6e20cd8567198fce1bb7e1c23ae",
+  "contracts_sha256": "efe2e563c15e666510ebfceb8bd53806a11bba64d383493e1162d371d9860363",
+  "index_hash": ""
+ },
+ "sig": "964102493c49c1526b47481226aae0d23b403b8d762d7f5eea35f91080a14417189d07782933dfeeb513921c5ac5d4fcdd98874b2550b01a859d0a593d303503"
+}

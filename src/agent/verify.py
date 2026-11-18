@@ -1,0 +1,78 @@
+"""Verification subagent (independent context): claim→chunk NLI veto + deterministic numeric/entity grounding.
+
+Two INDEPENDENT checks: (1) NLI entailment of each claim by the retrieved context (the veto used at serving time);
+(2) numeric/entity grounding — every number/id in the answer must occur in the context (used to MEASURE KPI-24 so the
+veto does not grade itself).
+"""
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+import numpy as np
+
+from src import telemetry
+from src.rag.onnx_models import OnnxCrossEncoder
+
+NLI_DIR = Path(__file__).resolve().parent.parent.parent / "artifacts" / "models" / "nli"
+_SENT = re.compile(r"(?<=[.!?])\s+")
+_FACT = re.compile(r"\b(?:SKU-\d{3}|LOT-\d{5}|[a-z]+-\d{2}|\d+(?:\.\d+)?)\b", re.I)
+
+
+def claims(answer: str) -> list[str]:
+    """Split an answer into atomic-ish claims (sentences)."""
+    return [s.strip() for s in _SENT.split(answer) if len(s.strip()) > 3]
+
+
+def ungrounded_facts(answer: str, context: str) -> list[str]:
+    """Numbers/ids in ``answer`` that do not appear in ``context`` (deterministic, model-free)."""
+    ctx = context.lower()
+    return [f for f in dict.fromkeys(_FACT.findall(answer)) if f.lower() not in ctx]
+
+
+class NliVerifier:
+    """Sentence-level entailment with cross-encoder/nli-deberta-v3-small (ONNX)."""
+
+    def __init__(self, path: Path = NLI_DIR) -> None:
+        self.m = OnnxCrossEncoder(path, 512, threads=2)
+        import json
+        cfg = json.loads((path / "config.json").read_text())
+        self.ent = [int(i) for i, l in cfg["id2label"].items() if l.lower().startswith("entail")][0]
+
+    def entail(self, premise: str, hyps: list[str]) -> list[float]:
+        """P(entailment) per hypothesis."""
+        if not hyps:
+            return []
+        lg = self.m.logits([(premise, h) for h in hyps])
+        e = np.exp(lg - lg.max(-1, keepdims=True))
+        return (e[:, self.ent] / e.sum(-1)).tolist()
+
+    @staticmethod
+    def _windows(chunk: str) -> list[str]:
+        """Sentence and 2-sentence windows of a chunk (small NLI models degrade on long multi-fact premises)."""
+        sents = [x.strip() for x in _SENT.split(chunk) if x.strip()]
+        return sents + [f"{a} {b}" for a, b in zip(sents, sents[1:])]
+
+    def verify(self, answer: str, chunk_texts: list[str], min_entail: float = 0.5) -> dict:
+        """Claim→chunk check. A claim is supported if (1) it is a verbatim quote of a chunk, else (2) some sentence window of some
+        chunk entails it, else (3) the joined context entails it (multi-chunk claims). Numeric/entity grounding failure also vetoes."""
+        with telemetry.span("verify.nli"):
+            cl = claims(answer)
+            ctx = " ".join(chunk_texts)
+            norm = lambda t: re.sub(r"\s+", " ", t.lower()).strip()
+            nctx = [norm(c) for c in chunk_texts]
+            todo = [c for c in cl if not any(norm(c) in nc for nc in nctx)]          # (1) quotes are grounded by construction
+            bad: list[str] = []
+            if todo:
+                wins = [w for ch in chunk_texts for w in self._windows(ch)][:48]
+                pairs = [(w, c) for c in todo for w in wins]
+                lg = self.m.logits(pairs)
+                e = np.exp(lg - lg.max(-1, keepdims=True)); pe = (e[:, self.ent] / e.sum(-1)).reshape(len(todo), len(wins))
+                weak = [c for c, row in zip(todo, pe) if row.max() < min_entail]       # (2)
+                if weak:
+                    for c, p in zip(weak, self.entail(ctx, weak)):                       # (3)
+                        if p < min_entail:
+                            bad.append(c)
+            ug = ungrounded_facts(answer, ctx)
+            return {"supported_ratio": 1.0 if not cl else 1 - len(bad) / len(cl), "unsupported": bad, "ungrounded_facts": ug,
+                    "vetoed": bool(bad or ug), "quoted": len(cl) - len(todo), "nli_checked": len(todo)}
