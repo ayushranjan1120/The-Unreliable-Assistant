@@ -62,12 +62,25 @@ def cache_ns():
     assert a != b; return "policy_version bump changes every L2 key (old entries unreachable, expire by TTL)"
 step("cache namespace invalidation", cache_ns)
 
-# 5. code rollback
+# 5. code rollback: check the last tag out into a scratch worktree and verify it is intact
 def code():
-    r = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--verify", "HEAD"], capture_output=True, text=True)
-    if r.returncode != 0:
-        raise RuntimeError("no git commits yet — code rollback NOT exercised (needs the owner's go-ahead to commit/tag)")
-    return "git HEAD present"
+    import hashlib, tempfile
+    git = lambda *a: subprocess.run(["git", "-C", str(ROOT), *a], capture_output=True, text=True)
+    tags = git("tag", "--sort=-creatordate").stdout.split()
+    if not tags:
+        raise RuntimeError("no git tag yet — code rollback NOT exercised")
+    wt = Path(tempfile.mkdtemp()) / "rb"
+    r = git("worktree", "add", "--detach", str(wt), tags[0])
+    if r.returncode:
+        raise RuntimeError(r.stderr[:120])
+    try:
+        lock = (wt / "DESIGN.lock").read_text().split()[0]
+        assert lock == hashlib.sha256((wt / "design.md").read_bytes()).hexdigest(), "design.md != DESIGN.lock at tag"
+        c = subprocess.run([sys.executable, "-m", "compileall", "-q", str(wt / "src"), str(wt / "mcp_servers")], capture_output=True, text=True)
+        assert c.returncode == 0, c.stdout[:100]
+        return f"tag {tags[0]} checked out; design lock matches; src/ + mcp_servers/ compile"
+    finally:
+        git("worktree", "remove", "--force", str(wt))
 step("code rollback to tag", code)
 
 rid = results_store.new_run_id("rollback"); art = ROOT / "artifacts" / f"rollback_drill_{rid}.json"; art.write_text(json.dumps(res, indent=1))

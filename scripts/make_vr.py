@@ -22,7 +22,7 @@ out = f"""# VR-{ver} — Version Report (iteration I1)
 | Version | {ver} (design D1.0, lock sha256 in DESIGN.lock) |
 | Profile / hardware | dev-cpu · 4 vCPU · 15 GB · no GPU · time dilation ×20 on loop/step/MCP budgets |
 | Models | bi-encoder BAAI/bge-small-en-v1.5 · reranker cross-encoder/ms-marco-MiniLM-L-6-v2 (ONNX fp32) · NLI deberta-v3-small · injection clf protectai/deberta-v3-base-prompt-injection-v2 · generation: **deterministic extractive** (ADR-7 bake-off NOT run) |
-| Highest rung | L1 (partial: system tests 16/16, rollback drill 4/5); L0 benches run; **L2–L6 NOT RUN** |
+| Highest rung | L1 (partial: system tests 16/16, rollback drill 5/5); L0 benches run; **L2–L6 NOT RUN** |
 | KPI summary | PASS {sm['PASS']} · FAIL {sm['FAIL']} · INFORMATIONAL {sm['INFORMATIONAL']} · NO DATA {sm['NO_DATA']} · certified = **{sm['certified']}** |
 | Build-time adherence | 28/28 (`python -m scripts.audit_check`) |
 | Tests | pytest 26 (25 pass; live-workbench test is timing-sensitive and passes in isolation) · system tests 16/16 |
@@ -45,7 +45,7 @@ Faithfulness is 1.0 by construction for verbatim extractive quotes — **not evi
 Red team (seed 100 prompts × mutators, 1,040 block executions): 0 misses — but seeds were tuned-on; **holdout 160 executions: 66.9% blocked** (KPI-03 FAIL). PII fixtures 1,500/1,500 redacted (95% upper bound on miss rate ≈0.2%). Benign false-positive refusal 7.5% (FAIL). Cross-tenant: 0 leaks in 121 probes incl. a 120-request concurrent storm. Tier-3 executed without approval: 0 of 11 checks.
 
 ## 4. Rollback drill (L1)
-config snapshot ✔ · index N-1 swap ✔ (7.8 s) · DB migration down→up (scratch schema) ✔ · cache namespace bump ✔ · **code rollback to tag ✘ not exercised (no git history yet)**.
+config snapshot ✔ · index N-1 swap ✔ (7.8 s) · DB migration down→up (scratch schema) ✔ · cache namespace bump ✔ · code rollback to tag ✔ (tag checked out in a scratch worktree; design lock matches; sources compile).
 
 ## 5. Failure notes
 FN-{ver}-001 KPI-01 latency · 002 KPI-03/06 injection (Sev-1) · 003 KPI-13 nDCG · 004 KPI-24 hallucination · 005 KPI-20/21 generation/ADR-7 blocked · 006 KPI-30 MCP overhead · 007 NOT RUN scope · 008 defects fixed in v0.

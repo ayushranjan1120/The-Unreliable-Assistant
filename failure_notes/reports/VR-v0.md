@@ -7,8 +7,8 @@
 | Version | v0 (design D1.0, lock sha256 in DESIGN.lock) |
 | Profile / hardware | dev-cpu · 4 vCPU · 15 GB · no GPU · time dilation ×20 on loop/step/MCP budgets |
 | Models | bi-encoder BAAI/bge-small-en-v1.5 · reranker cross-encoder/ms-marco-MiniLM-L-6-v2 (ONNX fp32) · NLI deberta-v3-small · injection clf protectai/deberta-v3-base-prompt-injection-v2 · generation: **deterministic extractive** (ADR-7 bake-off NOT run) |
-| Highest rung | L1 (partial: system tests 16/16, rollback drill 4/5); L0 benches run; **L2–L6 NOT RUN** |
-| KPI summary | PASS 15 · FAIL 6 · INFORMATIONAL 6 · NO DATA 9 · certified = **False** |
+| Highest rung | L1 (partial: system tests 16/16, rollback drill 5/5); L0 benches run; **L2–L6 NOT RUN** |
+| KPI summary | PASS 15 · FAIL 6 · INFORMATIONAL 11 · NO DATA 4 · certified = **False** |
 | Build-time adherence | 28/28 (`python -m scripts.audit_check`) |
 | Tests | pytest 26 (25 pass; live-workbench test is timing-sensitive and passes in isolation) · system tests 16/16 |
 
@@ -45,11 +45,11 @@
 | 28 | Cross-tenant cache isolation (leaks) | == 0leaks | 0 | 121 | dev-cpu | sys-20261118T041937-48642a | artifacts/system_tests_sys-20261118T041937-48642a.json | ✅ PASS |
 | 29 | Cost per 1,000 queries | <= 0.45$ | 0.062 | 442 | dev-cpu | golden-20261118T040511-b1c877 | artifacts/golden_eval_golden-20261118T040511-b1c877_extractive.json | 🔵 INFORMATIONAL (not certifiable) |
 | 30 | MCP JSON-RPC overhead p95 | <= 4ms | 13.267 | 724 | dev-cpu | mcp-20261118T041642-253456 | artifacts/mcp_overhead_mcp-20261118T041642-253456.json | ❌ FAIL |
-| 31 | E2E latency p50 @50K | <= 240ms | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
-| 32 | E2E latency p95 @50K | <= 450ms | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
-| 33 | E2E latency p99 @50K | <= 590ms | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
-| 34 | HTTP 5xx rate @50K | <= 0.05% | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
-| 35 | Sustained throughput | >= 8500RPS | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
+| 31 | E2E latency p50 @50K | <= 240ms | 2573.246 | 129 | dev-cpu | loadSMOKE-20261118T042621-2135a8 | artifacts/load_SMOKE.json | 🔵 INFORMATIONAL (not certifiable) |
+| 32 | E2E latency p95 @50K | <= 450ms | 5078.574 | 129 | dev-cpu | loadSMOKE-20261118T042621-2135a8 | artifacts/load_SMOKE.json | 🔵 INFORMATIONAL (not certifiable) |
+| 33 | E2E latency p99 @50K | <= 590ms | 5140.227 | 129 | dev-cpu | loadSMOKE-20261118T042621-2135a8 | artifacts/load_SMOKE.json | 🔵 INFORMATIONAL (not certifiable) |
+| 34 | HTTP 5xx rate @50K | <= 0.05% | 0 | 129 | dev-cpu | loadSMOKE-20261118T042621-2135a8 | artifacts/load_SMOKE.json | 🔵 INFORMATIONAL (not certifiable) |
+| 35 | Sustained throughput | >= 8500RPS | 2.414 | 129 | dev-cpu | loadSMOKE-20261118T042621-2135a8 | artifacts/load_SMOKE.json | 🔵 INFORMATIONAL (not certifiable) |
 | 36 | RSS growth over 1-hr soak | <= 3.0% | — | — | — | — | — | ⚪ NO DATA (counts as FAIL in certification) |
 
 ## 2. Golden-250 (extractive baseline; proxies, not RAGAS) per stratum
@@ -68,7 +68,7 @@ Faithfulness is 1.0 by construction for verbatim extractive quotes — **not evi
 Red team (seed 100 prompts × mutators, 1,040 block executions): 0 misses — but seeds were tuned-on; **holdout 160 executions: 66.9% blocked** (KPI-03 FAIL). PII fixtures 1,500/1,500 redacted (95% upper bound on miss rate ≈0.2%). Benign false-positive refusal 7.5% (FAIL). Cross-tenant: 0 leaks in 121 probes incl. a 120-request concurrent storm. Tier-3 executed without approval: 0 of 11 checks.
 
 ## 4. Rollback drill (L1)
-config snapshot ✔ · index N-1 swap ✔ (7.8 s) · DB migration down→up (scratch schema) ✔ · cache namespace bump ✔ · **code rollback to tag ✘ not exercised (no git history yet)**.
+config snapshot ✔ · index N-1 swap ✔ (7.8 s) · DB migration down→up (scratch schema) ✔ · cache namespace bump ✔ · code rollback to tag ✔ (tag checked out in a scratch worktree; design lock matches; sources compile).
 
 ## 5. Failure notes
 FN-v0-001 KPI-01 latency · 002 KPI-03/06 injection (Sev-1) · 003 KPI-13 nDCG · 004 KPI-24 hallucination · 005 KPI-20/21 generation/ADR-7 blocked · 006 KPI-30 MCP overhead · 007 NOT RUN scope · 008 defects fixed in v0.
