@@ -8,6 +8,7 @@ import streamlit as st
 import cached
 import state
 from components import cards, trace
+from utils.samples import SAMPLES
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -43,9 +44,23 @@ def render(ctx: state.Ctx) -> None:
     _hitl_queue(ctx)
 
 
+def _apply_sample() -> None:
+    """Callback: copy the chosen sample query into the query box."""
+    pick = st.session_state.get("sample_pick")
+    for label, query, _ in SAMPLES:
+        if label == pick:
+            st.session_state["triage_q"] = query
+
+
 def _triage_console(ctx: state.Ctx) -> None:
     st.markdown("**Live triage routing console & ReAct trace**")
-    q = st.text_input("Query", "Verify batch LOT-88392 safety protocol and return triage status", key="triage_q")
+    st.session_state.setdefault("triage_q", SAMPLES[0][1])
+    st.selectbox("Sample queries (each shows a different behaviour)", [x[0] for x in SAMPLES], key="sample_pick", on_change=_apply_sample,
+                 help="Pick one to fill the box below, then press Route query.")
+    expect = next((e for l, _, e in SAMPLES if l == st.session_state.get("sample_pick")), None)
+    if expect:
+        st.caption(f"Expected: {expect}")
+    q = st.text_input("Query", key="triage_q")
     if st.button("Route query", type="primary"):
         with st.status("Calling /api/v1/agent/query …", expanded=False) as s:
             res = cached.backend(ctx.backend_url).query_debug(ctx.tenant_id, ctx.user_id, q, ctx.session_id)
@@ -69,6 +84,7 @@ def _triage_console(ctx: state.Ctx) -> None:
 
 def _hitl_queue(ctx: state.Ctx) -> None:
     st.markdown("**Tier-3 HITL approval queue**")
+    approver = st.text_input("Approver user id (must differ from the requester)", "user_reviewer", key="approver_id")
     res = cached.backend_get(ctx.backend_url, "/api/v1/admin/hitl", tenant_id=ctx.tenant_id)
     if not res.ok:
         cards.no_data()
@@ -85,5 +101,5 @@ def _hitl_queue(ctx: state.Ctx) -> None:
                 if col.button(label, key=f"{label}_{it['approval_id']}"):
                     r = cached.backend(ctx.backend_url).post("/api/v1/admin/hitl/decide",
                                                              {"approval_id": it["approval_id"], "decision": decision,
-                                                              "approver": ctx.user_id}, ctx.tenant_id)
+                                                              "approver": approver}, ctx.tenant_id)
                     (st.toast if r.ok else st.error)(f"{decision}" if r.ok else r.error)

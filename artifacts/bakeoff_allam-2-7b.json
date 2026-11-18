@@ -1,0 +1,1814 @@
+{
+ "n": 80,
+ "n_pos": 71,
+ "n_neg": 9,
+ "faithfulness_proxy": 1.0,
+ "answer_relevancy_proxy": 0.823943661971831,
+ "context_entity_recall": 0.9671361502347418,
+ "answered_rate_pos": 0.971830985915493,
+ "abstention_accuracy_pct": 77.77777777777777,
+ "hallucination_rate_pct": 0.0,
+ "answered": 69,
+ "mean_steps": 1.95,
+ "latency_ms": {
+  "p50": 4608.5,
+  "p95": 12122.2
+ },
+ "per_stratum": {
+  "factoid": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "complex": {
+   "entity_recall": 0.9365079365079365,
+   "relevancy": 0.6904761904761905,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "multihop": {
+   "entity_recall": 0.9411764705882353,
+   "relevancy": 0.6470588235294118,
+   "answered": 0.8823529411764706,
+   "faith": 1.0
+  },
+  "summary": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  }
+ },
+ "llm_backends": {
+  "groq:allam-2-7b": 74,
+  "extractive": 2,
+  "none": 4
+ },
+ "veto_first_pct": 71.05263157894737,
+ "ttft_ms": {
+  "n": 76,
+  "p50": 89.2,
+  "p95": 130.7
+ },
+ "neg_answered": 2,
+ "rows": [
+  {
+   "id": "G001",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-014 have?",
+   "gt": "42 months",
+   "draft": "SKU-014, the Dual Reagent Mix, has a shelf life of 42 months.",
+   "answer": "SKU-014, the Dual Reagent Mix, has a shelf life of 42 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 92.3,
+    "total_ms": 111.8,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G004",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-017?",
+   "gt": "24 months",
+   "draft": "The shelf life of SKU-017 is 24 months, as mentioned in the card.",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 81.3,
+    "total_ms": 104.9,
+    "out_tokens": 29
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G007",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-037?",
+   "gt": "54 months",
+   "draft": "The shelf life of SKU-037 is 54 months.",
+   "answer": "The shelf life of SKU-037 is 54 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 97.4,
+    "total_ms": 110.9,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G010",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-021 have?",
+   "gt": "63 months",
+   "draft": "SKU-021 has a shelf life of 63 months.",
+   "answer": "SKU-021 has a shelf life of 63 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 97.1,
+    "total_ms": 111.0,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G013",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-009 have?",
+   "gt": "21 months",
+   "draft": "SKU-009, the Certified Sensor Cartridge, has a shelf life of 21 months.",
+   "answer": "SKU-009, the Certified Sensor Cartridge, has a shelf life of 21 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 83.6,
+    "total_ms": 102.3,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G016",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-011 have?",
+   "gt": "24 months",
+   "draft": "SKU-011, Rapid Sealant, has a shelf life of 24 months.",
+   "answer": "SKU-011, Rapid Sealant, has a shelf life of 24 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 86.1,
+    "total_ms": 105.0,
+    "out_tokens": 20
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G019",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-028?",
+   "gt": "30 months",
+   "draft": "The shelf life of SKU-028 is 30 months.",
+   "answer": "The shelf life of SKU-028 is 30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 89.2,
+    "total_ms": 102.6,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G022",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-027?",
+   "gt": "100 units",
+   "draft": "The minimum order quantity for SKU-027 is 100 units.",
+   "answer": "Product SKU-027 (Stable Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 100 units and the reorder point is 40 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 88.3,
+    "total_ms": 102.8,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G025",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-011?",
+   "gt": "10 units",
+   "draft": "The minimum order quantity for SKU-011 is 10 units.",
+   "answer": "Product SKU-011 (Rapid Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 10 units and the reorder point is 20 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 144.4,
+    "total_ms": 158.8,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G028",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-002?",
+   "gt": "250 units",
+   "draft": "The minimum order quantity for SKU-002 is 250 units.",
+   "answer": "Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 110.3,
+    "total_ms": 124.9,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G031",
+   "stratum": "factoid",
+   "q": "What storage temperature is required in Ultra-Cold Zone Z1?",
+   "gt": "-80 to -60 degrees Celsius",
+   "draft": "In Ultra-Cold Zone Z1, the required storage temperature is -80 to -60 degrees Celsius.",
+   "answer": "In Ultra-Cold Zone Z1, the required storage temperature is -80 to -60 degrees Celsius.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 94.8,
+    "total_ms": 116.5,
+    "out_tokens": 26
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G034",
+   "stratum": "factoid",
+   "q": "Who must a temperature excursion in Refrigerated Zone Z2 be escalated to?",
+   "gt": "the Warehouse Manager",
+   "draft": "In Refrigerated Zone Z2, a temperature excursion longer than 30 minutes must be escalated to the Warehouse Manager.",
+   "answer": "In Refrigerated Zone Z2, a temperature excursion longer than 30 minutes must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.6,
+    "total_ms": 104.8,
+    "out_tokens": 26
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G037",
+   "stratum": "factoid",
+   "q": "What storage temperature is required in Flammables Zone Z4?",
+   "gt": "15 to 25 degrees Celsius with ventilation",
+   "draft": "In Flammables Zone Z4, the required storage temperature is 15 to 25 degrees Celsius with ventilation.",
+   "answer": "In Flammables Zone Z4, the required storage temperature is 15 to 25 degrees Celsius with ventilation.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 75.7,
+    "total_ms": 96.6,
+    "out_tokens": 23
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G040",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-07?",
+   "gt": "21 days",
+   "draft": "The standard lead time for supplier sup-07 is 21 days.",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. The standard lead time is 21 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 77.4,
+    "total_ms": 91.0,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G043",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-02?",
+   "gt": "10 days",
+   "draft": "The standard lead time for supplier sup-02 is 10 days.",
+   "answer": "Supplier sup-02 (Dune Supply Co, Germany) is a tier A supplier. The standard lead time is 10 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 72.6,
+    "total_ms": 86.4,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G046",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-05?",
+   "gt": "28 days",
+   "draft": "The standard lead time for supplier sup-05 is 28 days.",
+   "answer": "Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier. The standard lead time is 28 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 81.5,
+    "total_ms": 96.5,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G049",
+   "stratum": "factoid",
+   "q": "How long are quality records retained?",
+   "gt": "10 years",
+   "draft": "Quality records are retained for 10 years before secure disposal.",
+   "answer": "Quality records are retained for 10 years before secure disposal.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 72.4,
+    "total_ms": 83.2,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G052",
+   "stratum": "factoid",
+   "q": "How long are procurement records retained?",
+   "gt": "7 years",
+   "draft": "Procurement records are retained for 7 years before secure disposal, according to the provided context with source id: chunks.source_id: policy-retention-procurement.",
+   "answer": "Records in the procurement domain are retained for 7 years before secure disposal.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 80.8,
+    "total_ms": 111.2,
+    "out_tokens": 39
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G055",
+   "stratum": "factoid",
+   "q": "How many QA reviewers must sign off the release of a medium risk batch?",
+   "gt": "2",
+   "draft": "Based on the provided context, 2 QA reviewers must sign off the release of a medium risk batch. The relevant information can be found under chunks.source_id: rule-release-medium.",
+   "answer": "Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 81.9,
+    "total_ms": 116.1,
+    "out_tokens": 48
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G058",
+   "stratum": "factoid",
+   "q": "Within how many hours must a Class II recall be notified?",
+   "gt": "24 hours",
+   "draft": "A Class II recall must be notified to the regulator and customers within 24 hours of the recall decision.",
+   "answer": "A Class II recall must be notified to the regulator and customers within 24 hours of the recall decision.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 77.6,
+    "total_ms": 96.1,
+    "out_tokens": 26
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G061",
+   "stratum": "factoid",
+   "q": "Which product category does SKU-030 belong to?",
+   "gt": "Medical Devices",
+   "draft": "SKU-030 belongs to the Medical Devices category.",
+   "answer": "SKU-030 belongs to the Medical Devices category.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 97.6,
+    "total_ms": 109.9,
+    "out_tokens": 13
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G064",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-015 or SKU-002, and by how many months?",
+   "gt": "SKU-015 by 57 months",
+   "draft": "Based on the provided context, SKU-015 has the longer shelf life. SKU-015 has a shelf life of 69 months, while SKU-002 has a shelf life of 30 months. Therefore, SKU-015 has a shelf life that",
+   "answer": "Product SKU-015 (Sterile Reagent Mix) belongs to the Packaging Materials category and is supplied by sup-09. Its shelf life is 69 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 89.0,
+    "total_ms": 135.5,
+    "out_tokens": 62
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G067",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-005 or SKU-018, and by how many months?",
+   "gt": "SKU-005 by 48 months",
+   "draft": "Based on the provided context, SKU-005 has the longer shelf life. SKU-005 has a shelf life of 60 months, while SKU-018 has a shelf life of 21 months. Therefore, SKU-005 has a shelf life that",
+   "answer": "Product SKU-005 (Advanced Syringe Set) belongs to the Consumables category and is supplied by sup-06. Its shelf life is 60 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 100.2,
+    "total_ms": 146.6,
+    "out_tokens": 62
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G070",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-022 or SKU-002, and by how many months?",
+   "gt": "SKU-022 by 42 months",
+   "draft": "Based on the provided context, SKU-022 has the longer shelf life. SKU-022 has a shelf life of 54 months, while SKU-002 has a shelf life of 30 months.",
+   "answer": "Product SKU-022 (Advanced Buffer) belongs to the Medical Devices category and is supplied by sup-10. Its shelf life is 54 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 99.5,
+    "total_ms": 137.8,
+    "out_tokens": 49
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G073",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?",
+   "gt": "they are equal",
+   "draft": "Based on the provided context, SKU-017 has a longer shelf life than SKU-003. SKU-017 has a shelf life of 24 months, while SKU-003 has a shelf life of 24 months as well. There is no difference",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-003 (Advanced Carrier Tray) belongs to the Reagents category and is supplied by sup-04.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 100.8,
+    "total_ms": 146.5,
+    "out_tokens": 62
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 3,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G076",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-021 or SKU-028, and by how many months?",
+   "gt": "SKU-021 by 33 months",
+   "draft": "SKU-021 has the longer shelf life, with a duration of 63 months, compared to SKU-028, which has a shelf life of 30 months. SKU-021 is from the Consumables category, while SKU-028 is from",
+   "answer": "Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09. Its shelf life is 63 months. Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 165.7,
+    "total_ms": 211.6,
+    "out_tokens": 60
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G079",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-037 or SKU-013, and by how many months?",
+   "gt": "SKU-013 by 12 months",
+   "draft": "Based on the provided context, SKU-037 has the longer shelf life with 54 months, while SKU-013 has a shelf life of 66 months. SKU-037 is 12 months shorter in shelf life compared to SKU-013.",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10. Its shelf life is 54 months. Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. Its shelf life is 66 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 98.7,
+    "total_ms": 145.2,
+    "out_tokens": 60
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G082",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-034 or SKU-035, and by how many months?",
+   "gt": "SKU-035 by 6 months",
+   "draft": "Based on the provided context, SKU-035 has the longer shelf life. SKU-035 has a shelf life of 30 months, while SKU-034 has a shelf life of 24 months.",
+   "answer": "Product SKU-034 (Ultra Vial Pack) belongs to the Vaccines category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 130.7,
+    "total_ms": 170.2,
+    "out_tokens": 49
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G085",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-06 or sup-10?",
+   "gt": "sup-10",
+   "draft": "Based on the provided context, supplier sup-10 has a shorter lead time compared to sup-06. sup-10 has a standard lead time of 7 days, while sup-06 has a lead time of 35 days.",
+   "answer": "Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier. Supplier sup-10 (Fjord Supply Co, Ireland) is a tier A supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 90.8,
+    "total_ms": 130.1,
+    "out_tokens": 58
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G088",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-06?",
+   "gt": "sup-07",
+   "draft": "Based on the provided context, supplier sup-07 has a shorter lead time compared to sup-06. sup-07 has a standard lead time of 21 days, while sup-06 has a standard lead time of 35 days.",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 190.4,
+    "total_ms": 232.0,
+    "out_tokens": 60
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G091",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-04 or sup-07?",
+   "gt": "sup-04",
+   "draft": "Based on the provided context, supplier sup-04 has a shorter lead time compared to sup-07. sup-04 has a standard lead time of 7 days, while sup-07 has a standard lead time of 21 days.",
+   "answer": "Supplier sup-04 (Alder Supply Co, Japan) is a tier A supplier. Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 75.1,
+    "total_ms": 115.3,
+    "out_tokens": 60
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G094",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-09?",
+   "gt": "sup-09",
+   "draft": "Based on the provided context, supplier sup-09 has a shorter lead time compared to sup-07. sup-09 has a standard lead time of 10 days, while sup-07 has a standard lead time of 21 days.",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-09 (Fjord Supply Co, Japan) is a tier B supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 82.7,
+    "total_ms": 127.8,
+    "out_tokens": 60
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G097",
+   "stratum": "complex",
+   "q": "A lot of SKU-014 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "Based on the provided context, for a lot of SKU-014, which is a medium risk product, 2 QA reviewers are needed, and they must sign off within 48 hours of submission.",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 86.0,
+    "total_ms": 121.8,
+    "out_tokens": 49
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G100",
+   "stratum": "complex",
+   "q": "A lot of SKU-030 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "Based on the provided context, for a lot of SKU-030, which is a medium risk product, 2 QA reviewers are needed, and they must sign off within 48 hours of submission for batch release.",
+   "answer": "Based on the provided context, for a lot of SKU-030, which is a medium risk product, 2 QA reviewers are needed, and they must sign off within 48 hours of submission for batch release.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 99.1,
+    "total_ms": 136.3,
+    "out_tokens": 53
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G103",
+   "stratum": "complex",
+   "q": "A lot of SKU-039 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "draft": "Based on the provided context, for a lot of SKU-039 (low risk product), 1 QA reviewer is needed, and they must sign off within 72 hours of submission.",
+   "answer": "[rule-release-low] Batch release for low risk products requires sign-off from 1 QA reviewer within 72 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 96.5,
+    "total_ms": 129.1,
+    "out_tokens": 47
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G106",
+   "stratum": "complex",
+   "q": "A lot of SKU-034 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "For a lot of SKU-034, which belongs to the high risk products category, 3 QA reviewers are needed, and they must sign off within 24 hours of submission.",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 99.6,
+    "total_ms": 131.1,
+    "out_tokens": 44
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G109",
+   "stratum": "complex",
+   "q": "A lot of SKU-006 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "Based on the provided context, for a lot of SKU-006, which is a medium risk product, 2 QA reviewers are needed, and they must sign off within 48 hours of submission.",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 104.5,
+    "total_ms": 138.8,
+    "out_tokens": 49
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G112",
+   "stratum": "complex",
+   "q": "A lot of SKU-010 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "For a lot of SKU-010, which is a high risk product, 3 QA reviewers are needed, and they must sign off within 24 hours of submission.",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 97.6,
+    "total_ms": 127.4,
+    "out_tokens": 42
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G115",
+   "stratum": "complex",
+   "q": "A lot of SKU-037 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "draft": "For a lot of SKU-037, which belongs to the low risk category, 1 QA reviewer is needed, and they must sign off within 72 hours of submission.",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 103.9,
+    "total_ms": 135.0,
+    "out_tokens": 43
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G118",
+   "stratum": "complex",
+   "q": "A lot of SKU-025 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "For SKU-025, which is a high risk product, 3 QA reviewers are needed, and they must sign off within 24 hours of submission.",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 101.4,
+    "total_ms": 129.4,
+    "out_tokens": 38
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G121",
+   "stratum": "complex",
+   "q": "A lot of SKU-004 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "Based on the provided context, for a lot of SKU-004, which is a medium risk product, 2 QA reviewers are needed, and they must sign off within 48 hours of submission.",
+   "answer": "[rule-release-medium] Batch release for medium risk products requires sign-off from 2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 102.4,
+    "total_ms": 137.0,
+    "out_tokens": 49
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G124",
+   "stratum": "complex",
+   "q": "A lot of SKU-018 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "For a lot of SKU-018, which is a high risk product, 3 QA reviewers are needed, and they must sign off within 24 hours of submission.",
+   "answer": "[rule-release-high] Batch release for high risk products requires sign-off from 3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 98.7,
+    "total_ms": 129.3,
+    "out_tokens": 42
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G127",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-016 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "If the storage zone for SKU-016 has a temperature excursion, an alarm triggers after 120 minutes (2 hours). This information is found in the context for Controlled Room Zone Z3, with the required storage temperature range being 15 to 25 degrees Celsius",
+   "answer": "[sku-016] Product SKU-016 (Dual Carrier Tray) belongs to the Nutraceuticals category and is supplied by sup-04. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 104.0,
+    "total_ms": 149.8,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G130",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-030 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "If the storage zone for SKU-030 has a temperature excursion, an alarm will trigger after 120 minutes (2 hours). This information is found in the \"zone-z3\" context, where it states, \"A temperature excursion longer than 120 minutes triggers",
+   "answer": "[sku-030] Product SKU-030 (Certified Reagent Mix) belongs to the Medical Devices category and is supplied by sup-07. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 107.6,
+    "total_ms": 154.6,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G133",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-025 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "draft": "Based on the provided context, if the storage zone for SKU-025 (Ultra-Cold Zone Z1) has a temperature excursion, an alarm will trigger after 15 minutes.",
+   "answer": "[sku-025] Product SKU-025 (Stable Assay Kit) belongs to the Biologics category and is supplied by sup-02. A temperature excursion longer than 15 minutes triggers an alarm and must be escalated to the Cold Chain Supervisor.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 104.2,
+    "total_ms": 138.9,
+    "out_tokens": 44
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G136",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-008 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "If the storage zone for SKU-008 has a temperature excursion, an alarm triggers after 120 minutes (2 hours). This information is found in the \"zone-z3\" context, where it states, \"A temperature excursion longer than 120 minutes triggers an",
+   "answer": "[sku-008] Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 104.3,
+    "total_ms": 150.2,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G139",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-023 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "If the storage zone for SKU-023 has a temperature excursion, an alarm will trigger after 120 minutes (2 hours). This information is found in the \"zone-z3\" context, where it states, \"A temperature excursion longer than 120 minutes triggers",
+   "answer": "[sku-023] Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 96.5,
+    "total_ms": 141.6,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G142",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-004 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "60 minutes",
+   "draft": "If the storage zone for SKU-004 has a temperature excursion, an alarm triggers after 60 minutes. This is based on the information provided for Flammables Zone Z4, where a temperature excursion longer than 60 minutes triggers an alarm and must be escalated to the",
+   "answer": "[sku-004] Product SKU-004 (Premium Vial Pack) belongs to the Solvents category and is supplied by sup-02. A temperature excursion longer than 60 minutes triggers an alarm and must be escalated to the Safety Officer.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 99.6,
+    "total_ms": 146.0,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G145",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-006 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "If the storage zone for SKU-006 has a temperature excursion, an alarm will trigger after 120 minutes (2 hours). This information is found in the \"zone-z3\" context, where it states, \"A temperature excursion longer than 120 minutes triggers",
+   "answer": "[sku-006] Product SKU-006 (Premium Carrier Tray) belongs to the Medical Devices category and is supplied by sup-03. A temperature excursion longer than 120 minutes triggers an alarm and must be escalated to the Shift Lead.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 110.9,
+    "total_ms": 157.8,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G148",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-002 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "draft": "Based on the provided context, if the storage zone for SKU-002 (Refrigerated Zone Z2) has a temperature excursion, an alarm will trigger after 30 minutes.",
+   "answer": "[sku-002] Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. A temperature excursion longer than 30 minutes triggers an alarm and must be escalated to the Warehouse Manager.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 110.8,
+    "total_ms": 143.2,
+    "out_tokens": 42
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G151",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-030 audited?",
+   "gt": "every 6 months",
+   "draft": "The supplier of SKU-030, sup-07, is audited every 6 months.",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 99.8,
+    "total_ms": 118.5,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G154",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-034 audited?",
+   "gt": "every 6 months",
+   "draft": "The supplier of SKU-034, sup-10, is audited every 6 months.",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 86.2,
+    "total_ms": 104.3,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G157",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-029 audited?",
+   "gt": "every 6 months",
+   "draft": "The supplier of SKU-029, sup-04, is audited every 6 months.",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 89.8,
+    "total_ms": 107.0,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G160",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-027 audited?",
+   "gt": "every 6 months",
+   "draft": "The supplier of SKU-027, sup-08, is audited every 6 months.",
+   "answer": "Tier A suppliers are audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 78.8,
+    "total_ms": 96.7,
+    "out_tokens": 22
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G163",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-011?",
+   "gt": "13 units",
+   "draft": "For SKU-011, 13 units are sampled in incoming inspection, as it belongs to the enhanced QA categories.",
+   "answer": "[rule-inspect-enhanced] Incoming inspection for enhanced QA categories uses a sample of 13 units per lot using AQL sampling.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.2,
+    "total_ms": 100.9,
+    "out_tokens": 29
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G166",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-017?",
+   "gt": "32 units",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 87.5,
+    "total_ms": 96.6,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G169",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-032?",
+   "gt": "8 units",
+   "draft": "Based on the provided context, for SKU-032 (Ultra Culture Medium) in the Nutraceuticals category, the incoming inspection uses a sample of 8 units per lot using AQL sampling.",
+   "answer": "[sku-032] Product SKU-032 (Ultra Culture Medium) belongs to the Nutraceuticals category and is supplied by sup-09.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 90.4,
+    "total_ms": 128.8,
+    "out_tokens": 46
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G172",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-009?",
+   "gt": "32 units",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 100.5,
+    "total_ms": 108.5,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G175",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-023?",
+   "gt": "8 units",
+   "draft": "Incoming inspection for SKU-023 samples 8 units per lot, as it belongs to the Packaging Materials category with a standard QA level.",
+   "answer": "[sku-023] Product SKU-023 (Sterile Vial Pack) belongs to the Packaging Materials category and is supplied by sup-02.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 89.6,
+    "total_ms": 115.3,
+    "out_tokens": 34
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G178",
+   "stratum": "summary",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "In the quarantine procedure for critical, the steps are as follows: 1. Tag the lot with a red quarantine label and record the nonconformance report number. 2. Move the lot to the locked quarantine area within one",
+   "answer": "In the quarantine procedure for critical, the steps are as follows: 1. Tag the lot with a red quarantine label and record the nonconformance report number. 2. Move the lot to the locked quarantine area within one",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.2,
+    "total_ms": 126.9,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G181",
+   "stratum": "summary",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "The inspect procedure for critical consists of the following steps: 1. Verify the delivery against the purchase order (chunks.source_id: step-inspect-critical-1) 2. Draw the AQL sample from at least three cartons (chunks.source_id: step",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.2,
+    "total_ms": 130.3,
+    "out_tokens": 65
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G184",
+   "stratum": "summary",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "The recall procedure for iii consists of the following steps: 1. Convene the recall committee and classify the recall (chunks.source_id: step-recall-iii-1) 2. Identify all affected lots and customers (chunks.source_id: step-",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.9,
+    "total_ms": 126.1,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G187",
+   "stratum": "summary",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "draft": "The release procedure for high involves the following steps: 1. Submit the batch record for QA review (chunks.source_id: step-release-high-1) 2. Reviewers verify test results against specifications (chunks.source_id: step-release-high-2",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 77.6,
+    "total_ms": 125.6,
+    "out_tokens": 68
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G190",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the quarantine procedure (critical).",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "To give an overview of the quarantine procedure (critical), please refer to the following steps: 1. Tag the lot with a red quarantine label and record the nonconformance report number (Step 1, chunks.source_id: step-quarantine-critical-",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 73.0,
+    "total_ms": 122.4,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G193",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the inspect procedure (critical).",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "Overview of the steps in the inspect procedure (critical): 1. Verify the delivery against the purchase order (chunks.source_id: step-inspect-critical-1) 2. Draw the AQL sample from at least three cartons (chunks.source_id",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 75.8,
+    "total_ms": 121.7,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G196",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the recall procedure (iii).",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "Overview of steps in recall procedure (iii): 1. Convene the recall committee and classify the recall (chunks.source_id: step-recall-iii-1) 2. Identify all affected lots and customers (chunks.source_id: step-recall",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 81.3,
+    "total_ms": 128.6,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G199",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the release procedure (high).",
+   "gt": "4-step release procedure (high)",
+   "draft": "Overview of the steps in the release procedure (high): 1. Submit the batch record for QA review (chunks.source_id: step-release-high-1) 2. Reviewers verify test results against specifications (chunks.source_id: step-release-high",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 79.4,
+    "total_ms": 125.5,
+    "out_tokens": 68
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G202",
+   "stratum": "summary",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "In the quarantine procedure for critical, the steps are as follows: 1. Tag the lot with a red quarantine label and record the nonconformance report number. 2. Move the lot to the locked quarantine area within one",
+   "answer": "In the quarantine procedure for critical, the steps are as follows: 1. Tag the lot with a red quarantine label and record the nonconformance report number. 2. Move the lot to the locked quarantine area within one",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 76.5,
+    "total_ms": 122.3,
+    "out_tokens": 66
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G205",
+   "stratum": "summary",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "The inspect procedure for critical consists of the following steps: 1. Verify the delivery against the purchase order (chunks.source_id: step-inspect-critical-1) 2. Draw the AQL sample from at least three cartons (chunks.source_id: step",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 76.6,
+    "total_ms": 123.2,
+    "out_tokens": 65
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G208",
+   "stratum": "summary",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "The recall procedure for iii consists of the following steps: 1. Convene the recall committee and classify the recall (chunks.source_id: step-recall-iii-1) 2. Identify all affected lots and customers (chunks.source_id: step-",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 73.2,
+    "total_ms": 120.0,
+    "out_tokens": 64
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G211",
+   "stratum": "summary",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "draft": "The release procedure for high involves the following steps: 1. Submit the batch record for QA review (chunks.source_id: step-release-high-1) 2. Reviewers verify test results against specifications (chunks.source_id: step-release-high-2",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 75.3,
+    "total_ms": 121.7,
+    "out_tokens": 68
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G214",
+   "stratum": "negative",
+   "q": "What is the shelf life of SKU-352?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 73.7,
+    "total_ms": 81.3,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G217",
+   "stratum": "negative",
+   "q": "What is the shelf life of SKU-142?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 75.2,
+    "total_ms": 83.6,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G220",
+   "stratum": "negative",
+   "q": "What is the minimum order quantity for SKU-216?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:allam-2-7b",
+    "ttft_ms": 82.1,
+    "total_ms": 90.3,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G223",
+   "stratum": "negative",
+   "q": "What is the minimum order quantity for SKU-398?",
+   "gt": "ABSTAIN",
+   "draft": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "extractive",
+    "ttft_ms": 0.3,
+    "total_ms": 0.3,
+    "out_tokens": 48
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G226",
+   "stratum": "negative",
+   "q": "Which supplier provides SKU-490?",
+   "gt": "ABSTAIN",
+   "draft": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. Product SKU-001 (Premium Filter Unit) belongs to the Biologics category and is supplied by sup-06.",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. Product SKU-001 (Premium Filter Unit) belongs to the Biologics category and is supplied by sup-06.",
+   "abstained": false,
+   "llm": {
+    "backend": "extractive",
+    "ttft_ms": 0.2,
+    "total_ms": 0.2,
+    "out_tokens": 57
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G229",
+   "stratum": "negative",
+   "q": "What is the CEO's salary?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G232",
+   "stratum": "negative",
+   "q": "What is our competitor's market share?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G235",
+   "stratum": "negative",
+   "q": "How do I configure my home router?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G238",
+   "stratum": "negative",
+   "q": "What is the capital of Australia?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  }
+ ]
+}

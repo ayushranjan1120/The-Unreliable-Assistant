@@ -147,3 +147,21 @@ async def test_audit_chain_tamper_evident_and_append_only():
             assert await c.fetchval("SELECT count(*) FROM audit_log WHERE tenant_id=$1", t) == 0
     finally:
         await repo.pool.close()
+
+
+def test_dotenv_parsing_inline_comments_duplicates_and_empties(tmp_path, monkeypatch):
+    """Regression: inline comments broke int() settings; empty duplicate keys must not shadow real values."""
+    import os
+    from src import config
+    assert config._parse_env_value("15000     # raise for remote DB") == "15000"
+    assert config._parse_env_value('"a # b"') == "a # b"
+    assert config._parse_env_value("") == ""
+    f = tmp_path / ".env"
+    f.write_text("T_A=first   # c\nT_A=second\nT_B=\nT_B=real\n# T_C=no\n")
+    monkeypatch.setattr(config, "ROOT", tmp_path)
+    for k in ("T_A", "T_B", "T_C"):
+        monkeypatch.delenv(k, raising=False)
+    config._load_dotenv()
+    assert os.environ["T_A"] == "first" and os.environ["T_B"] == "real" and "T_C" not in os.environ
+    for k in ("T_A", "T_B"):
+        os.environ.pop(k, None)

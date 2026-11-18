@@ -6,7 +6,9 @@ PIDS=/tmp/ua_pids; mkdir -p $PIDS
 PY=.venv/bin/python
 stop_one() { [ -f $PIDS/$1 ] && kill "$(cat $PIDS/$1)" 2>/dev/null; rm -f $PIDS/$1; }
 case "${1:-status}" in
-  stop) stop_one api; stop_one state; sleep 1; echo stopped ;;
+  ui) stop_one ui; nohup .venv/bin/streamlit run app.py --server.headless true --server.port 8501 --browser.gatherUsageStats false > /tmp/ua_ui.log 2>&1 & echo $! > $PIDS/ui
+      for i in $(seq 1 30); do curl -s localhost:8501/_stcore/health 2>/dev/null | grep -q ok && { echo "ui up: http://localhost:8501"; exit 0; }; sleep 1; done; echo "ui failed; see /tmp/ua_ui.log"; exit 1 ;;
+  stop) stop_one api; stop_one state; stop_one ui; sleep 1; echo stopped ;;
   start)
     $PY -m mcp_servers.manifest "${BUILD_VERSION:-v0}" >/dev/null
     nohup $PY mcp_servers/state_server.py > /tmp/ua_state.log 2>&1 & echo $! > $PIDS/state
@@ -15,5 +17,5 @@ case "${1:-status}" in
     for i in $(seq 1 60); do curl -s localhost:8000/healthz >/dev/null 2>&1 && { echo "api up"; exit 0; }; sleep 2; done
     echo "api failed to start; see /tmp/ua_api.log"; exit 1 ;;
   restart) "$0" stop; "$0" start ;;
-  status) for n in state api; do [ -f $PIDS/$n ] && kill -0 "$(cat $PIDS/$n)" 2>/dev/null && echo "$n: running ($(cat $PIDS/$n))" || echo "$n: stopped"; done ;;
+  status) for n in state api ui; do [ -f $PIDS/$n ] && kill -0 "$(cat $PIDS/$n)" 2>/dev/null && echo "$n: running ($(cat $PIDS/$n))" || echo "$n: stopped"; done ;;
 esac

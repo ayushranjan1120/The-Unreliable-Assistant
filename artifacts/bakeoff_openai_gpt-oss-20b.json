@@ -1,0 +1,1752 @@
+{
+ "n": 80,
+ "n_pos": 71,
+ "n_neg": 9,
+ "faithfulness_proxy": 1.0,
+ "answer_relevancy_proxy": 0.8450704225352113,
+ "context_entity_recall": 0.9530516431924883,
+ "answered_rate_pos": 0.8873239436619719,
+ "abstention_accuracy_pct": 77.77777777777777,
+ "hallucination_rate_pct": 0.0,
+ "answered": 63,
+ "mean_steps": 1.9875,
+ "latency_ms": {
+  "p50": 2143.15,
+  "p95": 5652.84
+ },
+ "per_stratum": {
+  "factoid": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "complex": {
+   "entity_recall": 0.8412698412698413,
+   "relevancy": 0.47619047619047616,
+   "answered": 0.6190476190476191,
+   "faith": 1.0
+  },
+  "multihop": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  },
+  "summary": {
+   "entity_recall": 1.0,
+   "relevancy": 1.0,
+   "answered": 1.0,
+   "faith": 1.0
+  }
+ },
+ "llm_backends": {
+  "groq:openai/gpt-oss-20b": 69,
+  "none": 8,
+  "extractive": 3
+ },
+ "veto_first_pct": 23.61111111111111,
+ "ttft_ms": {
+  "n": 72,
+  "p50": 383.6,
+  "p95": 554.6
+ },
+ "neg_answered": 2,
+ "rows": [
+  {
+   "id": "G001",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-014 have?",
+   "gt": "42 months",
+   "draft": "42 months.",
+   "answer": "42 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 450.7,
+    "total_ms": 455.8,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G004",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-017?",
+   "gt": "24 months",
+   "draft": "24 months.",
+   "answer": "24 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 442.0,
+    "total_ms": 446.9,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G007",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-037?",
+   "gt": "54 months",
+   "draft": "The shelf life of SKU-037 is 54 months.",
+   "answer": "The shelf life of SKU-037 is 54 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 364.0,
+    "total_ms": 383.8,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G010",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-021 have?",
+   "gt": "63 months",
+   "draft": "63 months.",
+   "answer": "63 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 353.1,
+    "total_ms": 358.2,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G013",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-009 have?",
+   "gt": "21 months",
+   "draft": "21 months.",
+   "answer": "21 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 435.9,
+    "total_ms": 440.3,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G016",
+   "stratum": "factoid",
+   "q": "How many months of shelf life does SKU-011 have?",
+   "gt": "24 months",
+   "draft": "SKU-011 has a shelf life of 24 months. (source_id: sku-011)",
+   "answer": "Product SKU-011 (Rapid Sealant) belongs to the Reagents category and is supplied by sup-08. Its shelf life is 24 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 443.2,
+    "total_ms": 465.0,
+    "out_tokens": 23
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G019",
+   "stratum": "factoid",
+   "q": "What is the shelf life of SKU-028?",
+   "gt": "30 months",
+   "draft": "30 months.",
+   "answer": "30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 395.9,
+    "total_ms": 400.4,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G022",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-027?",
+   "gt": "100 units",
+   "draft": "The minimum order quantity for SKU-027 is 100 units.",
+   "answer": "Product SKU-027 (Stable Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 100 units and the reorder point is 40 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 554.6,
+    "total_ms": 569.9,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G025",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-011?",
+   "gt": "10 units",
+   "draft": "The minimum order quantity for SKU-011 is 10 units.",
+   "answer": "Product SKU-011 (Rapid Sealant) belongs to the Reagents category and is supplied by sup-08. The minimum order quantity is 10 units and the reorder point is 20 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 141.7,
+    "total_ms": 158.1,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G028",
+   "stratum": "factoid",
+   "q": "What is the minimum order quantity for SKU-002?",
+   "gt": "250 units",
+   "draft": "The minimum order quantity for SKU-002 is 250 units.",
+   "answer": "Product SKU-002 (Dual Assay Kit) belongs to the Vaccines category and is supplied by sup-07. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 390.6,
+    "total_ms": 405.4,
+    "out_tokens": 16
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G031",
+   "stratum": "factoid",
+   "q": "What storage temperature is required in Ultra-Cold Zone Z1?",
+   "gt": "-80 to -60 degrees Celsius",
+   "draft": "-80 to -60 degrees Celsius.",
+   "answer": "-80 to -60 degrees Celsius.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 116.6,
+    "total_ms": 126.0,
+    "out_tokens": 10
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G034",
+   "stratum": "factoid",
+   "q": "Who must a temperature excursion in Refrigerated Zone Z2 be escalated to?",
+   "gt": "the Warehouse Manager",
+   "draft": "Warehouse Manager",
+   "answer": "Warehouse Manager",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 757.2,
+    "total_ms": 760.4,
+    "out_tokens": 3
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G037",
+   "stratum": "factoid",
+   "q": "What storage temperature is required in Flammables Zone Z4?",
+   "gt": "15 to 25 degrees Celsius with ventilation",
+   "draft": "15 to 25 degrees Celsius.",
+   "answer": "15 to 25 degrees Celsius.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 359.4,
+    "total_ms": 368.9,
+    "out_tokens": 8
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G040",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-07?",
+   "gt": "21 days",
+   "draft": "21 days.",
+   "answer": "21 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 379.1,
+    "total_ms": 383.3,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G043",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-02?",
+   "gt": "10 days",
+   "draft": "The standard lead time for supplier sup-02 is 10 days.",
+   "answer": "Supplier sup-02 (Dune Supply Co, Germany) is a tier A supplier. The standard lead time is 10 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 308.7,
+    "total_ms": 324.8,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G046",
+   "stratum": "factoid",
+   "q": "What is the standard lead time for supplier sup-05?",
+   "gt": "28 days",
+   "draft": "The standard lead time for supplier sup-05 is 28 days.",
+   "answer": "Supplier sup-05 (Dune Supply Co, Germany) is a tier C supplier. The standard lead time is 28 days.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 334.8,
+    "total_ms": 351.0,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G049",
+   "stratum": "factoid",
+   "q": "How long are quality records retained?",
+   "gt": "10 years",
+   "draft": "10 years",
+   "answer": "10 years",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 338.5,
+    "total_ms": 347.8,
+    "out_tokens": 12
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G052",
+   "stratum": "factoid",
+   "q": "How long are procurement records retained?",
+   "gt": "7 years",
+   "draft": "7 years",
+   "answer": "7 years",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 323.5,
+    "total_ms": 335.5,
+    "out_tokens": 12
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G055",
+   "stratum": "factoid",
+   "q": "How many QA reviewers must sign off the release of a medium risk batch?",
+   "gt": "2",
+   "draft": "2 QA reviewers",
+   "answer": "2 QA reviewers",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 364.5,
+    "total_ms": 374.4,
+    "out_tokens": 13
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G058",
+   "stratum": "factoid",
+   "q": "Within how many hours must a Class II recall be notified?",
+   "gt": "24 hours",
+   "draft": "24 hours",
+   "answer": "24 hours",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 424.5,
+    "total_ms": 436.6,
+    "out_tokens": 14
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G061",
+   "stratum": "factoid",
+   "q": "Which product category does SKU-030 belong to?",
+   "gt": "Medical Devices",
+   "draft": "Medical Devices",
+   "answer": "Medical Devices",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 225.7,
+    "total_ms": 229.4,
+    "out_tokens": 3
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G064",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-015 or SKU-002, and by how many months?",
+   "gt": "SKU-015 by 57 months",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 414.9,
+    "total_ms": 421.2,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G067",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-005 or SKU-018, and by how many months?",
+   "gt": "SKU-005 by 48 months",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 364.9,
+    "total_ms": 371.4,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G070",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-022 or SKU-002, and by how many months?",
+   "gt": "SKU-022 by 42 months",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 367.1,
+    "total_ms": 373.7,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G073",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-017 or SKU-003, and by how many months?",
+   "gt": "they are equal",
+   "draft": "SKU-017 and SKU-003 both have a shelf life of 24 months, so there is no difference in months.",
+   "answer": "Product SKU-017 (Dual Buffer) belongs to the Biologics category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-003 (Advanced Carrier Tray) belongs to the Reagents category and is supplied by sup-04.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 374.8,
+    "total_ms": 403.2,
+    "out_tokens": 31
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 3,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G076",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-021 or SKU-028, and by how many months?",
+   "gt": "SKU-021 by 33 months",
+   "draft": "SKU-021 has the longer shelf life, 63 months versus SKU-028\u2019s 30 months, a difference of 33 months.",
+   "answer": "Product SKU-021 (Advanced Culture Medium) belongs to the Consumables category and is supplied by sup-09. Its shelf life is 63 months. Product SKU-028 (Premium Buffer) belongs to the Solvents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 285.4,
+    "total_ms": 315.4,
+    "out_tokens": 34
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G079",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-037 or SKU-013, and by how many months?",
+   "gt": "SKU-013 by 12 months",
+   "draft": "SKU-013 has the longer shelf life, by 12 months.",
+   "answer": "Product SKU-037 (Certified Carrier Tray) belongs to the Consumables category and is supplied by sup-10. Its shelf life is 54 months. Product SKU-013 (Certified Sealant) belongs to the Consumables category and is supplied by sup-05. Its shelf life is 66 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 423.6,
+    "total_ms": 439.7,
+    "out_tokens": 17
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G082",
+   "stratum": "complex",
+   "q": "Which has the longer shelf life, SKU-034 or SKU-035, and by how many months?",
+   "gt": "SKU-035 by 6 months",
+   "draft": "SKU-035 has the longer shelf life, 30 months versus SKU-034\u2019s 24 months, a difference of 6 months.",
+   "answer": "Product SKU-034 (Ultra Vial Pack) belongs to the Vaccines category and is supplied by sup-10. Its shelf life is 24 months. Product SKU-035 (Ultra Carrier Tray) belongs to the Reagents category and is supplied by sup-09. Its shelf life is 30 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 390.3,
+    "total_ms": 421.7,
+    "out_tokens": 34
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G085",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-06 or sup-10?",
+   "gt": "sup-10",
+   "draft": "Supplier sup-10 has the shorter lead time: 7 days versus sup-06's 35 days.",
+   "answer": "Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier. Supplier sup-10 (Fjord Supply Co, Ireland) is a tier A supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 375.1,
+    "total_ms": 400.5,
+    "out_tokens": 27
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G088",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-06?",
+   "gt": "sup-07",
+   "draft": "sup-07 has the shorter lead time (21 days versus sup-06's 35 days).",
+   "answer": "Supplier sup-07 (Grove Supply Co, Singapore) is a tier A supplier. Supplier sup-06 (Iris Supply Co, Singapore) is a tier A supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 408.1,
+    "total_ms": 430.3,
+    "out_tokens": 27
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G091",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-04 or sup-07?",
+   "gt": "sup-04",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G094",
+   "stratum": "complex",
+   "q": "Which supplier has the shorter lead time, sup-07 or sup-09?",
+   "gt": "sup-09",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G097",
+   "stratum": "complex",
+   "q": "A lot of SKU-014 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G100",
+   "stratum": "complex",
+   "q": "A lot of SKU-030 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G103",
+   "stratum": "complex",
+   "q": "A lot of SKU-039 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 235.9,
+    "total_ms": 241.7,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G106",
+   "stratum": "complex",
+   "q": "A lot of SKU-034 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "3 QA reviewers within 24 hours.",
+   "answer": "3 QA reviewers within 24 hours.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 462.7,
+    "total_ms": 472.4,
+    "out_tokens": 9
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G109",
+   "stratum": "complex",
+   "q": "A lot of SKU-006 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "2 QA reviewers within 48 hours.",
+   "answer": "2 QA reviewers within 48 hours.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 439.8,
+    "total_ms": 451.6,
+    "out_tokens": 9
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G112",
+   "stratum": "complex",
+   "q": "A lot of SKU-010 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "3 QA reviewers within 24 hours.",
+   "answer": "3 QA reviewers within 24 hours.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 446.1,
+    "total_ms": 455.2,
+    "out_tokens": 9
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G115",
+   "stratum": "complex",
+   "q": "A lot of SKU-037 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "1 reviewer(s) within 72 hours",
+   "draft": "1 QA reviewer within 72 hours.",
+   "answer": "1 QA reviewer within 72 hours.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 504.4,
+    "total_ms": 514.9,
+    "out_tokens": 9
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G118",
+   "stratum": "complex",
+   "q": "A lot of SKU-025 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "3 QA reviewers within 24 hours of submission.",
+   "answer": "3 QA reviewers within 24 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 413.1,
+    "total_ms": 431.7,
+    "out_tokens": 21
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G121",
+   "stratum": "complex",
+   "q": "A lot of SKU-004 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "2 reviewer(s) within 48 hours",
+   "draft": "2 QA reviewers within 48 hours of submission.",
+   "answer": "2 QA reviewers within 48 hours of submission.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 257.6,
+    "total_ms": 276.7,
+    "out_tokens": 21
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G124",
+   "stratum": "complex",
+   "q": "A lot of SKU-018 is submitted for release. How many reviewers are needed and within how many hours must they sign off?",
+   "gt": "3 reviewer(s) within 24 hours",
+   "draft": "3 QA reviewers within 24 hours.",
+   "answer": "3 QA reviewers within 24 hours.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 243.3,
+    "total_ms": 253.3,
+    "out_tokens": 9
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G127",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-016 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "120 minutes.",
+   "answer": "120 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 702.1,
+    "total_ms": 706.8,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G130",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-030 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "120 minutes.",
+   "answer": "120 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 442.9,
+    "total_ms": 454.5,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G133",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-025 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "15 minutes",
+   "draft": "15 minutes.",
+   "answer": "15 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 408.7,
+    "total_ms": 412.9,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G136",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-008 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "120 minutes.",
+   "answer": "120 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 438.2,
+    "total_ms": 442.9,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G139",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-023 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "120 minutes.",
+   "answer": "120 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 116.2,
+    "total_ms": 122.3,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G142",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-004 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "60 minutes",
+   "draft": "60 minutes.",
+   "answer": "60 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 456.5,
+    "total_ms": 462.3,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G145",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-006 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "120 minutes",
+   "draft": "120 minutes.",
+   "answer": "120 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 234.8,
+    "total_ms": 240.1,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G148",
+   "stratum": "multihop",
+   "q": "If the storage zone for SKU-002 has a temperature excursion, after how many minutes does an alarm trigger?",
+   "gt": "30 minutes",
+   "draft": "30 minutes.",
+   "answer": "30 minutes.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 474.2,
+    "total_ms": 482.8,
+    "out_tokens": 10
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G151",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-030 audited?",
+   "gt": "every 6 months",
+   "draft": "Supplier sup-07 is audited every 6 months.",
+   "answer": "Supplier sup-07 is audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 458.5,
+    "total_ms": 472.1,
+    "out_tokens": 13
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G154",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-034 audited?",
+   "gt": "every 6 months",
+   "draft": "Supplier sup-10 is audited every 6 months.",
+   "answer": "Supplier sup-10 is audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 330.7,
+    "total_ms": 344.0,
+    "out_tokens": 13
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G157",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-029 audited?",
+   "gt": "every 6 months",
+   "draft": "Sup-04 is audited every 6 months.",
+   "answer": "Sup-04 is audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 360.5,
+    "total_ms": 373.4,
+    "out_tokens": 12
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G160",
+   "stratum": "multihop",
+   "q": "How often is the supplier of SKU-027 audited?",
+   "gt": "every 6 months",
+   "draft": "Supplier sup-08 is audited every 6 months.",
+   "answer": "Supplier sup-08 is audited every 6 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 364.8,
+    "total_ms": 377.6,
+    "out_tokens": 13
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 1
+   }
+  },
+  {
+   "id": "G163",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-011?",
+   "gt": "13 units",
+   "draft": "13 units.",
+   "answer": "13 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 465.3,
+    "total_ms": 470.9,
+    "out_tokens": 4
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G166",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-017?",
+   "gt": "32 units",
+   "draft": "32 units per lot.",
+   "answer": "32 units per lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 633.7,
+    "total_ms": 641.9,
+    "out_tokens": 6
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G169",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-032?",
+   "gt": "8 units",
+   "draft": "8 units per lot.",
+   "answer": "8 units per lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 383.6,
+    "total_ms": 391.0,
+    "out_tokens": 6
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G172",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-009?",
+   "gt": "32 units",
+   "draft": "32 units per lot.",
+   "answer": "32 units per lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 399.9,
+    "total_ms": 406.9,
+    "out_tokens": 6
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G175",
+   "stratum": "multihop",
+   "q": "How many units are sampled in incoming inspection for SKU-023?",
+   "gt": "8 units",
+   "draft": "8 units per lot.",
+   "answer": "8 units per lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 459.5,
+    "total_ms": 466.4,
+    "out_tokens": 6
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G178",
+   "stratum": "summary",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "The critical quarantine procedure: Step 1 tag the lot with a red quarantine label and record the nonconformance report number. Step 2 move the lot to the locked quarantine area within one hour. Step 3 QA reviews the nonconformance and decides release, rework or destroy. Step 4 record the decision and notify the supplier.",
+   "answer": "The critical quarantine procedure: Step 1 tag the lot with a red quarantine label and record the nonconformance report number. Step 2 move the lot to the locked quarantine area within one hour. Step 3 QA reviews the nonconformance and decides release, rework or destroy. Step 4 record the decision and notify the supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 347.9,
+    "total_ms": 467.7,
+    "out_tokens": 125
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 4
+   }
+  },
+  {
+   "id": "G181",
+   "stratum": "summary",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "Verify the delivery against the purchase order, draw the AQL sample from at least three cartons, inspect labels, seals and temperature logs, then record results and accept or reject the lot.",
+   "answer": "Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 421.5,
+    "total_ms": 461.7,
+    "out_tokens": 47
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G184",
+   "stratum": "summary",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "The recall procedure for iii. involves: Step 1 - convene the recall committee and classify the recall. Step 2 - identify all affected lots and customers. Step 3 - notify the regulator and customers. Step 4 - collect returned stock and file the closure report.",
+   "answer": "The recall procedure for iii. involves: Step 1 - convene the recall committee and classify the recall. Step 2 - identify all affected lots and customers. Step 3 - notify the regulator and customers. Step 4 - collect returned stock and file the closure report.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 361.4,
+    "total_ms": 458.3,
+    "out_tokens": 113
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 5
+   }
+  },
+  {
+   "id": "G187",
+   "stratum": "summary",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "draft": "Submit the batch record for QA review, reviewers verify test results against specifications, reviewers sign electronically, and QA releases the lot in the system.",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 426.5,
+    "total_ms": 460.5,
+    "out_tokens": 36
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G190",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the quarantine procedure (critical).",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "Step 1 of the quarantine procedure (critical): Tag the lot with a red quarantine label and record the nonconformance report number. chunks.source_id: step-quarantine-critical-1 Step 2 of the quarantine procedure (critical): Move the lot to the locked quarantine area within one hour. chunks.source_id: step-quarantine-critical-2 Step 3 of the quarantine procedure (critical): QA reviews the nonconformance and decides release, rework or destroy. chunks.source_id: step-quarantine-critical-3 Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier. chunks.source_id: step-quarantine-critical-4",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 459.2,
+    "total_ms": 632.3,
+    "out_tokens": 170
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G193",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the inspect procedure (critical).",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "Step 1 of the inspect procedure (critical): Verify the delivery against the purchase order. Step 2 of the inspect procedure (critical): Draw the AQL sample from at least three cartons. Step 3 of the inspect procedure (critical): Inspect labels, seals and temperature logs. Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "answer": "Step 1 of the inspect procedure (critical): Verify the delivery against the purchase order. Step 2 of the inspect procedure (critical): Draw the AQL sample from at least three cartons. Step 3 of the inspect procedure (critical): Inspect labels, seals and temperature logs. Step 4 of the inspect procedure (critical): Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 213.9,
+    "total_ms": 300.9,
+    "out_tokens": 98
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 4,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G196",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the recall procedure (iii).",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall. chunks.source_id: step-recall-iii-1 Step 2 of the recall procedure (iii): Identify all affected lots and customers. chunks.source_id: step-recall-iii-2 Step 3 of the recall procedure (iii): Notify the regulator and customers. chunks.source_id: step-recall-iii-3 Step 4 of the recall procedure (iii): Collect returned stock and file the closure report. chunks.source_id: step-recall-iii-4",
+   "answer": "Step 1 of the recall procedure (iii): Convene the recall committee and classify the recall.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 433.2,
+    "total_ms": 567.6,
+    "out_tokens": 150
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G199",
+   "stratum": "summary",
+   "q": "Give me an overview of the steps in the release procedure (high).",
+   "gt": "4-step release procedure (high)",
+   "draft": "Step 1: Submit the batch record for QA review. Step 2: Reviewers verify test results against specifications. Step 3: Reviewers sign electronically. Step 4: QA releases the lot in the system.",
+   "answer": "Step 1: Submit the batch record for QA review. Step 2: Reviewers verify test results against specifications. Step 3: Reviewers sign electronically. Step 4: QA releases the lot in the system.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 342.0,
+    "total_ms": 394.3,
+    "out_tokens": 51
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 4
+   }
+  },
+  {
+   "id": "G202",
+   "stratum": "summary",
+   "q": "Summarize the quarantine procedure for critical.",
+   "gt": "4-step quarantine procedure (critical)",
+   "draft": "The critical quarantine procedure: Step 1 tag the lot with a red label and record the nonconformance report number; Step 2 move the lot to the locked quarantine area within one hour; Step 3 QA reviews the nonconformance and decides release, rework or destroy; Step 4 record the decision and notify the supplier.",
+   "answer": "Step 4 of the quarantine procedure (critical): Record the decision and notify the supplier.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 100.6,
+    "total_ms": 217.6,
+    "out_tokens": 124
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G205",
+   "stratum": "summary",
+   "q": "Summarize the inspect procedure for critical.",
+   "gt": "4-step inspect procedure (critical)",
+   "draft": "The inspect procedure for critical involves: Step 1: Verify the delivery against the purchase order. Step 2: Draw the AQL sample from at least three cartons. Step 3: Inspect labels, seals and temperature logs. Step 4: Record results and accept or reject the lot.",
+   "answer": "The inspect procedure for critical involves: Step 1: Verify the delivery against the purchase order. Step 2: Draw the AQL sample from at least three cartons. Step 3: Inspect labels, seals and temperature logs. Step 4: Record results and accept or reject the lot.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 370.5,
+    "total_ms": 438.8,
+    "out_tokens": 70
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 4
+   }
+  },
+  {
+   "id": "G208",
+   "stratum": "summary",
+   "q": "Summarize the recall procedure for iii.",
+   "gt": "4-step recall procedure (iii)",
+   "draft": "The recall procedure for iii. involves: Step 1 - convene the recall committee and classify the recall. Step 2 - identify all affected lots and customers. Step 3 - notify the regulator and customers. Step 4 - collect returned stock and file the closure report.",
+   "answer": "The recall procedure for iii. involves: Step 1 - convene the recall committee and classify the recall. Step 2 - identify all affected lots and customers. Step 3 - notify the regulator and customers. Step 4 - collect returned stock and file the closure report.",
+   "abstained": false,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 420.4,
+    "total_ms": 542.6,
+    "out_tokens": 113
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 0,
+    "nli_checked": 5
+   }
+  },
+  {
+   "id": "G211",
+   "stratum": "summary",
+   "q": "Summarize the release procedure for high.",
+   "gt": "4-step release procedure (high)",
+   "draft": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "answer": "Step 1 of the release procedure (high): Submit the batch record for QA review.",
+   "abstained": false,
+   "llm": {
+    "backend": "extractive",
+    "ttft_ms": 0.1,
+    "total_ms": 0.1,
+    "out_tokens": 23
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 1,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G214",
+   "stratum": "negative",
+   "q": "What is the shelf life of SKU-352?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 119.1,
+    "total_ms": 125.2,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G217",
+   "stratum": "negative",
+   "q": "What is the shelf life of SKU-142?",
+   "gt": "ABSTAIN",
+   "draft": "Product SKU-007 (Pure Sealant) belongs to the Packaging Materials category and is supplied by sup-04. Its shelf life is 72 months.",
+   "answer": "Product SKU-007 (Pure Sealant) belongs to the Packaging Materials category and is supplied by sup-04. Its shelf life is 72 months.",
+   "abstained": false,
+   "llm": {
+    "backend": "extractive",
+    "ttft_ms": 0.1,
+    "total_ms": 0.1,
+    "out_tokens": 38
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G220",
+   "stratum": "negative",
+   "q": "What is the minimum order quantity for SKU-216?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 435.5,
+    "total_ms": 442.0,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G223",
+   "stratum": "negative",
+   "q": "What is the minimum order quantity for SKU-398?",
+   "gt": "ABSTAIN",
+   "draft": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "answer": "Product SKU-008 (Compact Reagent Mix) belongs to the Nutraceuticals category and is supplied by sup-02. The minimum order quantity is 250 units and the reorder point is 80 units.",
+   "abstained": false,
+   "llm": {
+    "backend": "extractive",
+    "ttft_ms": 0.1,
+    "total_ms": 0.1,
+    "out_tokens": 48
+   },
+   "verify": {
+    "supported_ratio": 1.0,
+    "unsupported": [],
+    "ungrounded_facts": [],
+    "vetoed": false,
+    "quoted": 2,
+    "nli_checked": 0
+   }
+  },
+  {
+   "id": "G226",
+   "stratum": "negative",
+   "q": "Which supplier provides SKU-490?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "I don't have enough information in the knowledge base to answer that reliably.",
+   "abstained": true,
+   "llm": {
+    "backend": "groq:openai/gpt-oss-20b",
+    "ttft_ms": 116.0,
+    "total_ms": 124.1,
+    "out_tokens": 1
+   },
+   "verify": null
+  },
+  {
+   "id": "G229",
+   "stratum": "negative",
+   "q": "What is the CEO's salary?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G232",
+   "stratum": "negative",
+   "q": "What is our competitor's market share?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G235",
+   "stratum": "negative",
+   "q": "How do I configure my home router?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  },
+  {
+   "id": "G238",
+   "stratum": "negative",
+   "q": "What is the capital of Australia?",
+   "gt": "ABSTAIN",
+   "draft": null,
+   "answer": "That question is outside what I can help with (enterprise policies, SOPs and product catalogue).",
+   "abstained": true,
+   "llm": null,
+   "verify": null
+  }
+ ]
+}

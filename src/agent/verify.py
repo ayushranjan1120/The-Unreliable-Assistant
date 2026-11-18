@@ -61,7 +61,11 @@ class NliVerifier:
             ctx = " ".join(chunk_texts)
             norm = lambda t: re.sub(r"\s+", " ", t.lower()).strip()
             nctx = [norm(c) for c in chunk_texts]
-            todo = [c for c in cl if not any(norm(c) in nc for nc in nctx)]          # (1) quotes are grounded by construction
+            strip = lambda t: re.sub(r"[^a-z0-9 ]", " ", norm(t)).split()
+            ctxw = set(w for nc in nctx for w in strip(nc))
+            def span_ok(c: str) -> bool:      # short span answers ("42 months.", "Medical Devices"): every token must occur in the context
+                w = strip(c); return 0 < len(w) <= 4 and all(x in ctxw for x in w)
+            todo = [c for c in cl if not any(norm(c) in nc for nc in nctx) and not span_ok(c)]   # (1) quotes / grounded spans need no NLI
             bad: list[str] = []
             if todo:
                 wins = [w for ch in chunk_texts for w in self._windows(ch)][:48]

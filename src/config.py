@@ -2,21 +2,33 @@
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def _parse_env_value(raw: str) -> str:
+    """Value of a KEY=VALUE line: quoted values are unquoted; unquoted values lose a trailing ' # comment'."""
+    v = raw.strip()
+    if v[:1] in ("'", '"') and v.endswith(v[:1]) and len(v) >= 2:
+        return v[1:-1]
+    return re.split(r"\s+#", v, maxsplit=1)[0].strip()
+
+
 def _load_dotenv() -> None:
-    """Load KEY=VALUE lines from ./.env (gitignored) without overriding variables already in the environment."""
+    """Load KEY=VALUE lines from ./.env (gitignored). Variables already in the environment win; the FIRST occurrence of a key
+    in the file wins over later duplicates; empty values never shadow a real value."""
     f = ROOT / ".env"
     if f.exists():
         for line in f.read_text().splitlines():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+                v = _parse_env_value(v)
+                if v and k.strip() not in os.environ:
+                    os.environ[k.strip()] = v
 
 
 _load_dotenv()

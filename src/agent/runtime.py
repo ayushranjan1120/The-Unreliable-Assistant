@@ -140,7 +140,7 @@ class AgentRuntime:
                         "abstained": 0, "degraded": 0, "tier3_requests": 0, "tier3_executed_without_approval": 0, "drift": []}
 
     # ------------------------------------------------------------------------------------------------------------------
-    async def handle(self, req: AgentQueryIn, traceparent: str | None = None) -> tuple[AgentQueryOut, dict]:
+    async def handle(self, req: AgentQueryIn, traceparent: str | None = None, force: bool = False) -> tuple[AgentQueryOut, dict]:
         """Process one request end to end; returns the contract output and a debug extras dict (steps/spans/tokens)."""
         tp = telemetry.parse_traceparent(traceparent)
         tc = telemetry.start_trace(tp[0] if tp else None)
@@ -188,14 +188,14 @@ class AgentRuntime:
             return out("DIRECT_ANSWER", DIRECT_MSG)
         if tri.route == "TRANSACTION_EXEC":
             return await self._execute(req, text, rc, steps, out)
-        return await self._retrieve_and_answer(req, text, rc, steps, extras, out, pctx)
+        return await self._retrieve_and_answer(req, text, rc, steps, extras, out, pctx, force)
 
     # ---- Retrieval + verification path ---------------------------------------------------------------------------------
-    async def _retrieve_and_answer(self, req, text, rc, steps, extras, out, pctx):
+    async def _retrieve_and_answer(self, req, text, rc, steps, extras, out, pctx, force=False):
         ents = normalize_entities(text)
         goal = GoalAnchorBlock(re.sub(r"\s+", " ", text)[:200], tuple(ents))
         rc.goal_terms = grounding._terms(text) | {e.lower() for e in ents}
-        reason = grounding.gate_reason(text, self.graph)                      # deterministic abstention: unknown entity / vocabulary gap
+        reason = None if force else grounding.gate_reason(text, self.graph)                      # deterministic abstention: unknown entity / vocabulary gap
         if reason:
             self.metrics["abstained"] += 1
             steps.append(Step(2, "VERIFY", None, f"abstain:{reason}", 0.0))
@@ -268,10 +268,18 @@ class AgentRuntime:
                     with telemetry.span("llm.generate"):
                         r = await asyncio.wait_for(self.llm.generate(SYSTEM_PROMPT, prompt, text, chunk_texts), rc.remaining_ms() / 1000 + 0.001)
                 gen_text, in_tok, out_tok, ttft = r.text, r.in_tokens, r.out_tokens, r.ttft_ms
+                gen_text = llmmod.normalize_answer(gen_text)
+                extras["llm"] = {"backend": r.backend, "ttft_ms": round(r.ttft_ms, 1), "total_ms": round(r.total_ms, 1), "out_tokens": r.out_tokens}
                 telemetry.METRICS.observe("ttft", ttft)
         except Exception:                                                     # FMEA #6/#7: LLM 429/timeout → extractive fallback
             degraded = True; telemetry.METRICS.inc("llm.fallback")
             gen_text = llmmod.extractive_answer(text, chunk_texts); in_tok, out_tok, ttft = count(prompt), count(gen_text), 0.0
+        if gen_text.strip().rstrip(".") == "INSUFFICIENT_CONTEXT":            # the model itself declined: abstain, never fall back to an extractive answer
+            telemetry.METRICS.inc("llm.declined"); self.metrics["abstained"] += 1
+            steps.append(Step(iteration + 2, "VERIFY", None, "model declined: INSUFFICIENT_CONTEXT → abstain", 0.0))
+            res = out("HYBRID_RAG", ABSTAIN_MSG, abstained=True, degraded=degraded)
+            await self._cache_store(req, text, res[0], shareable=True)
+            return res
         v = await asyncio.to_thread(self.nli.verify, gen_text, chunk_texts) if gen_text != "INSUFFICIENT_CONTEXT" else {"vetoed": True, "supported_ratio": 0.0, "unsupported": [], "ungrounded_facts": []}
         veto_first = v["vetoed"]
         extras["draft"], extras["verify"] = gen_text, v

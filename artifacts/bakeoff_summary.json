@@ -1,0 +1,220 @@
+{
+ "openai/gpt-oss-20b": {
+  "n": 80,
+  "n_pos": 71,
+  "n_neg": 9,
+  "faithfulness_proxy": 1.0,
+  "answer_relevancy_proxy": 0.8450704225352113,
+  "context_entity_recall": 0.9530516431924883,
+  "answered_rate_pos": 0.8873239436619719,
+  "abstention_accuracy_pct": 77.77777777777777,
+  "hallucination_rate_pct": 0.0,
+  "answered": 63,
+  "mean_steps": 1.9875,
+  "latency_ms": {
+   "p50": 2143.15,
+   "p95": 5652.84
+  },
+  "per_stratum": {
+   "factoid": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "complex": {
+    "entity_recall": 0.8412698412698413,
+    "relevancy": 0.47619047619047616,
+    "answered": 0.6190476190476191,
+    "faith": 1.0
+   },
+   "multihop": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "summary": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   }
+  },
+  "llm_backends": {
+   "groq:openai/gpt-oss-20b": 69,
+   "none": 8,
+   "extractive": 3
+  },
+  "veto_first_pct": 23.61111111111111,
+  "ttft_ms": {
+   "n": 72,
+   "p50": 383.6,
+   "p95": 554.6
+  },
+  "neg_answered": 2
+ },
+ "allam-2-7b": {
+  "n": 80,
+  "n_pos": 71,
+  "n_neg": 9,
+  "faithfulness_proxy": 1.0,
+  "answer_relevancy_proxy": 0.823943661971831,
+  "context_entity_recall": 0.9671361502347418,
+  "answered_rate_pos": 0.971830985915493,
+  "abstention_accuracy_pct": 77.77777777777777,
+  "hallucination_rate_pct": 0.0,
+  "answered": 69,
+  "mean_steps": 1.95,
+  "latency_ms": {
+   "p50": 4608.5,
+   "p95": 12122.2
+  },
+  "per_stratum": {
+   "factoid": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "complex": {
+    "entity_recall": 0.9365079365079365,
+    "relevancy": 0.6904761904761905,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "multihop": {
+    "entity_recall": 0.9411764705882353,
+    "relevancy": 0.6470588235294118,
+    "answered": 0.8823529411764706,
+    "faith": 1.0
+   },
+   "summary": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   }
+  },
+  "llm_backends": {
+   "groq:allam-2-7b": 74,
+   "extractive": 2,
+   "none": 4
+  },
+  "veto_first_pct": 71.05263157894737,
+  "ttft_ms": {
+   "n": 76,
+   "p50": 89.2,
+   "p95": 130.7
+  },
+  "neg_answered": 2
+ },
+ "qwen/qwen3.8-27b": {
+  "n": 80,
+  "n_pos": 71,
+  "n_neg": 9,
+  "faithfulness_proxy": 1.0,
+  "answer_relevancy_proxy": 0.8098591549295775,
+  "context_entity_recall": 0.9812206572769953,
+  "answered_rate_pos": 0.9436619718309859,
+  "abstention_accuracy_pct": 100.0,
+  "hallucination_rate_pct": 0.0,
+  "answered": 67,
+  "mean_steps": 1.95,
+  "latency_ms": {
+   "p50": 4053.62,
+   "p95": 6943.15
+  },
+  "per_stratum": {
+   "factoid": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "complex": {
+    "entity_recall": 0.9365079365079365,
+    "relevancy": 0.6428571428571429,
+    "answered": 0.8095238095238095,
+    "faith": 1.0
+   },
+   "multihop": {
+    "entity_recall": 1.0,
+    "relevancy": 0.6470588235294118,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "summary": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   }
+  },
+  "llm_backends": {
+   "groq:qwen/qwen3.8-27b": 76,
+   "none": 4
+  },
+  "veto_first_pct": 63.1578947368421,
+  "ttft_ms": {
+   "n": 76,
+   "p50": 116.8,
+   "p95": 326.7
+  },
+  "neg_answered": 0
+ },
+ "openai/gpt-oss-120b": {
+  "n": 80,
+  "n_pos": 71,
+  "n_neg": 9,
+  "faithfulness_proxy": 1.0,
+  "answer_relevancy_proxy": 0.8802816901408451,
+  "context_entity_recall": 0.9812206572769953,
+  "answered_rate_pos": 0.9577464788732394,
+  "abstention_accuracy_pct": 100.0,
+  "hallucination_rate_pct": 0.0,
+  "answered": 68,
+  "mean_steps": 1.95,
+  "latency_ms": {
+   "p50": 3305.29,
+   "p95": 5887.14
+  },
+  "per_stratum": {
+   "factoid": {
+    "entity_recall": 1.0,
+    "relevancy": 0.9523809523809523,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "complex": {
+    "entity_recall": 0.9365079365079365,
+    "relevancy": 0.7142857142857143,
+    "answered": 0.8571428571428571,
+    "faith": 1.0
+   },
+   "multihop": {
+    "entity_recall": 1.0,
+    "relevancy": 0.9117647058823529,
+    "answered": 1.0,
+    "faith": 1.0
+   },
+   "summary": {
+    "entity_recall": 1.0,
+    "relevancy": 1.0,
+    "answered": 1.0,
+    "faith": 1.0
+   }
+  },
+  "llm_backends": {
+   "groq:openai/gpt-oss-120b": 76,
+   "none": 4
+  },
+  "veto_first_pct": 27.63157894736842,
+  "ttft_ms": {
+   "n": 76,
+   "p50": 444.8,
+   "p95": 547.8
+  },
+  "neg_answered": 0
+ }
+}

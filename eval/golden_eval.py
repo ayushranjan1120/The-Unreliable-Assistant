@@ -48,7 +48,8 @@ def main() -> dict:
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default="http://127.0.0.1:8000"); ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--version", default="v0"); ap.add_argument("--profile", default="dev-cpu"); ap.add_argument("--tag", default="")
-    ap.add_argument("--no-record", action="store_true")
+    ap.add_argument("--no-record", action="store_true"); ap.add_argument("--force-negatives", action="store_true", help="send negatives through generation (tests the model's own abstention)")
+    ap.add_argument("--save", default="", help="write rows+summary to this JSON path without recording KPIs")
     a = ap.parse_args()
     G = [json.loads(l) for l in (ROOT / "eval/data/golden_250.jsonl").read_text().splitlines()]
     if a.limit:
@@ -57,7 +58,7 @@ def main() -> dict:
     rows, t_start = [], time.time()
     for i, g in enumerate(G):
         tenant, user = "tenant_eval", f"user_{i % 7}"
-        r = c.post(f"{a.url}/api/v1/admin/query_debug", json={"tenant_id": tenant, "user_id": user, "query": g["question"], "role": "operator"}, headers={"X-Tenant-ID": tenant})
+        r = c.post(f"{a.url}/api/v1/admin/query_debug", json={"tenant_id": tenant, "user_id": user, "query": g["question"], "role": "operator", **({"force_generate": True} if a.force_negatives and g["stratum"] == "negative" else {})}, headers={"X-Tenant-ID": tenant})
         d = r.json()
         rows.append({"g": g, "d": d})
         if (i + 1) % 25 == 0:
@@ -90,6 +91,15 @@ def main() -> dict:
            "answered_rate_pos": m("answered"), "abstention_accuracy_pct": 100 * neg_ok / max(neg_n, 1), "hallucination_rate_pct": 100 * halluc / max(answered, 1), "answered": answered,
            "mean_steps": st.mean(steps), "latency_ms": {"p50": sorted(lat)[len(lat) // 2], "p95": sorted(lat)[int(len(lat) * .95)]},
            "per_stratum": {k: {mk: (st.mean(mv) if mv else None) for mk, mv in v.items()} for k, v in per.items()}}
+    from collections import Counter
+    res["llm_backends"] = dict(Counter((x["d"].get("llm") or {}).get("backend", "none") for x in rows))
+    res["veto_first_pct"] = 100 * sum("vetoed_first=True" in " ".join(s["observation"] for s in x["d"].get("react_steps", [])) for x in rows) / max(sum(bool(x["d"].get("llm")) for x in rows), 1)
+    tt = sorted((x["d"].get("llm") or {}).get("ttft_ms", 0) for x in rows if x["d"].get("llm"))
+    res["ttft_ms"] = {"n": len(tt), "p50": tt[len(tt) // 2] if tt else None, "p95": tt[int(len(tt) * .95)] if tt else None}
+    res["neg_answered"] = sum(1 for x in rows if x["g"]["stratum"] == "negative" and not (bool(x["d"].get("abstained")) or x["d"].get("route") == "REJECT_OOS"))
+    if a.save:
+        Path(a.save).write_text(json.dumps({**res, "rows": [{"id": x["g"]["id"], "stratum": x["g"]["stratum"], "q": x["g"]["question"], "gt": x["g"]["ground_truth"], "draft": x["d"].get("draft"), "answer": x["d"].get("answer"),
+                                                              "abstained": x["d"].get("abstained"), "llm": x["d"].get("llm"), "verify": x["d"].get("verify")} for x in rows]}, indent=1))
     st_ = c.get(f"{a.url}/api/v1/admin/status", timeout=30).json()["runtime"]
     if st_["completed"]:
         res["token_reduction_pct"] = reduction_pct(st_["tokens_baseline"], st_["tokens_prompt"]); res["cost_per_1k"] = 1000 * st_["cost"] / st_["completed"]

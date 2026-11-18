@@ -103,9 +103,11 @@ async def query(request: Request, x_tenant_id: str | None = Header(default=None)
 async def query_debug(request: Request, x_admin_token: str | None = Header(default=None)):
     """Dev-only: same as /query plus ReAct steps, spans, triage and token accounting (Streamlit Tab 1/6)."""
     _admin(x_admin_token)
-    body = AgentQueryIn.model_validate_json(await request.body())
-    o, extras = await _rt().handle(body, request.headers.get("traceparent"))
-    return ORJSONResponse({**o.model_dump(), **{k: v for k, v in extras.items() if k in ("react_steps", "spans", "triage", "retrieval", "tokens", "verify", "cache", "pii", "draft", "chunk_heads", "context")}})
+    raw = json.loads(await request.body())
+    force = bool(raw.pop("force_generate", False))              # dev-only: skip the deterministic pre-retrieval gate (ADR-7 bake-off)
+    body = AgentQueryIn.model_validate(raw)
+    o, extras = await _rt().handle(body, request.headers.get("traceparent"), force)
+    return ORJSONResponse({**o.model_dump(), **{k: v for k, v in extras.items() if k in ("react_steps", "spans", "triage", "retrieval", "tokens", "verify", "cache", "pii", "draft", "chunk_heads", "context", "llm")}})
 
 
 @app.get("/api/v1/admin/status")
