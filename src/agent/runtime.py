@@ -162,8 +162,9 @@ class AgentRuntime:
             return o, extras
 
         # ---- INGRESS: pre-execution plugins (PII → injection), fail-closed ----------------------------------------------
-        try:
-            text = await asyncio.to_thread(self.plugins.run_pre, pctx, req.query)
+        t_pre = time.perf_counter()
+        try:                                                              # stage 1: PII redaction ALWAYS runs first (cache keys are built from redacted text)
+            text = await asyncio.to_thread(self.plugins.run_pre, pctx, req.query, {"pii_redactor"}, "hook.pre.pii")
         except ToolError as e:
             self.audit.emit(req.tenant_id, "GUARDRAIL_BLOCK", req.user_id, {"hits": e.data.get("hits"), "q_hash": hashlib.sha256(req.query.encode()).hexdigest()[:12]})
             telemetry.METRICS.inc("guardrail.blocked")
@@ -172,6 +173,15 @@ class AgentRuntime:
 
         # ---- cache (before triage) ----------------------------------------------------------------------------------------
         hit = await self.cache.lookup(req.tenant_id, req.user_id, text)
+        if not hit:                                                       # stage 2: injection models only on a MISS (a hit == identical redacted text already passed)
+            try:
+                text = await asyncio.to_thread(self.plugins.run_pre, pctx, text, {"injection_shield"}, "hook.pre.injection")
+            except ToolError as e:
+                telemetry.METRICS.observe("hook.pre", (time.perf_counter() - t_pre) * 1000)
+                self.audit.emit(req.tenant_id, "GUARDRAIL_BLOCK", req.user_id, {"hits": e.data.get("hits"), "q_hash": hashlib.sha256(req.query.encode()).hexdigest()[:12]})
+                telemetry.METRICS.inc("guardrail.blocked")
+                return out("REJECT_OOS", BLOCK_MSG, status="REJECTED", remediation="rephrase without instructions about the assistant itself")
+        telemetry.METRICS.observe("hook.pre", (time.perf_counter() - t_pre) * 1000)   # KPI-01 = total guardrail time per request (pii + injection when run)
         if hit:
             tier, p = hit
             extras["cache"] = tier

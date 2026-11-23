@@ -96,9 +96,10 @@ CLF_BLOCK_AT = 0.99
 class InjectionShield:
     """Lifecycle plugin: stage 1 regex scoring + optional stage-2 ONNX classifier, per-session crescendo memory."""
 
-    def __init__(self, clf=None) -> None:
+    def __init__(self, clf=None, detector=None) -> None:
         self._sess: dict[str, tuple[float, float]] = {}
         self.clf = clf
+        self.detector = detector            # v0.1 trained detector (uses clf probability as a feature)
 
     @hookimpl
     def pre_execution(self, ctx: PluginCtx, text: str) -> str:
@@ -112,12 +113,17 @@ class InjectionShield:
             self._sess.pop(next(iter(self._sess)))
         ctx.flags["injection"] = {"score": round(v.score, 2), "hits": v.hits}
         if not v.blocked and acc < CRESCENDO_AT and self.clf is not None and len(text) >= 8:
-            from src.harness.repair import normalize_entities
             p = self.clf.p_injection([text])[0]
             ctx.flags["injection"]["clf"] = round(p, 4)
-            # allowance: a query about a real catalog entity with no regex hit is treated as in-domain (known gap: domain-prefixed attacks)
-            if p >= CLF_BLOCK_AT and not (normalize_entities(text) and not v.hits):
-                v.hits.append("clf"); raise ToolError(Code.GUARDRAIL_BLOCK, "request blocked by injection classifier", {"hits": v.hits, "p": round(p, 4)})
+            if self.detector is not None:                      # v0.1: trained combination, no entity allowance needed
+                q = self.detector.prob(text, v.score, p)
+                ctx.flags["injection"]["lr"] = round(q, 4)
+                if q >= self.detector.tau:
+                    v.hits.append("lr"); raise ToolError(Code.GUARDRAIL_BLOCK, "request blocked by injection detector", {"hits": v.hits, "p": round(q, 4)})
+            else:
+                from src.harness.repair import normalize_entities
+                if p >= CLF_BLOCK_AT and not (normalize_entities(text) and not v.hits):
+                    v.hits.append("clf"); raise ToolError(Code.GUARDRAIL_BLOCK, "request blocked by injection classifier", {"hits": v.hits, "p": round(p, 4)})
         if v.blocked or acc >= CRESCENDO_AT:
             raise ToolError(Code.GUARDRAIL_BLOCK, "request blocked by injection shield", {"hits": v.hits})
         return text

@@ -52,7 +52,13 @@ async def lifespan(app: FastAPI):
     await host.start()
     clf = InjectionClassifier() if os.environ.get("INJECTION_CLF", "1") == "1" else None
     reg = PluginRegistry()
-    classes = {"pii_redactor": PiiRedactor(), "injection_shield": InjectionShield(clf)}
+    det = None
+    if clf is not None:
+        from src.plugins.injection_lr import InjectionDetector
+        from src.rag.index import MODELS_DIR
+        from src.rag.onnx_models import OnnxEncoder
+        det = InjectionDetector(OnnxEncoder(MODELS_DIR / "bi", 256))
+    classes = {"pii_redactor": PiiRedactor(), "injection_shield": InjectionShield(clf, det)}
     for meta in load_config(ROOT / "mcp_config.json"):
         if meta.name in classes:
             reg.register(classes[meta.name], meta)

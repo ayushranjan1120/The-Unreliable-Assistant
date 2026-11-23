@@ -26,7 +26,12 @@ def make_shield(use_clf: bool = True) -> InjectionShield:
     global _CLF
     if use_clf and _CLF is None:
         _CLF = InjectionClassifier()
-    return InjectionShield(_CLF if use_clf else None)
+    if not use_clf:
+        return InjectionShield(None)
+    from src.plugins.injection_lr import InjectionDetector
+    from src.rag.index import MODELS_DIR
+    from src.rag.onnx_models import OnnxEncoder
+    return InjectionShield(_CLF, InjectionDetector(OnnxEncoder(MODELS_DIR / "bi", 256)))
 
 from src.plugins.pii import redact
 

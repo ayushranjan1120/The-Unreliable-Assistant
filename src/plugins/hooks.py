@@ -87,10 +87,13 @@ class PluginRegistry:
     def _ordered(self, stage: str) -> list[PluginMeta]:
         return sorted((m for m in self.meta.values() if m.stage == stage), key=lambda m: m.priority)
 
-    def run_pre(self, ctx: PluginCtx, text: str) -> str:
-        """Run PRE_EXECUTION plugins in priority order. A failing fail-closed plugin REJECTS the request."""
-        with telemetry.span("hook.pre"):
+    def run_pre(self, ctx: PluginCtx, text: str, only: set[str] | None = None, span: str = "hook.pre") -> str:
+        """Run PRE_EXECUTION plugins in priority order (optionally only the named ones, for staged execution).
+        A failing fail-closed plugin REJECTS the request."""
+        with telemetry.span(span):
             for m in self._ordered("PRE_EXECUTION"):
+                if only is not None and m.name not in only:
+                    continue
                 if not m.enabled:
                     if m.fail_closed:                       # disabling a fail-closed guard must never silently pass traffic
                         raise ToolError(Code.GUARDRAIL_BLOCK, f"fail-closed plugin '{m.name}' is disabled")
