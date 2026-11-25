@@ -23,6 +23,8 @@ from pathlib import Path
 import httpx
 
 from src.agent.verify import ungrounded_facts
+from src.config import get_settings as _gs
+from src.vault import load_vault
 from utils import results_store
 from utils.token_calc import reduction_pct
 
@@ -56,6 +58,7 @@ def main() -> dict:
     if a.limit:
         G = G[::max(1, len(G) // a.limit)][:a.limit]
     c = httpx.Client(timeout=120)
+    VAULT = load_vault(_gs().vault_dir)
     rows, t_start = [], time.time()
     for i, g in enumerate(G):
         tenant, user = "tenant_eval", f"user_{i % 7}"
@@ -81,16 +84,19 @@ def main() -> dict:
         ents = g["entities"]
         found = sum((e.lower() in ctx.lower()) or (e.lower() in g["question"].lower()) for e in ents)
         per[g["stratum"]]["entity_recall"].append(found / max(len(ents), 1))
+        ctx_notes = {n for n, note in VAULT.items() if note.body in ctx}
+        per[g["stratum"]]["gt_note_cov"].append(len(set(g["gt_notes"]) & ctx_notes) / max(len(g["gt_notes"]), 1))
         f, n = facts_present(g, d.get("answer") or "")
         per[g["stratum"]]["relevancy"].append(0.0 if ab else (f / n if n else 1.0))
         per[g["stratum"]]["answered"].append(0.0 if ab else 1.0)
         if not ab:
             answered += 1
             per[g["stratum"]]["faith"].append((d.get("verify") or {}).get("supported_ratio", d.get("faithfulness") or 0.0) if d.get("verify") else (d.get("faithfulness") or 0.0))
-            if ungrounded_facts(d.get("answer") or "", ctx):
-                halluc += 1
+            ug = ungrounded_facts(d.get("answer") or "", ctx)
+            if ug:
+                halluc += 1; x["ungrounded"] = ug
     m = lambda k: st.mean(v for s in per.values() for v in s[k]) if any(per[s][k] for s in per) else 0.0
-    res = {"n": len(G), "n_pos": len(G) - neg_n, "n_neg": neg_n, "faithfulness_proxy": m("faith"), "answer_relevancy_proxy": m("relevancy"), "context_entity_recall": m("entity_recall"),
+    res = {"n": len(G), "n_pos": len(G) - neg_n, "n_neg": neg_n, "faithfulness_proxy": m("faith"), "answer_relevancy_proxy": m("relevancy"), "context_entity_recall": m("entity_recall"), "gt_note_coverage": m("gt_note_cov"),
            "answered_rate_pos": m("answered"), "abstention_accuracy_pct": 100 * neg_ok / max(neg_n, 1), "hallucination_rate_pct": 100 * halluc / max(answered, 1), "answered": answered,
            "mean_steps": st.mean(steps), "latency_ms": {"p50": sorted(lat)[len(lat) // 2], "p95": sorted(lat)[int(len(lat) * .95)]},
            "per_stratum": {k: {mk: (st.mean(mv) if mv else None) for mk, mv in v.items()} for k, v in per.items()}}
@@ -108,7 +114,7 @@ def main() -> dict:
         res["token_reduction_pct"] = reduction_pct(st_["tokens_baseline"], st_["tokens_prompt"]); res["cost_per_1k"] = 1000 * st_["cost"] / st_["completed"]
     if not a.no_record:
         rid = results_store.new_run_id("golden"); art = ROOT / "artifacts" / f"golden_eval_{rid}{a.tag}.json"
-        art.write_text(json.dumps({**res, "rows": [{"id": x["g"]["id"], "q": x["g"]["question"], "gt": x["g"]["ground_truth"], "answer": x["d"].get("answer"), "abstained": x["d"].get("abstained"), "route": x["d"].get("route"),
+        art.write_text(json.dumps({**res, "rows": [{"id": x["g"]["id"], "q": x["g"]["question"], "gt": x["g"]["ground_truth"], "answer": x["d"].get("answer"), "abstained": x["d"].get("abstained"), "route": x["d"].get("route"), "ungrounded": x.get("ungrounded"), "context": x["d"].get("context"),
                                                     "degraded": x["d"].get("degraded")} for x in rows]}, indent=1))
         rec = lambda k, v, n, **ex: results_store.record_run(k, v, n=n, run_id=rid, version=a.version, rung="L0", profile=a.profile, artifact=str(art.relative_to(ROOT)), extra=ex or None)
         rec(20, res["faithfulness_proxy"], answered, method="proxy"); rec(21, res["answer_relevancy_proxy"], res["n_pos"], method="proxy"); rec(22, res["context_entity_recall"], res["n_pos"], method="proxy-entity-lists")
