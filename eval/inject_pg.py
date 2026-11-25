@@ -15,7 +15,7 @@ key = lambda t: hashlib.sha256(t.encode()).hexdigest()[:20]
 async def score(c: httpx.AsyncClient, t: str, sem) -> float | None:
     async with sem:
         for a in range(6):
-            r = await c.post("https://api.groq.com/openai/v1/chat/completions", headers=H, json={"model": MODEL, "messages": [{"role": "user", "content": t[:1500]}]}, timeout=40)
+            r = await c.post("https://api.groq.com/openai/v1/chat/completions", headers=H, json={"model": MODEL, "messages": [{"role": "user", "content": t[:600]}]}, timeout=40)
             if r.status_code == 200:
                 try: return float(r.json()["choices"][0]["message"]["content"])
                 except Exception: return None
@@ -25,7 +25,16 @@ async def score(c: httpx.AsyncClient, t: str, sem) -> float | None:
 
 async def main() -> None:
     cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
-    texts = sorted({t for ts, _ in B.load_sets().values() for t in ts} | set(new_benign()), key=lambda x: key(x))
+    import random
+    def sub(name, texts, labels, n_per_class):                      # deterministic stratified subsample (documented in the VR)
+        r = random.Random(7); out = []
+        for k in (0, 1):
+            ix = [i for i, l in enumerate(labels) if l == k]; r.shuffle(ix); out += [texts[i] for i in ix[:n_per_class]]
+        return out
+    S = B.load_sets(); texts = []
+    texts += S["deepset_train"][0] + S["deepset_test"][0] + S["ours_holdout_attacks"][0] + S["ours_benign_indomain"][0]
+    texts += sub("xtram_train", *S["xtram_train"], 300) + sub("xtram_test", *S["xtram_test"], 350) + new_benign()[:240]
+    texts = sorted(set(texts), key=lambda x: key(x))
     todo = [t for t in texts if key(t) not in cache]; print(f"{len(texts)} texts, {len(todo)} to score", flush=True)
     sem = asyncio.Semaphore(4)
     async with httpx.AsyncClient() as c:

@@ -70,7 +70,7 @@ def main() -> dict:
         if (i + 1) % 25 == 0:
             print(f"  {i + 1}/{len(G)} ({time.time() - t_start:.0f}s)", flush=True)
     per = defaultdict(lambda: defaultdict(list)); overall = defaultdict(list)
-    ans_items, neg_ok, neg_n, halluc, answered = 0, 0, 0, 0, 0
+    ans_items, neg_ok, neg_n, halluc, answered, cache_served = 0, 0, 0, 0, 0, 0
     steps, lat = [], []
     for x in rows:
         g, d = x["g"], x["d"]
@@ -89,6 +89,8 @@ def main() -> dict:
         f, n = facts_present(g, d.get("answer") or "")
         per[g["stratum"]]["relevancy"].append(0.0 if ab else (f / n if n else 1.0))
         per[g["stratum"]]["answered"].append(0.0 if ab else 1.0)
+        if not ab and not (d.get("context")):                       # cache-served duplicate: no retrieved context to check against (originally verified on generation)
+            cache_served += 1; answered += 1; continue
         if not ab:
             answered += 1
             per[g["stratum"]]["faith"].append((d.get("verify") or {}).get("supported_ratio", d.get("faithfulness") or 0.0) if d.get("verify") else (d.get("faithfulness") or 0.0))
@@ -97,7 +99,7 @@ def main() -> dict:
                 halluc += 1; x["ungrounded"] = ug
     m = lambda k: st.mean(v for s in per.values() for v in s[k]) if any(per[s][k] for s in per) else 0.0
     res = {"n": len(G), "n_pos": len(G) - neg_n, "n_neg": neg_n, "faithfulness_proxy": m("faith"), "answer_relevancy_proxy": m("relevancy"), "context_entity_recall": m("entity_recall"), "gt_note_coverage": m("gt_note_cov"),
-           "answered_rate_pos": m("answered"), "abstention_accuracy_pct": 100 * neg_ok / max(neg_n, 1), "hallucination_rate_pct": 100 * halluc / max(answered, 1), "answered": answered,
+           "answered_rate_pos": m("answered"), "abstention_accuracy_pct": 100 * neg_ok / max(neg_n, 1), "hallucination_rate_pct": 100 * halluc / max(answered - cache_served, 1), "answered": answered, "cache_served_unchecked": cache_served,
            "mean_steps": st.mean(steps), "latency_ms": {"p50": sorted(lat)[len(lat) // 2], "p95": sorted(lat)[int(len(lat) * .95)]},
            "per_stratum": {k: {mk: (st.mean(mv) if mv else None) for mk, mv in v.items()} for k, v in per.items()}}
     from collections import Counter
