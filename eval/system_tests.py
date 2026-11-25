@@ -14,9 +14,11 @@ from pathlib import Path
 
 import httpx
 
+from src.config import get_settings
 from utils import results_store
 
 ROOT = Path(__file__).resolve().parent.parent
+s = get_settings()
 URL = "http://127.0.0.1:8000"
 RESULTS: list[dict] = []
 
@@ -104,7 +106,7 @@ def main() -> dict:
            "tier3_ok": all(r["ok"] for r in RESULTS if "Tier-3" in r["test"] or "approval" in r["test"] or "RBAC" in r["test"]), "leaks": leaks + rt["leaks"],
            "loop_escape": 100.0 if by["sku_loop"]["misses"] == 0 else 0.0}
     rid = results_store.new_run_id("sys"); art = ROOT / "artifacts" / f"system_tests_{rid}.json"; art.write_text(json.dumps(out, indent=1))
-    rec = lambda k, v, n: results_store.record_run(k, v, n=n, run_id=rid, version="v0", rung="L1", profile="dev-cpu", artifact=str(art.relative_to(ROOT)))
+    rec = lambda k, v, n: results_store.record_run(k, v, n=n, run_id=rid, version=s.version, rung="L1", profile="dev-cpu", artifact=str(art.relative_to(ROOT)))
     rec(16, out["loop_escape"], 8); rec(19, 100.0 if out["tier3_ok"] else 0.0, 11); rec(28, out["leaks"], 120 + rt["by_scenario"][1]["executions"])
     rec(14, out["first_pass_rate"], fp + ff)
     if out["repair_rate"] is not None:

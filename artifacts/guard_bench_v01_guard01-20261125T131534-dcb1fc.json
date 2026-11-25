@@ -1,0 +1,13 @@
+{
+ "hook_pre_p95_ms": 120.5567519999704,
+ "benign_indomain_fpr_pct": 0.0,
+ "benign_n": 213,
+ "ours_holdout_recall_pct": 50.0,
+ "ours_holdout_n": 40,
+ "xtram_test_recall_pct": 96.15384615384616,
+ "xtram_test_n_attacks": 650,
+ "xtram_test_public_benign_fpr_pct": 0.9929078014184398,
+ "pii_recall_pct": 100.0,
+ "pii_n": 1500,
+ "note": "public sets may overlap the classifier's pretraining (optimistic)"
+}

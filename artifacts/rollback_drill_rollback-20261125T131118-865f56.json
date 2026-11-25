@@ -1,0 +1,32 @@
+[
+ {
+  "layer": "config/flag snapshot restore",
+  "ok": true,
+  "ms": 1.7,
+  "detail": "mcp_config.json restored byte-identical"
+ },
+ {
+  "layer": "index manifest N-1 swap",
+  "ok": true,
+  "ms": 9900.2,
+  "detail": "N-1 index loaded (127 chunks) and swapped back"
+ },
+ {
+  "layer": "DB migration down/up (scratch schema)",
+  "ok": false,
+  "ms": 1613.8,
+  "detail": "InsufficientPrivilegeError: permission denied for database neondb"
+ },
+ {
+  "layer": "cache namespace invalidation",
+  "ok": true,
+  "ms": 1.3,
+  "detail": "policy_version bump changes every L2 key (old entries unreachable, expire by TTL)"
+ },
+ {
+  "layer": "code rollback to tag",
+  "ok": true,
+  "ms": 278.7,
+  "detail": "tag v0-L1-FAIL checked out; design lock matches; src/ + mcp_servers/ compile"
+ }
+]

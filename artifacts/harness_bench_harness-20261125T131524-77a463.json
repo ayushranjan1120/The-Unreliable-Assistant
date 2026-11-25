@@ -1,0 +1,9 @@
+{
+ "repairable_cases": 550,
+ "repaired_ok": 550,
+ "repair_success_pct": 100.0,
+ "unrepairable_cases": 20,
+ "rejected_not_guessed": 20,
+ "rejected_pct": 100.0,
+ "first_pass_pct_realistic_stream": 94.13333333333334
+}

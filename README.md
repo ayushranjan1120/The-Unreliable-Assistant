@@ -2,7 +2,7 @@
 
 An MCP-enabled, plugin-extensible agentic assistant for enterprise policies, SOPs and a product catalogue — built to cut **end-to-end latency** and raise **answer accuracy** under load, with hard guardrails: tenant isolation, PII redaction, prompt-injection defence, a bounded tool loop, deterministic abstention, and human approval for every state-changing action.
 
-> **Status: build `v0` (iteration 1 of 3). Tested, not certified.** It runs on a CPU-only 4-vCPU host, so GPU-bound and 5K→50K-user load results are **not run** and nothing is claimed as passing the 50K target. Every number below is backed by a recorded run (`artifacts/kpi_runs.jsonl`) and explained in [`failure_notes/reports/VR-v0.md`](failure_notes/reports/VR-v0.md). Failures are documented, not hidden: see [`failure_notes/`](failure_notes/).
+> **Status: build `v0.2` (iteration 3 of 3, release candidate). Tested, not certified.** It runs on a CPU-only 4-vCPU host, so GPU-bound and 5K→50K-user load results are **not run** and nothing is claimed as passing the 50K target. Every number below is backed by a recorded run (`artifacts/kpi_runs.jsonl`) and explained in [`failure_notes/reports/VR-v0.2.md`](failure_notes/reports/VR-v0.2.md). Failures are documented, not hidden: see [`failure_notes/`](failure_notes/).
 
 ## Preview
 
@@ -85,7 +85,7 @@ curl -s localhost:8000/api/v1/agent/query -H 'Content-Type: application/json' -H
 Full runbook: [`docs/TESTING.md`](docs/TESTING.md).
 
 ```bash
-python -m pytest -q                       # 27 unit + rule tests (tenant-key/SQL lint, BM25 parity, fail-closed plugins, audit tamper, RLS, harness)
+python -m pytest -q                       # 26 unit + rule tests (tenant-key/SQL lint, BM25 parity, fail-closed plugins, audit tamper, RLS, harness)
 python -m scripts.audit_check             # spec adherence (28 build-time checks) + disclosed deviations + KPI evidence
 python -m eval.ir_bench                   # retrieval KPIs 07-13 on the 250-question golden set
 python -m eval.guard_bench                # PII / injection (holdout) / false-positive KPIs
@@ -98,16 +98,17 @@ python -m scripts.make_vr v0              # regenerate the Version Report from r
 
 The **load ladder** (5K → 10K → 25K → 50K users, then a 1-hour soak) uses [`load_tests/k6_50k_load.js`](load_tests/k6_50k_load.js) and [`load_tests/jmeter_50k_plan.jmx`](load_tests/jmeter_50k_plan.jmx). Each rung has abort conditions and a rollback path ([`design.md` §1.11](design.md)).
 
-## Results so far (v0, dev-cpu — see [VR-v0](failure_notes/reports/VR-v0.md))
+## Results (v0.2, dev-cpu — see [VR-v0.2](failure_notes/reports/VR-v0.2.md))
+
+**Scorecard: 17 pass · 4 fail · 6 informational · 9 no data · certified: no.** Every number is backed by a recorded run in `artifacts/kpi_runs.jsonl`.
 
 | Area | Result |
 |---|---|
-| Passing (recorded evidence) | PII redaction recall 100% (1,500 trials) · retrieval recall@50 1.00, context precision 0.91, MRR 0.93 · 16/16 live system checks (Tier-3 never executes without approval, 0 cross-tenant leaks incl. a 120-request storm) · circuit breaker escape · auto-repair 550/550 · token reduction 68% |
-| Failing / open | Injection block rate on an unseen holdout (67%) and benign false positives (7.5%) · pre-hook latency 86 ms on CPU · nDCG@4 0.81 · MCP overhead 13 ms · hallucination measurement — each has a failure note |
-| Not run | 5K–50K-user rungs, 1-hour soak, GPU latencies (this host: 4 vCPU, no GPU) |
-| Generation | ADR-7 bake-off over 4 models on identical retrieval; comparison questions were limited by retrieval (fixed with entity pinning), not the model — see `artifacts/bakeoff_summary.json` |
+| Passing | Hallucination **0 / 211** checkable answers · abstention 100% (37 unanswerable) · answer relevancy proxy 0.97 · PII recall 100% (1,500) · tenant isolation 0 leaks (16/16 live checks + 120-request storm) · Tier-3 never executes without approval · recall@50 1.00, MRR 0.93, precision@4 0.91 · token reduction 67% · injection false positives 0% on our benign set |
+| Failing | Injection block rate **96.2%** vs ≥99.5% on frozen public test (50% on our own holdout) · nDCG@4 **0.81** (multi-hop 0.51) · pre-hook latency **121 ms** on CPU · MCP overhead 19.5 ms |
+| Not run | 5K–50K-user rungs and the 1-hour soak (needs GPU + distributed injectors; `scripts/certify.sh` refuses to run on this host) |
 
-The original audit report is kept unmodified in [`audit/`](audit/AUDIT-2026-11-13.md) and treated as **claims, not evidence**; [`audit/CLAIMS_REGISTER.md`](audit/CLAIMS_REGISTER.md) maps each claim to what we measured.
+Failures are documented, not hidden: [`failure_notes/`](failure_notes/). The narrative and residual-gap decisions are in [`NARRATIVE-v0.2`](failure_notes/reports/NARRATIVE-v0.2.md). The injection result is the most important open item: independent public data shows the detector misses ~4% of attacks, which is why the design relies on tenant isolation, fail-closed plugins and human approval for every state change, not on the classifier alone.
 
 ## Repository layout
 
@@ -124,7 +125,7 @@ scripts/        dev_stack.sh · neon_setup.py · setup_models.py · audit_check.
 
 ## Roadmap
 
-Three planned iterations — **v0** (this) → **v0.1** (LLM bake-off closure, injection classifier generalisation on a frozen holdout, latency fixes) → **v0.2** (50K certification on GPU + distributed injectors). Gaps and open decisions are listed in the Version Report.
+Three planned iterations — **v0** (this) → **v0.1** (LLM bake-off closure, injection classifier generalisation on a frozen holdout, latency fixes) → **v0.2** (this release candidate: all defects that can be closed on this host, honest gap report) → next: **v0.3** (GPU reranker and injection detector, then the 50K certification ladder on target infrastructure). Gaps and open decisions are listed in the Version Report.
 
 ## Notes
 

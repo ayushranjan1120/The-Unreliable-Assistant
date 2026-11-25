@@ -10,9 +10,11 @@ from src.contracts.models import LotStatusIn, SkuLookupIn
 from src.errors import Code, ToolError
 from src.harness.breaker import CircuitBreaker
 from src.harness.harness import IdemStore, ReqCtx, ToolExecutionHarness, ToolSpec
+from src.config import get_settings
 from utils import results_store
 
 ROOT = Path(__file__).resolve().parent.parent
+s = get_settings()
 async def ok(m, rc): return {"ok": True}
 
 async def main():
@@ -51,7 +53,7 @@ async def main():
     c = telemetry.METRICS.counters; fp = 100 * c["harness.validate.first_pass_ok"] / (c["harness.validate.first_pass_ok"] + c["harness.validate.first_pass_fail"])
     out = {"repairable_cases": len(cases), "repaired_ok": fixed, "repair_success_pct": rep_rate, "unrepairable_cases": len(bad), "rejected_not_guessed": rejected, "rejected_pct": rej_rate, "first_pass_pct_realistic_stream": fp}
     rid = results_store.new_run_id("harness"); art = ROOT / "artifacts" / f"harness_bench_{rid}.json"; art.write_text(json.dumps(out, indent=1))
-    rec = lambda k, v, n: results_store.record_run(k, v, n=n, run_id=rid, version="v0", rung="L1", profile="dev-cpu", artifact=str(art.relative_to(ROOT)))
+    rec = lambda k, v, n: results_store.record_run(k, v, n=n, run_id=rid, version=s.version, rung="L1", profile="dev-cpu", artifact=str(art.relative_to(ROOT)))
     rec(15, rep_rate, len(cases)); rec(14, fp, 1500)
     print(json.dumps(out, indent=1))
 asyncio.run(main())

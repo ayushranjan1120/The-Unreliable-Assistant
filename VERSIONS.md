@@ -13,6 +13,6 @@ Append-only. One row per event. Tags: `vX.Y` = rung passed · `vX.Y-L<n>-FAIL` =
 | Version | Date | Highest rung passed | KPIs failing | Failure notes addressed | Rollback target | Notes |
 |---|---|---|---|---|---|---|
 | v0 (I1) | 2026-11-18 | L1 partial (L0 benches, 16/16 system checks, rollback 4/5); L2+ NOT RUN | 01,03,06,13,24,30 FAIL; 20-22,08,09,29 informational; 9 no data | FN-v0-001…008 | none (nothing deployed) | built on dev-cpu; nothing certified; VR-v0.md |
-| v0.1 (I2) | — | — | — | — | v0 | planned goal: L2–L4 (10K, 25K); not started |
-| v0.2 (I3) | — | — | — | — | v0.1 | planned goal: L5 (50K) + L6 soak; not started |
+| v0.1 (I2) | 2026-11-19 | L0/L1 benches; L2+ NOT RUN | injection (KPI-03), nDCG, latency | FN-v0-002 (partial), FN-v0-001 (partial) | v0 | cache-before-injection ordering; trained LR injection detector; golden run aborted by VM restart |
+| v0.2 (I3) | 2026-11-25 | L1 (system, red team, rollback 4/5); L2–L6 NOT RUN (no GPU) | 01, 03, 13, 30 FAIL; 9 no data (scale + 3 unmeasured) | FN-v0-004 closed; FN-v0-005 closed for dev; FN-v0-002/003/006/007 open | v0.1 | 17 pass / 4 fail / 6 info / 9 no data; release candidate, not certified |
 | 2026-11-18 | design D1.0 locked | sha256 4902c991a38d |
